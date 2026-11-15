@@ -80,6 +80,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  agora: {
+    title: 'Conversaciones que son tuyas.',
+    chapters: [
+      ['Conversa', 'Canales, mensajes directos, hilos y reacciones, en tiempo real y en tu propio servidor.'],
+      ['Cifrado de extremo a extremo', 'Solo los dispositivos del canal leen los mensajes. Compara sus huellas en persona para estar seguros.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro, oscuro o de alto contraste, en español o en inglés.'],
+    ],
+    next: 'funciones',
+  },
   torno: {
     title: 'Del boceto a la pieza.',
     chapters: [
@@ -170,6 +179,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     toma: () => `<div class="story-artboard">${screenshot(0, 'story-toma-dark')}${screenshot(2, 'story-toma-home')}${screenshot(1, 'story-toma-light')}</div>`,
     anima: () => `<div class="story-artboard">${screenshot(0, 'story-anima-dark')}${screenshot(2, 'story-anima-home')}${screenshot(1, 'story-anima-light')}</div>`,
     trama: () => `<div class="story-artboard">${screenshot(0, 'story-trama-dark')}${screenshot(2, 'story-trama-home')}${screenshot(1, 'story-trama-light')}</div>`,
+    agora: () => `<div class="story-artboard">${screenshot(0, 'story-agora-dark')}${screenshot(2, 'story-agora-home')}${screenshot(1, 'story-agora-light')}</div>`,
     torno: () => `<div class="story-artboard">${screenshot(0, 'story-torno-dark')}${screenshot(2, 'story-torno-home')}${screenshot(1, 'story-torno-light')}</div>`,
     pluma: () => `<div class="story-artboard">${screenshot(0, 'story-pluma-dark')}${screenshot(2, 'story-pluma-home')}${screenshot(1, 'story-pluma-light')}</div>`,
     letra: () => `<div class="story-artboard">${screenshot(0, 'story-letra-dark')}${screenshot(2, 'story-letra-prefs')}${screenshot(1, 'story-letra-light')}</div>`,

@@ -44,6 +44,7 @@
 .accent-fuchsia{--accent:#ea6fc6;--accent-rgb:234,111,198}
 .accent-periwinkle{--accent:#afadf1;--accent-rgb:175,173,241}
 .accent-lilac{--accent:#c7a5f2;--accent-rgb:199,165,242}
+.accent-teal{--accent:#5cc2bf;--accent-rgb:92,194,191}
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -200,6 +201,7 @@ html:not(.js) .scroll-progress{display:none}
 .product-card--toma{--card-rgb:234,111,198}
 .product-card--anima{--card-rgb:175,173,241}
 .product-card--trama{--card-rgb:199,165,242}
+.product-card--agora{--card-rgb:92,194,191}
 /* An odd product out spans the row, its screenshot beside the text instead of below it. */
 @media(min-width:861px){
   .product-grid>.product-card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-rows:1fr auto;min-height:440px}
@@ -896,6 +898,18 @@ html:not(.js) .scroll-progress{display:none}
 @keyframes peer-move{from{opacity:0;left:30%;top:70%}to{opacity:1;left:62%;top:46%}}
 @media (prefers-reduced-motion:reduce){.js .peer-cursor{animation:none}}
 
+/* Ágora: someone typing in a speech bubble, behind the lock of end-to-end encryption. */
+.sig-typing{position:relative}
+.sig-typing .product-preview{z-index:0}
+.typing{position:absolute;right:-12px;top:-20px;z-index:1;display:flex;align-items:center;gap:6px;padding:12px 16px;border-radius:20px 20px 20px 6px;background:var(--accent);pointer-events:none}
+.typing-lock{width:15px;height:15px;margin-right:4px;fill:#0c0d13}
+.typing i{width:8px;height:8px;border-radius:50%;background:#0c0d13;opacity:.35}
+.js .typing i{animation:typing-dot 1.2s ease-in-out infinite}
+.js .typing i:nth-child(3){animation-delay:.15s}
+.js .typing i:nth-child(4){animation-delay:.3s}
+@keyframes typing-dot{0%,60%,100%{opacity:.35;translate:0 0}30%{opacity:1;translate:0 -3px}}
+@media (prefers-reduced-motion:reduce){.js .typing i{animation:none}}
+
 /* Forja: the crosshair and pickbox of a drafting canvas, resting over the screenshot. */
 .sig-crosshair{position:relative}
 .crosshair{position:absolute;left:62%;top:46%;width:0;height:0;pointer-events:none}
@@ -1191,8 +1205,8 @@ a.soon-card--released .i{color:var(--ink)}
 
 /* Ánima and Trama: the work in the dark theme, Home rising over it, then the light theme wiping in. */
 .scroll-story--anima .story-stage,.scroll-story--trama .story-stage{background:#101015}
-.story-anima-home,.story-trama-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
-.story-anima-light,.story-trama-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
+.story-anima-home,.story-trama-home,.story-agora-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
+.story-anima-light,.story-trama-light,.story-agora-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
 
 /* Nodalix: retain the desktop as the spatial reference for both panels. */
 .scroll-story--nodalix .story-stage{background:#0d1020}
