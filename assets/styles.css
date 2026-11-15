@@ -42,6 +42,8 @@
 .accent-magenta{--accent:#ee7d9d;--accent-rgb:238,125,157}
 .accent-gold{--accent:#e3b65a;--accent-rgb:227,182,90}
 .accent-fuchsia{--accent:#ea6fc6;--accent-rgb:234,111,198}
+.accent-periwinkle{--accent:#afadf1;--accent-rgb:175,173,241}
+.accent-lilac{--accent:#c7a5f2;--accent-rgb:199,165,242}
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -196,6 +198,8 @@ html:not(.js) .scroll-progress{display:none}
 .product-card--lamina{--card-rgb:238,125,157}
 .product-card--torno{--card-rgb:227,182,90}
 .product-card--toma{--card-rgb:234,111,198}
+.product-card--anima{--card-rgb:175,173,241}
+.product-card--trama{--card-rgb:199,165,242}
 /* An odd product out spans the row, its screenshot beside the text instead of below it. */
 @media(min-width:861px){
   .product-grid>.product-card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-rows:1fr auto;min-height:440px}
@@ -858,6 +862,31 @@ html:not(.js) .scroll-progress{display:none}
 @keyframes playhead-sweep{from{opacity:0;left:8%}to{opacity:1;left:38%}}
 @media (prefers-reduced-motion:reduce){.js .playhead{animation:none}}
 
+/* Ánima: a ball drawn three times, the earlier drawings fading behind it as onion skin. */
+.sig-onion{position:relative}
+.sig-onion .product-preview{z-index:0}
+.onion{position:absolute;right:-10px;top:-18px;z-index:1;width:150px;height:64px;pointer-events:none}
+.onion i{position:absolute;bottom:0;width:30px;height:30px;border-radius:50%;background:var(--accent)}
+.onion i:nth-child(1){left:0;opacity:.18}
+.onion i:nth-child(2){left:44px;bottom:26px;opacity:.38}
+.onion i:nth-child(3){left:96px;bottom:8px;opacity:1;box-shadow:0 0 0 4px rgba(var(--accent-rgb),.2)}
+.js .onion i{animation:onion-in .5s cubic-bezier(.2,.8,.2,1) both}
+.js .onion i:nth-child(1){animation-delay:.3s}
+.js .onion i:nth-child(2){animation-delay:.5s}
+.js .onion i:nth-child(3){animation-delay:.7s}
+@keyframes onion-in{from{opacity:0;translate:-16px 0}}
+@media (prefers-reduced-motion:reduce){.js .onion i{animation:none}}
+
+/* Trama: a collaborator's cursor with their name tag, as live collaboration shows it. */
+.sig-cursor{position:relative}
+.sig-cursor .product-preview{z-index:0}
+.peer-cursor{position:absolute;left:62%;top:46%;z-index:1;pointer-events:none}
+.peer-cursor svg{display:block;width:22px;height:22px;fill:var(--accent);stroke:#0c0d13;stroke-width:1.2}
+.peer-cursor b{position:absolute;left:16px;top:18px;padding:4px 9px;border-radius:999px;background:var(--accent);color:#0c0d13;font:600 12px/1 var(--sans,system-ui),sans-serif;white-space:nowrap}
+.js .peer-cursor{animation:peer-move 1.6s cubic-bezier(.2,.8,.2,1) .4s both}
+@keyframes peer-move{from{opacity:0;left:30%;top:70%}to{opacity:1;left:62%;top:46%}}
+@media (prefers-reduced-motion:reduce){.js .peer-cursor{animation:none}}
+
 /* Forja: the crosshair and pickbox of a drafting canvas, resting over the screenshot. */
 .sig-crosshair{position:relative}
 .crosshair{position:absolute;left:62%;top:46%;width:0;height:0;pointer-events:none}
@@ -1150,6 +1179,11 @@ a.soon-card--released .i{color:var(--ink)}
 .scroll-story--toma .story-stage{background:#101015}
 .story-toma-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
 .story-toma-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
+
+/* Ánima and Trama: the work in the dark theme, Home rising over it, then the light theme wiping in. */
+.scroll-story--anima .story-stage,.scroll-story--trama .story-stage{background:#101015}
+.story-anima-home,.story-trama-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
+.story-anima-light,.story-trama-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
 
 /* Nodalix: retain the desktop as the spatial reference for both panels. */
 .scroll-story--nodalix .story-stage{background:#0d1020}
