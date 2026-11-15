@@ -993,7 +993,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "agora",
-    "icon": "assets/icons/hicolor/512x512/apps/dev.danielmiguelt.Agora.png",
+    "icon": "/screens/agora/agora-icon.png",
     "previews": [
       [
         "/screens/agora/agora-dark.jpg",
