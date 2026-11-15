@@ -53,6 +53,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  toma: {
+    title: 'Del metraje al montaje.',
+    chapters: [
+      ['Monta', 'Coloca los clips en la línea de tiempo y ajusta cada corte al fotograma con el monitor de programa.'],
+      ['Empieza desde Inicio', 'Abre tus medios, metraje de ejemplo o un proyecto de ejemplo, en el Inicio que comparten las aplicaciones creativas.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma sin cerrar el proyecto.'],
+    ],
+    next: 'funciones',
+  },
   torno: {
     title: 'Del boceto a la pieza.',
     chapters: [
@@ -140,6 +149,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     </div><canvas class="story-curve" data-story-canvas="curve"></canvas>
       ${screenshot(1, 'story-lienzo-curves')}`,
     forja: () => `<div class="story-drafting">${screenshot(0, 'story-forja-model')}<span class="story-forja-cursor"></span>${screenshot(1, 'story-forja-home')}${screenshot(2, 'story-forja-light')}</div>`,
+    toma: () => `<div class="story-artboard">${screenshot(0, 'story-toma-dark')}${screenshot(2, 'story-toma-home')}${screenshot(1, 'story-toma-light')}</div>`,
     torno: () => `<div class="story-artboard">${screenshot(0, 'story-torno-dark')}${screenshot(2, 'story-torno-home')}${screenshot(1, 'story-torno-light')}</div>`,
     pluma: () => `<div class="story-artboard">${screenshot(0, 'story-pluma-dark')}${screenshot(2, 'story-pluma-home')}${screenshot(1, 'story-pluma-light')}</div>`,
     letra: () => `<div class="story-artboard">${screenshot(0, 'story-letra-dark')}${screenshot(2, 'story-letra-prefs')}${screenshot(1, 'story-letra-light')}</div>`,

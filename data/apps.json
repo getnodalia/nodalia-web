@@ -627,6 +627,126 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
   },
   {
+    "id": "toma",
+    "name": "Toma",
+    "category": "Creatividad",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Edición de vídeo",
+    "headline": "Cada corte, en su fotograma.",
+    "tagline": "Edición de vídeo nativa, sin cuenta ni nube.",
+    "description": "Un editor de vídeo nativo, escrito en Rust y con el diseño de Nodalia, para montar, ajustar y exportar tus vídeos. Con sus propios códecs, sin FFmpeg, sin cuenta y sin nube.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "toma",
+    "icon": "assets/app-icon/hicolor/512x512/apps/dev.danielmiguelt.Toma.png",
+    "previews": [
+      [
+        "/screens/toma/toma-dark.jpg",
+        "Un proyecto de ejemplo abierto en Toma, en el tema oscuro, con el monitor de programa y la línea de tiempo"
+      ],
+      [
+        "/screens/toma/toma-light.jpg",
+        "El mismo proyecto en el tema claro, elegido en Preferencias"
+      ],
+      [
+        "/screens/toma/toma-home-light.jpg",
+        "Inicio de Toma: abrir medios, metraje y un proyecto de ejemplo, o barras y tono"
+      ]
+    ],
+    "features": [
+      [
+        "Montaje en la línea de tiempo",
+        "Pistas de vídeo y audio, entrada y salida, insertar y sobrescribir, levantar y extraer, con tiempo exacto al fotograma."
+      ],
+      [
+        "Herramientas de edición",
+        "Rizo, rodillo, desplazar, deslizar y ajustar velocidad, con ajuste a los cortes y marcadores."
+      ],
+      [
+        "Audio",
+        "Mezclador de clips y de pistas, medidores de sonoridad y normalización por tipo de audio."
+      ],
+      [
+        "Códecs propios",
+        "Decodifica y exporta los formatos habituales con códecs escritos en Rust, sin FFmpeg, y con decodificación por hardware donde el sistema la ofrece."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, la barra de la app con su selector de espacios de trabajo, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro."
+      ],
+      [
+        "Todo es un comando",
+        "Cada acción se puede automatizar con toma-cli o con agentes de IA a través de MCP."
+      ]
+    ],
+    "formats": [
+      "MP4",
+      "MOV",
+      "MKV",
+      "WebM",
+      "H.264",
+      "HEVC",
+      "AV1",
+      "VP9",
+      "AAC",
+      "Opus",
+      "WAV"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · MSI y zip portátil (Windows)"
+      ],
+      [
+        "Códecs",
+        "Propios, en Rust"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Toma es un retrato de Georges Méliès, pionero del cine y de los efectos especiales.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Necesita FFmpeg?",
+        "No. Toma lee y escribe vídeo y audio con sus propios códecs, escritos en Rust a partir de las especificaciones públicas."
+      ],
+      [
+        "¿Se puede automatizar?",
+        "Sí. Todo es un comando: toma-cli exporta proyectos sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
+      ],
+      [
+        "¿Mis vídeos salen de mi equipo?",
+        "No. Todo se edita en local y la aplicación no necesita cuenta ni servidor. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Toma está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los proyectos importantes.",
+    "cta": "Descargar Toma",
+    "accent": "fuchsia",
+    "downloads": {
+      "linux": "^toma-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^toma-[0-9].*-macos-(universal|arm64)\\.dmg$",
+      "windows": "^toma-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
+  },
+  {
     "id": "letra",
     "name": "Letra",
     "category": "Productividad",

@@ -130,5 +130,16 @@
  "STL",
  "3MF",
  "OBJ",
- "glTF"
+ "glTF",
+ "Toma",
+ "MP4",
+ "MOV",
+ "MKV",
+ "WebM",
+ "HEVC",
+ "AV1",
+ "VP9",
+ "AAC",
+ "Opus",
+ "WAV"
 ]
