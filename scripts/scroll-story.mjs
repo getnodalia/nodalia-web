@@ -62,6 +62,24 @@ const stories = {
     ],
     next: 'funciones',
   },
+  anima: {
+    title: 'Del boceto al movimiento.',
+    chapters: [
+      ['Anima', 'Dibuja en el escenario y da movimiento con fotogramas clave, interpolaciones y papel cebolla en la línea de tiempo.'],
+      ['Empieza desde Inicio', 'Crea un documento, abre los recientes o una escena de ejemplo, en el Inicio que comparten las aplicaciones creativas.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma sin cerrar la escena.'],
+    ],
+    next: 'funciones',
+  },
+  trama: {
+    title: 'De la idea a la interfaz.',
+    chapters: [
+      ['Diseña', 'Monta pantallas con marcos y auto layout, componentes y estilos, y conviértelas en un prototipo.'],
+      ['Empieza desde Inicio', 'Crea un archivo, abre los recientes o un ejemplo, en el Inicio que comparten las aplicaciones creativas.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma sin cerrar el diseño.'],
+    ],
+    next: 'funciones',
+  },
   torno: {
     title: 'Del boceto a la pieza.',
     chapters: [
@@ -150,6 +168,8 @@ export function scrollStory(id, apps, { e, safeUrl }) {
       ${screenshot(1, 'story-lienzo-curves')}`,
     forja: () => `<div class="story-drafting">${screenshot(0, 'story-forja-model')}<span class="story-forja-cursor"></span>${screenshot(1, 'story-forja-home')}${screenshot(2, 'story-forja-light')}</div>`,
     toma: () => `<div class="story-artboard">${screenshot(0, 'story-toma-dark')}${screenshot(2, 'story-toma-home')}${screenshot(1, 'story-toma-light')}</div>`,
+    anima: () => `<div class="story-artboard">${screenshot(0, 'story-anima-dark')}${screenshot(2, 'story-anima-home')}${screenshot(1, 'story-anima-light')}</div>`,
+    trama: () => `<div class="story-artboard">${screenshot(0, 'story-trama-dark')}${screenshot(2, 'story-trama-home')}${screenshot(1, 'story-trama-light')}</div>`,
     torno: () => `<div class="story-artboard">${screenshot(0, 'story-torno-dark')}${screenshot(2, 'story-torno-home')}${screenshot(1, 'story-torno-light')}</div>`,
     pluma: () => `<div class="story-artboard">${screenshot(0, 'story-pluma-dark')}${screenshot(2, 'story-pluma-home')}${screenshot(1, 'story-pluma-light')}</div>`,
     letra: () => `<div class="story-artboard">${screenshot(0, 'story-letra-dark')}${screenshot(2, 'story-letra-prefs')}${screenshot(1, 'story-letra-light')}</div>`,

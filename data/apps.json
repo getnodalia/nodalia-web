@@ -747,6 +747,239 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
   },
   {
+    "id": "anima",
+    "name": "Ánima",
+    "category": "Creatividad",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Animación 2D",
+    "headline": "Cada dibujo, en movimiento.",
+    "tagline": "Animación 2D nativa, sin cuenta ni nube.",
+    "description": "Un estudio de animación 2D nativo, escrito en Rust y con el diseño de Nodalia, para dibujar, animar en la línea de tiempo y exportar tus animaciones. Sin cuenta y sin nube.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "anima",
+    "icon": "assets/app-icon/hicolor/512x512/apps/dev.danielmiguelt.Anima.png",
+    "previews": [
+      [
+        "/screens/anima/anima-dark.jpg",
+        "Una escena de ejemplo abierta en Ánima, en el tema oscuro, con el escenario y la línea de tiempo"
+      ],
+      [
+        "/screens/anima/anima-light.jpg",
+        "La misma escena en el tema claro, elegido en Preferencias"
+      ],
+      [
+        "/screens/anima/anima-home-light.jpg",
+        "Inicio de Ánima: documentos nuevos, recientes y una escena de ejemplo"
+      ]
+    ],
+    "features": [
+      [
+        "Dibujo vectorial",
+        "Pluma, lápiz, pincel, borrador y formas, con anclas Bézier, rellenos, degradados y muestras."
+      ],
+      [
+        "Línea de tiempo",
+        "Capas, carpetas, guías y máscaras; fotogramas clave que se arrastran, papel cebolla e interpolaciones con curvas de aceleración."
+      ],
+      [
+        "Animación",
+        "Símbolos con su propia línea de tiempo, trayectorias de movimiento, huesos, cámara, filtros y escenas."
+      ],
+      [
+        "Sonido e interactividad",
+        "Capas de audio con su forma de onda y scripts de fotograma que se prueban en la vista previa."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, la barra de la app con su selector de espacios de trabajo, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro."
+      ],
+      [
+        "Todo es un comando",
+        "Cada acción se puede automatizar con anima-cli o con agentes de IA a través de MCP."
+      ]
+    ],
+    "formats": [
+      "FLA",
+      "XFL",
+      "SVG",
+      "PNG",
+      "GIF",
+      "WebP",
+      "Lottie",
+      "HTML",
+      "WebM",
+      "MP4"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · MSI y zip portátil (Windows)"
+      ],
+      [
+        "Formato propio",
+        ".anima"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Ánima es un retrato de Émile Reynaud, inventor del praxinoscopio y pionero del dibujo animado.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Abre mis archivos de animación?",
+        "Abre archivos .fla y .xfl y dibujos SVG, y guarda en su propio formato .anima."
+      ],
+      [
+        "¿Se puede automatizar?",
+        "Sí. Todo es un comando: anima-cli renderiza y exporta sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
+      ],
+      [
+        "¿Mis dibujos salen de mi equipo?",
+        "No. Todo se edita en local y la aplicación no necesita cuenta ni servidor. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Ánima está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los proyectos importantes.",
+    "cta": "Descargar Ánima",
+    "accent": "periwinkle",
+    "downloads": {
+      "linux": "^anima-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^anima-[0-9].*-macos-(universal|arm64)\\.dmg$",
+      "windows": "^anima-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
+  },
+  {
+    "id": "trama",
+    "name": "Trama",
+    "category": "Creatividad",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Diseño de interfaces",
+    "headline": "Cada pantalla, bien tejida.",
+    "tagline": "Diseño de interfaces y prototipos, nativo y en tu equipo.",
+    "description": "Una app nativa de diseño de interfaces y prototipos, escrita en Rust y con el diseño de Nodalia: marcos con auto layout, componentes y variantes, prototipos e inspección, y colaboración en directo con un servidor que tú eliges.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "trama",
+    "icon": "assets/app-icon/hicolor/512x512/apps/dev.danielmiguelt.Trama.png",
+    "previews": [
+      [
+        "/screens/trama/trama-dark.jpg",
+        "Un diseño de ejemplo abierto en Trama, en el tema oscuro, con las capas, el lienzo y las propiedades"
+      ],
+      [
+        "/screens/trama/trama-light.jpg",
+        "El mismo diseño en el tema claro, elegido en Preferencias"
+      ],
+      [
+        "/screens/trama/trama-home-light.jpg",
+        "Inicio de Trama: archivos nuevos, recientes y ejemplos para abrir"
+      ]
+    ],
+    "features": [
+      [
+        "Auto layout",
+        "Marcos que se ordenan solos en las dos direcciones, con ajuste de línea, cuadrícula, márgenes, separación y tamaños Ajustar, Rellenar y Fijo."
+      ],
+      [
+        "Componentes y variantes",
+        "Componentes principales, instancias que conservan sus cambios, variantes y propiedades, estilos y variables con modos."
+      ],
+      [
+        "Vectores",
+        "Redes vectoriales con pluma y lápiz, constructor de formas, operaciones booleanas editables y trazos de ancho variable."
+      ],
+      [
+        "Prototipos e inspección",
+        "Interacciones, transiciones, vista de presentación con marcos de dispositivo y modo Inspección con medidas y código."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, la barra de la app con su selector de espacios de trabajo, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro."
+      ],
+      [
+        "Todo es un comando",
+        "Cada acción se puede automatizar con trama-cli o con agentes de IA a través de MCP."
+      ]
+    ],
+    "formats": [
+      "SVG",
+      "PNG",
+      "JPG",
+      "WebP",
+      "PDF"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · MSI y zip portátil (Windows)"
+      ],
+      [
+        "Formato propio",
+        ".trama"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Trama es un retrato de Joseph Marie Jacquard, inventor del telar programable con tarjetas perforadas.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Puedo trabajar con otras personas?",
+        "Sí. Trama colabora en directo en la red local, y en línea con un servidor que configuras en Preferencias. No depende de ningún servicio externo."
+      ],
+      [
+        "¿Se puede automatizar?",
+        "Sí. Todo es un comando: trama-cli exporta sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
+      ],
+      [
+        "¿Mis diseños salen de mi equipo?",
+        "Solo si los compartes. Sin colaboración activa todo se guarda en local, sin cuenta. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Trama está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia del trabajo importante.",
+    "cta": "Descargar Trama",
+    "accent": "lilac",
+    "downloads": {
+      "linux": "^trama-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^trama-[0-9].*-macos-(universal|arm64)\\.dmg$",
+      "windows": "^trama-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
+  },
+  {
     "id": "letra",
     "name": "Letra",
     "category": "Productividad",
