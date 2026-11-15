@@ -760,7 +760,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "anima",
-    "icon": "assets/app-icon/hicolor/512x512/apps/dev.danielmiguelt.Anima.png",
+    "icon": "/screens/anima/anima-icon.png",
     "previews": [
       [
         "/screens/anima/anima-dark.jpg",
@@ -879,7 +879,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "trama",
-    "icon": "assets/app-icon/hicolor/512x512/apps/dev.danielmiguelt.Trama.png",
+    "icon": "/screens/trama/trama-icon.png",
     "previews": [
       [
         "/screens/trama/trama-dark.jpg",
