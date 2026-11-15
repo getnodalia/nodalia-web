@@ -8,7 +8,7 @@
     "eyebrow": "Simulación CFD",
     "headline": "La dinámica de fluidos, sin barreras.",
     "tagline": "Engineering the Flow.",
-    "description": "Una aplicación de escritorio libre para simulación de fluidos con OpenFOAM integrado: de la geometría al posproceso 3D sin tocar la terminal ni instalar nada más.",
+    "description": "Una aplicación de escritorio libre para simulación de fluidos, con su propio motor de cálculo y OpenFOAM integrado: de la geometría al posproceso 3D sin tocar la terminal ni instalar nada más.",
     "platforms": "Linux x86_64 · macOS Apple Silicon",
     "technology": "C++20 · Qt 6 · VTK · OpenFOAM",
     "license": "GPL-3.0",
@@ -38,16 +38,20 @@
         "Geometría, malla, física, ejecución supervisada y posproceso en una sola aplicación, con las herramientas de cada etapa siempre en el mismo sitio."
       ],
       [
+        "Motor propio",
+        "Los casos de tobera se calculan por defecto con el motor de Vortia, sin OpenFOAM. Si lo prefieres, vuelves a OpenFOAM en Preferencias › Cálculo."
+      ],
+      [
         "OpenFOAM y mallador dentro",
         "Los instaladores incluyen OpenFOAM, MPI y el mallador (Python y Gmsh). No hay que instalar ni configurar nada aparte."
       ],
       [
-        "Laminar y turbulento",
-        "Flujo incompresible laminar, transitorio o estacionario, y turbulencia k-ω SST estacionaria con funciones de pared."
+        "Laminar, turbulento y con calor",
+        "Flujo incompresible laminar, transitorio o estacionario, turbulencia k-ω SST estacionaria con funciones de pared y convección natural de un fluido de Boussinesq, con paredes que ceden o reciben calor."
       ],
       [
         "Visualización 3D",
-        "Inspecciona modelos, mallas y resultados con VTK sin salir de la interfaz, con contornos, perfiles e informes."
+        "Inspecciona modelos, mallas y resultados con VTK sin salir de la interfaz. El comando vortia da sondas, perfiles, caudales, esfuerzos en paredes y líneas de corriente, y exporta a CSV o a ParaView."
       ],
       [
         "Verificación a la vista",
@@ -91,7 +95,7 @@
       ],
       [
         "Motor de cálculo",
-        "OpenFOAM integrado: v2606 en macOS, v2412 en Linux"
+        "Motor propio para toberas · OpenFOAM integrado: v2606 en macOS, v2412 en Linux"
       ],
       [
         "Requisitos",
@@ -105,7 +109,7 @@
     "faq": [
       [
         "¿Necesito instalar OpenFOAM?",
-        "No. Desde la versión 0.3.0 los instaladores incluyen OpenFOAM, MPI y el mallador. Puedes comprobar la instalación con vortia --verify-engine, que ejecuta un caso real en serie y en paralelo."
+        "No. Los casos de tobera usan el motor propio de Vortia, y para el resto los instaladores incluyen OpenFOAM, MPI y el mallador. Puedes comprobar la instalación con vortia --verify-engine, que ejecuta un caso real en serie y en paralelo."
       ],
       [
         "¿Qué tengo que hacer la primera vez que lo abro?",
@@ -117,7 +121,7 @@
       ],
       [
         "¿Qué queda fuera?",
-        "LES y DES, transferencia de calor, multifase, combustión, mallas móviles y geometría 3D general con mallado automático de volumen. El flujo compresible para toberas es experimental y no está disponible en la AppImage de Linux."
+        "LES y DES, transferencia de calor más allá de la convección natural laminar, multifase, combustión, mallas móviles y geometría 3D general con mallado automático de volumen. El flujo compresible para toberas es experimental y no está disponible en la AppImage de Linux."
       ],
       [
         "¿Qué es Vortia Native?",
@@ -411,7 +415,7 @@
     "headline": "El plano, trazo a trazo.",
     "tagline": "Dibujo técnico con la línea de comandos de siempre.",
     "description": "Una aplicación CAD nativa para dibujo 2D y planos DWG y DXF, escrita en Rust y con el diseño de Nodalia. Se dibuja desde la línea de comandos, como siempre.",
-    "platforms": "Linux · macOS (Universal) · Windows · FreeBSD",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "forja",
@@ -454,6 +458,10 @@
       [
         "Todo es un comando",
         "Cada menú, herramienta y orden se puede automatizar con forja-cli o con agentes de IA a través de MCP."
+      ],
+      [
+        "Suite de ingeniería",
+        "La misma barra de título, la misma pantalla de inicio y la misma tipografía, IBM Plex, que Torno y Vortia, con los dibujos en pestañas y la búsqueda de comandos siempre a mano."
       ]
     ],
     "formats": [
@@ -470,15 +478,11 @@
       ],
       [
         "Paquetes",
-        "AppImage · .deb · .rpm · Flatpak (Linux) · DMG (macOS) · MSI y zip portátil (Windows) · FreeBSD"
-      ],
-      [
-        "Arquitecturas",
-        "x86_64 · ARM64 · RISC-V (Linux)"
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG universal (macOS) · MSI y zip portátil (Windows x64)"
       ],
       [
         "Tecnología",
-        "Rust · Nodalia Design"
+        "Rust · Nodalia Design · IBM Plex"
       ]
     ],
     "faq": [
@@ -496,7 +500,7 @@
       ],
       [
         "¿En qué sistemas funciona?",
-        "Hay paquetes para Linux (x86_64, ARM64 y RISC-V), un DMG universal para macOS, Windows (x64 y ARM64) y FreeBSD. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+        "Hay paquetes para Linux x86_64 (AppImage, .deb, .rpm y .tar.gz), un DMG universal para macOS con Apple Silicon e Intel y Windows x64, con instalador MSI o zip portátil. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
       ]
     ],
     "limitation": "Forja está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los planos importantes.",
@@ -1019,7 +1023,7 @@
       ],
       [
         "Tu propio servidor",
-        "Un solo binario con un archivo SQLite. Funciona sin conexión a internet y sin depender de ningún servicio externo."
+        "Un solo programa con un archivo SQLite y su propio paquete: .deb, .rpm o un .tar.gz con install.sh que lo deja como servicio de systemd, en un servidor, un VPS o un contenedor LXC de Proxmox. Funciona sin internet y sin servicios externos."
       ],
       [
         "En tiempo real",
@@ -1027,7 +1031,7 @@
       ],
       [
         "Diseño de Nodalia",
-        "Islas redondeadas, controles de ventana propios en Linux y nativos en macOS y Windows, tema claro, oscuro o de alto contraste."
+        "Islas redondeadas, controles de ventana propios en Linux y nativos en Windows y en macOS, dentro de la barra superior; tema claro, oscuro o de alto contraste, en el idioma de tu sistema."
       ],
       [
         "Nativo de verdad",
@@ -1049,7 +1053,7 @@
       ],
       [
         "Servidor",
-        "agora-server · SQLite · Linux, macOS y Windows"
+        "agora-server · .deb, .rpm y .tar.gz con install.sh (Linux) · zip (macOS) · SQLite"
       ],
       [
         "Cifrado",
@@ -1064,11 +1068,11 @@
     "faq": [
       [
         "¿Dónde lo descargo?",
-        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64. El servidor viene en el mismo paquete."
+        "En esta página: el botón principal ofrece la aplicación para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64. El servidor va aparte, en la misma versión: agora-server en Linux y un zip en macOS; en Windows viene en el mismo zip que la aplicación."
       ],
       [
         "¿Necesito un servidor?",
-        "Sí, uno que instalas tú: agora-server es un único programa con un archivo SQLite. Puede funcionar en tu propio ordenador para probarlo o detrás de un proxy con TLS para tu equipo."
+        "Sí, uno que instalas tú: agora-server es un único programa con un archivo SQLite. Puede funcionar en tu propio ordenador para probarlo o detrás de un proxy con TLS para tu equipo. El repositorio tiene una guía para instalarlo en un contenedor LXC de Proxmox."
       ],
       [
         "¿Qué protege el cifrado?",
@@ -1673,7 +1677,7 @@
     "id": "brujula",
     "name": "Brújula",
     "category": "Navegador",
-    "status": "Versión 0.7 · solo Linux",
+    "status": "Versión 0.9 · solo Linux",
     "statusKind": "early",
     "eyebrow": "El navegador de Nodalix",
     "headline": "Navega rápido, seguro y a tu manera.",
@@ -1738,6 +1742,18 @@
       [
         "Rápido y ligero",
         "Las pestañas que no usas se duermen y se archivan solas, con vista dividida, Peek, ventana flotante y notas por espacio."
+      ],
+      [
+        "Asistente de IA",
+        "Ordena tus pestañas con un plan que ves antes de que toque nada y programa tareas que leen una página y te avisan de lo nuevo. Pregunta antes de cerrar pestañas, pulsar o escribir, y nunca ve tus contraseñas."
+      ],
+      [
+        "Herramientas de página",
+        "Buscar en la página, zoom que se recuerda por sitio, silenciar la pestaña, capturar, imprimir y herramientas de desarrollo, cada una con su atajo y en la paleta de comandos."
+      ],
+      [
+        "Sitios con DRM",
+        "WebKitGTK no trae Widevine, así que Netflix, Spotify y otros sitios protegidos no se reproducen dentro. Brújula los reconoce, te lo dice y los abre en un navegador instalado que sí lo tenga."
       ],
       [
         "Contraseñas cifradas",
