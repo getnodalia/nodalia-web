@@ -980,6 +980,121 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
   },
   {
+    "id": "agora",
+    "name": "Ágora",
+    "category": "Comunicación",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Chat de equipo",
+    "headline": "Tu equipo, en tu servidor.",
+    "tagline": "Chat de equipo cifrado de extremo a extremo, en un servidor que tú controlas.",
+    "description": "Un chat de equipo nativo, escrito en Rust y con el diseño de Nodalia: espacios de trabajo, canales, mensajes directos, hilos y reacciones en un servidor que instalas tú. Los mensajes van cifrados de extremo a extremo y el servidor solo guarda texto cifrado.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "agora",
+    "icon": "assets/icons/hicolor/512x512/apps/dev.danielmiguelt.Agora.png",
+    "previews": [
+      [
+        "/screens/agora/agora-dark.jpg",
+        "Un canal de Ágora en el tema oscuro, con un hilo abierto a la derecha"
+      ],
+      [
+        "/screens/agora/agora-light.jpg",
+        "El mismo canal en el tema claro, con los detalles del canal y sus personas"
+      ],
+      [
+        "/screens/agora/agora-encryption-dark.jpg",
+        "Los detalles de un canal cifrado, con la huella de cada dispositivo para compararla en persona"
+      ]
+    ],
+    "features": [
+      [
+        "Canales y mensajes directos",
+        "Espacios de trabajo con canales públicos y privados, mensajes directos, hilos, reacciones, menciones y mensajes no leídos."
+      ],
+      [
+        "Cifrado de extremo a extremo",
+        "Cada canal y mensaje directo se cifra con MLS (RFC 9420). El servidor guarda solo texto cifrado y cada dispositivo muestra su huella."
+      ],
+      [
+        "Tu propio servidor",
+        "Un solo binario con un archivo SQLite. Funciona sin conexión a internet y sin depender de ningún servicio externo."
+      ],
+      [
+        "En tiempo real",
+        "Los mensajes llegan al momento por una conexión que se recupera sola, y la búsqueda se hace en tu equipo."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, controles de ventana propios en Linux y nativos en macOS y Windows, tema claro, oscuro o de alto contraste."
+      ],
+      [
+        "Nativo de verdad",
+        "Escrito en Rust con egui. Sin Electron, sin Chromium y sin vista web."
+      ]
+    ],
+    "formats": [
+      "Español",
+      "English"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · zip portátil (Windows)"
+      ],
+      [
+        "Servidor",
+        "agora-server · SQLite · Linux, macOS y Windows"
+      ],
+      [
+        "Cifrado",
+        "MLS (RFC 9420) con OpenMLS"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Ágora es un retrato de Sócrates, que conversaba en el ágora de Atenas.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64. El servidor viene en el mismo paquete."
+      ],
+      [
+        "¿Necesito un servidor?",
+        "Sí, uno que instalas tú: agora-server es un único programa con un archivo SQLite. Puede funcionar en tu propio ordenador para probarlo o detrás de un proxy con TLS para tu equipo."
+      ],
+      [
+        "¿Qué protege el cifrado?",
+        "El texto de los mensajes: el servidor nunca lo ve. Sí ve quién habla en qué canal y cuándo, las reacciones y la lista de dispositivos. Un dispositivo nuevo no puede leer los mensajes anteriores a su llegada."
+      ],
+      [
+        "¿Funciona en macOS?",
+        "Sí. La aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Ágora está en una fase temprana: todavía no hay archivos adjuntos, notificaciones del sistema ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.",
+    "cta": "Descargar Ágora",
+    "accent": "teal",
+    "downloads": {
+      "linux": "^agora-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^agora-[0-9].*-macos-universal\\.dmg$",
+      "windows": "^agora-[0-9].*-windows-x64\\.zip$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Zip portátil para Windows de 64 bits con arquitectura x64, con la aplicación y el servidor."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y el servidor para macOS"
+  },
+  {
     "id": "letra",
     "name": "Letra",
     "category": "Productividad",
