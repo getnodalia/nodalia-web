@@ -41,6 +41,7 @@
 .accent-emerald{--accent:#4fcf7d;--accent-rgb:79,207,125}
 .accent-magenta{--accent:#ee7d9d;--accent-rgb:238,125,157}
 .accent-gold{--accent:#e3b65a;--accent-rgb:227,182,90}
+.accent-fuchsia{--accent:#ea6fc6;--accent-rgb:234,111,198}
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -194,6 +195,7 @@ html:not(.js) .scroll-progress{display:none}
 .product-card--celdas{--card-rgb:79,207,125}
 .product-card--lamina{--card-rgb:238,125,157}
 .product-card--torno{--card-rgb:227,182,90}
+.product-card--toma{--card-rgb:234,111,198}
 /* An odd product out spans the row, its screenshot beside the text instead of below it. */
 @media(min-width:861px){
   .product-grid>.product-card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-rows:1fr auto;min-height:440px}
@@ -846,6 +848,16 @@ html:not(.js) .scroll-progress{display:none}
 @keyframes triad-turn{from{opacity:0;rotate:-40deg}to{opacity:1;rotate:0deg}}
 @media (prefers-reduced-motion:reduce){.js .triad{animation:none}}
 
+/* Toma: a timeline playhead with its timecode, sweeping across the screenshot. */
+.sig-playhead{position:relative}
+.sig-playhead .product-preview{z-index:0}
+.playhead{position:absolute;left:38%;top:-14px;bottom:-14px;z-index:1;width:2px;background:var(--accent);border-radius:2px;pointer-events:none}
+.playhead::before{content:"";position:absolute;left:50%;top:0;width:14px;height:14px;translate:-50% 0;background:var(--accent);clip-path:polygon(0 0,100% 0,100% 55%,50% 100%,0 55%)}
+.playhead-time{position:absolute;left:12px;top:-6px;padding:5px 9px;border-radius:999px;background:var(--island);border:1px solid rgba(255,255,255,.08);color:var(--accent);font:600 13px/1 var(--mono,ui-monospace),monospace;white-space:nowrap}
+.js .playhead{animation:playhead-sweep 1.6s cubic-bezier(.2,.8,.2,1) .4s both}
+@keyframes playhead-sweep{from{opacity:0;left:8%}to{opacity:1;left:38%}}
+@media (prefers-reduced-motion:reduce){.js .playhead{animation:none}}
+
 /* Forja: the crosshair and pickbox of a drafting canvas, resting over the screenshot. */
 .sig-crosshair{position:relative}
 .crosshair{position:absolute;left:62%;top:46%;width:0;height:0;pointer-events:none}
@@ -1133,6 +1145,11 @@ a.soon-card--released .i{color:var(--ink)}
 .scroll-story--torno .story-stage{background:#1d1f27}
 .story-torno-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
 .story-torno-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
+
+/* Toma: the edit in the dark theme, Home rising over it, then the light theme wiping in. */
+.scroll-story--toma .story-stage{background:#101015}
+.story-toma-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
+.story-toma-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
 
 /* Nodalix: retain the desktop as the spatial reference for both panels. */
 .scroll-story--nodalix .story-stage{background:#0d1020}
