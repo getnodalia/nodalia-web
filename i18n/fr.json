@@ -1175,5 +1175,8 @@
  "Sí. Trama colabora en directo en la red local, y en línea con un servidor que configuras en Preferencias. No depende de ningún servicio externo.": "Oui. Trama collabore en direct sur le réseau local, et en ligne avec un serveur que vous configurez dans les Préférences. Il ne dépend d'aucun service extérieur.",
  "Sí. Todo es un comando: trama-cli exporta sin abrir la ventana y ofrece un servidor MCP para agentes de IA.": "Oui. Tout est une commande : trama-cli exporte sans ouvrir la fenêtre et propose un serveur MCP pour les agents d'IA.",
  "¿Mis diseños salen de mi equipo?": "Mes designs quittent-ils mon ordinateur ?",
- "Solo si los compartes. Sin colaboración activa todo se guarda en local, sin cuenta. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir.": "Seulement si vous les partagez. Sans collaboration en direct, tout est enregistré en local, sans compte. Sur macOS, l'application n'est pas notariée : la première fois, faites un clic droit dessus et choisissez Ouvrir."
+ "Solo si los compartes. Sin colaboración activa todo se guarda en local, sin cuenta. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir.": "Seulement si vous les partagez. Sans collaboration en direct, tout est enregistré en local, sans compte. Sur macOS, l'application n'est pas notariée : la première fois, faites un clic droit dessus et choisissez Ouvrir.",
+ "Sistema": "Système",
+ "Oficina": "Bureautique",
+ "Más": "Plus"
 }

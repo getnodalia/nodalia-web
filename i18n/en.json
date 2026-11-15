@@ -1175,5 +1175,8 @@
  "Sí. Trama colabora en directo en la red local, y en línea con un servidor que configuras en Preferencias. No depende de ningún servicio externo.": "Yes. Trama collaborates live on the local network, and online with a server you set up in Preferences. It does not depend on any outside service.",
  "Sí. Todo es un comando: trama-cli exporta sin abrir la ventana y ofrece un servidor MCP para agentes de IA.": "Yes. Everything is a command: trama-cli exports without opening the window and offers an MCP server for AI agents.",
  "¿Mis diseños salen de mi equipo?": "Do my designs leave my computer?",
- "Solo si los compartes. Sin colaboración activa todo se guarda en local, sin cuenta. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir.": "Only if you share them. Without live collaboration everything is saved locally, with no account. On macOS the app is not notarized: the first time, right-click it and choose Open."
+ "Solo si los compartes. Sin colaboración activa todo se guarda en local, sin cuenta. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir.": "Only if you share them. Without live collaboration everything is saved locally, with no account. On macOS the app is not notarized: the first time, right-click it and choose Open.",
+ "Sistema": "System",
+ "Oficina": "Office",
+ "Más": "More"
 }
