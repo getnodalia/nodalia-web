@@ -36,7 +36,8 @@ function defineApp(entry) {
     repo: githubRepo(repo),
     icon: asset(icon),
     previews: previews.map(([assetPath, alt]) => [asset(assetPath), alt]),
-    localScreens: previews.map(([assetPath]) => assetPath).filter((assetPath) => assetPath.startsWith('/screens/')),
+    // A local icon is served the same way, for apps whose repository raw.githubusercontent.com cannot serve.
+    localScreens: [...previews.map(([assetPath]) => assetPath), icon].filter((assetPath) => assetPath.startsWith('/screens/')),
   };
 }
 
