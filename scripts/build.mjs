@@ -178,15 +178,23 @@ const nav = (active = '', base = brand.portal + '/') => `<header class="topbar">
   </nav>
   ${langSelect(base)}
 </div></header>`;
+// The footer lists every product by suite, so a growing catalogue widens the band instead of
+// lengthening one column. An app missing from these groups still shows, under "Más".
+const footerSuites = [['Sistema', ['nodalix', 'brujula']], ['Oficina', ['letra', 'celdas', 'lamina']], ['Creatividad', ['lienzo', 'pluma', 'toma', 'anima', 'trama']], ['Ingeniería', ['torno', 'vortia', 'forja']], ['Más', ['vinilo']]];
+const footerGroups = (() => {
+  const grouped = new Set(footerSuites.flatMap(([, ids]) => ids));
+  const link = (app) => [app.name, app.url];
+  return footerSuites.map(([label, ids]) => {
+    const links = ids.filter((id) => byId[id]).map((id) => link(byId[id]));
+    if (label === 'Más') links.push(...ordered.filter((app) => !grouped.has(app.id)).map(link), ['Studium', `${brand.portal}/#studium`]);
+    return [label, links];
+  });
+})();
 const footer = () => `<footer class="footer"><div class="container">
   <div class="footer-content">
     <div class="footer-about"><a class="brand" href="${safeUrl(brand.portal)}"><img src="${wordmarkSrc}" alt="Nodalia" width="133" height="34" loading="lazy"/></a>
       <p>Software independiente desarrollado en público: un sistema operativo Linux, aplicaciones de escritorio y componentes para Home Assistant.</p>
       <nav class="social" aria-label="Redes sociales">${[['Instagram', brand.instagram, icon.instagram], ['X', brand.x, icon.x], ['GitHub', brand.github, icon.github]].map(([name, url, glyph]) => `<a href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer me" aria-label="${name}">${glyph}</a>`).join('')}</nav></div>
-    <div class="footer-col"><h2>Productos</h2><nav class="footer-links" aria-label="Productos">
-      ${ordered.map((app) => A(app.url, e(app.name))).join('')}
-      ${A(`${brand.portal}/#studium`, 'Studium')}
-    </nav></div>
     <div class="footer-col"><h2>Home Assistant</h2><nav class="footer-links" aria-label="Home Assistant">
       ${A(repoUrl(site.ecosystem.featured.repo), e(site.ecosystem.featured.name), '', true)}
       ${site.ecosystem.more.slice(0, 2).map(([name, repo]) => A(repoUrl(repo), e(name), '', true)).join('')}
@@ -199,6 +207,9 @@ const footer = () => `<footer class="footer"><div class="container">
       ${brand.coffee ? A(brand.coffee, 'Invitar a un café', '', true) : ''}
     </nav></div>
   </div>
+  <nav class="footer-products" aria-label="Productos"><h2>Productos</h2><div class="footer-suites">
+    ${footerGroups.map(([label, links]) => `<div class="footer-suite"><h3>${label}</h3><div class="footer-links">${links.map(([name, url]) => A(url, e(name))).join('')}</div></div>`).join('')}
+  </div></nav>
   <div class="footer-meta"><span>© <span>${new Date().getUTCFullYear()}</span> Nodalia · Creado por ${A(site.author.website, e(site.author.name), '', true)}</span><span>Sin cookies ni analítica propia.</span></div>
 </div></footer>`;
 const shell = ({title, description, canonical, content, accent = '', preview = '', previewAlt = '', active = '', schema = null, scripts = '', identity = false}) => `<!doctype html>
