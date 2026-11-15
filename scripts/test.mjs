@@ -31,6 +31,9 @@ for (const id of SITES) {
   assert.match(page,/nodalia-wordmark\.svg/);
   assert.match(page,/class="topbar"/);
   assert.match(page,/class="footer"/);
+  const products = page.match(/<nav class="footer-products"[\s\S]*?<\/nav>/)?.[0] ?? '';
+  for (const app of SITES.filter((site) => site !== 'portal')) assert.ok(products.includes(`href="https://getnodalia.com/${app}/"`), `${app} missing from the footer of ${id}`);
+  assert.equal((products.match(/class="footer-suite"/g) ?? []).length, 5, `footer of ${id} groups its products in five suites`);
   assert.match(css,/@media\(max-width:600px\)/);
   assert.match(css,/prefers-reduced-motion/);
   assert.match(wordmark,/<svg[^>]+viewBox/);
@@ -227,6 +230,8 @@ for (const [id, accent] of [['anima', 'periwinkle'], ['trama', 'lilac'], ['agora
   const html = await readFile(path.join(root, `dist/portal/${id}/index.html`), 'utf8');
   assert.match(html, new RegExp(`<body class="accent-${accent}">`));
   assert.ok(portal.includes(`data-release="${id}"`), `${id} no está en las últimas versiones`);
+  assert.ok((await stat(path.join(root, `dist/portal/${id}/screens/${id}/${id}-icon.png`))).size > 1000, `Falta el icono de ${id}`);
+  assert.ok(portal.includes(`https://getnodalia.com/${id}/screens/${id}/${id}-icon.png`), `El portal no usa el icono local de ${id}`);
 }
 const brujulaHtml = await readFile(path.join(root, 'dist/portal/brujula/index.html'), 'utf8');
 assert.match(brujulaHtml, /<body class="accent-green">/);
