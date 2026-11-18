@@ -80,6 +80,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  pliego: {
+    title: 'De la retícula a la imprenta.',
+    chapters: [
+      ['Maqueta', 'Compón páginas con retículas, marcos de texto enlazados, estilos e imágenes, y expórtalas a PDF o EPUB.'],
+      ['Empieza desde Inicio', 'Abre los recientes, la revista de ejemplo o un documento nuevo del tamaño que necesites, en el Inicio que comparten las aplicaciones creativas.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma sin cerrar el documento.'],
+    ],
+    next: 'funciones',
+  },
   agora: {
     title: 'Conversaciones que son tuyas.',
     chapters: [
@@ -143,6 +152,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  buzon: {
+    title: 'De la bandeja a la respuesta.',
+    chapters: [
+      ['Lee', 'Todas tus cuentas en una bandeja, con las conversaciones agrupadas y las etiquetas a la vista.'],
+      ['Ajusta', 'Temas, tamaño del texto, controles de ventana e icono de la aplicación, en Ajustes.'],
+      ['A tu manera', 'Cambia al tema claro u oscuro sin cerrar nada.'],
+    ],
+    next: 'funciones',
+  },
   nodalix: {
     title: 'Del escritorio a los ajustes.',
     chapters: [
@@ -188,11 +206,13 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     toma: () => `<div class="story-artboard">${screenshot(0, 'story-toma-dark')}${screenshot(2, 'story-toma-home')}${screenshot(1, 'story-toma-light')}</div>`,
     anima: () => `<div class="story-artboard">${screenshot(0, 'story-anima-dark')}${screenshot(2, 'story-anima-home')}${screenshot(1, 'story-anima-light')}</div>`,
     trama: () => `<div class="story-artboard">${screenshot(0, 'story-trama-dark')}${screenshot(2, 'story-trama-home')}${screenshot(1, 'story-trama-light')}</div>`,
+    pliego: () => `<div class="story-artboard">${screenshot(0, 'story-pliego-dark')}${screenshot(2, 'story-pliego-home')}${screenshot(1, 'story-pliego-light')}</div>`,
     agora: () => `<div class="story-artboard">${screenshot(0, 'story-agora-dark')}${screenshot(2, 'story-agora-home')}${screenshot(1, 'story-agora-light')}</div>`,
     torno: () => `<div class="story-artboard">${screenshot(0, 'story-torno-dark')}${screenshot(2, 'story-torno-home')}${screenshot(1, 'story-torno-light')}</div>`,
     pluma: () => `<div class="story-artboard">${screenshot(0, 'story-pluma-dark')}${screenshot(2, 'story-pluma-home')}${screenshot(1, 'story-pluma-light')}</div>`,
     letra: () => `<div class="story-artboard">${screenshot(0, 'story-letra-dark')}${screenshot(2, 'story-letra-prefs')}${screenshot(1, 'story-letra-light')}</div>`,
     celdas: () => `<div class="story-artboard">${screenshot(0, 'story-celdas-dark')}${screenshot(2, 'story-celdas-home')}${screenshot(1, 'story-celdas-light')}</div>`,
+    buzon: () => `<div class="story-artboard">${screenshot(0, 'story-buzon-dark')}${screenshot(2, 'story-buzon-settings')}${screenshot(1, 'story-buzon-light')}</div>`,
     lamina: () => `<div class="story-artboard">${screenshot(0, 'story-lamina-dark')}${screenshot(2, 'story-lamina-prefs')}${screenshot(1, 'story-lamina-light')}</div>`,
     papel: () => `<div class="story-artboard">${screenshot(0, 'story-papel-dark')}${screenshot(2, 'story-papel-home')}${screenshot(1, 'story-papel-light')}</div>`,
     nodalix: () => `<div class="story-monitor">${screenshot(0, 'story-desktop')}${screenshot(1, 'story-settings')}

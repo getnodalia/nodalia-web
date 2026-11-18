@@ -984,6 +984,123 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
   },
   {
+    "id": "pliego",
+    "name": "Pliego",
+    "category": "Creatividad",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Maquetación editorial",
+    "headline": "Cada página, en su retícula.",
+    "tagline": "Maquetación editorial nativa, sin cuenta ni nube.",
+    "description": "Una aplicación de maquetación nativa, escrita en Rust y con el diseño de Nodalia, para componer revistas, libros y folletos página a página y exportarlos a PDF o EPUB. Sin cuenta y sin nube.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "pliego",
+    "icon": "/screens/pliego/pliego-icon.png",
+    "previews": [
+      [
+        "/screens/pliego/pliego-dark.jpg",
+        "La revista de ejemplo abierta en Pliego, en el tema oscuro, con la retícula de columnas y el panel de propiedades"
+      ],
+      [
+        "/screens/pliego/pliego-light.jpg",
+        "La misma revista en el tema claro, elegido en Preferencias"
+      ],
+      [
+        "/screens/pliego/pliego-home-light.jpg",
+        "Inicio de Pliego: archivos recientes, la revista de ejemplo y los tamaños de página para empezar un documento"
+      ]
+    ],
+    "features": [
+      [
+        "Páginas y retículas",
+        "Páginas enfrentadas, márgenes, columnas, guías, retícula base y páginas maestras."
+      ],
+      [
+        "Texto que fluye",
+        "Marcos de texto enlazados, estilos de párrafo y de carácter, tablas, notas al pie y composición tipográfica cuidada."
+      ],
+      [
+        "Imágenes y objetos",
+        "Coloca imágenes y PDF, dibuja formas y trazados, y ordénalos en capas."
+      ],
+      [
+        "Salida profesional",
+        "Exporta a PDF para imprenta, incluido PDF/X-4, a PDF interactivo y a EPUB, y empaqueta el documento con sus fuentes e imágenes."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, la barra de la app con su selector de espacios de trabajo, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro."
+      ],
+      [
+        "Todo es un comando",
+        "Cada acción se puede automatizar con pliego-cli o con agentes de IA a través de MCP."
+      ]
+    ],
+    "formats": [
+      "PDF",
+      "PDF/X-4",
+      "EPUB",
+      "IDML",
+      "HTML",
+      "RTF",
+      "XML",
+      "PNG"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · MSI y zip portátil (Windows)"
+      ],
+      [
+        "Formato propio",
+        ".pliego, con intercambio IDML"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Pliego es un retrato de Johannes Gutenberg, que introdujo la imprenta de tipos móviles.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Abre documentos de otras aplicaciones?",
+        "Sí, a través de IDML, el formato de intercambio abierto de la maquetación editorial, que Pliego lee y escribe. También coloca PDF e imágenes."
+      ],
+      [
+        "¿Se puede automatizar?",
+        "Sí. Todo es un comando: pliego-cli exporta documentos sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
+      ],
+      [
+        "¿Mis documentos salen de mi equipo?",
+        "No. Todo se maqueta en local y la aplicación no necesita cuenta ni servidor. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Pliego está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los documentos importantes.",
+    "cta": "Descargar Pliego",
+    "accent": "indigo",
+    "downloads": {
+      "linux": "^pliego-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^pliego-[0-9].*-macos-(universal|arm64)\\.dmg$",
+      "windows": "^pliego-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
+  },
+  {
     "id": "agora",
     "name": "Ágora",
     "category": "Comunicación",
@@ -1097,6 +1214,120 @@
       "windows": "Zip portátil para Windows de 64 bits con arquitectura x64, con la aplicación y el servidor."
     },
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y el servidor para macOS"
+  },
+  {
+    "id": "buzon",
+    "name": "Buzón",
+    "category": "Comunicación",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Correo electrónico",
+    "headline": "Tu correo, en orden.",
+    "tagline": "Todas tus cuentas de correo en una app nativa, rápida y privada.",
+    "description": "Un cliente de correo nativo para Linux, escrito en Rust y con el diseño de Nodalia. Reúne tus cuentas IMAP, POP3 y JMAP en una sola bandeja, envía por SMTP y bloquea el contenido remoto y los rastreadores hasta que tú decidas.",
+    "platforms": "Linux x86_64",
+    "technology": "Rust · GTK 4 · Nodalia Design",
+    "license": "AGPL-3.0-or-later",
+    "repo": "buzon",
+    "icon": "/screens/buzon/buzon-icon.png",
+    "previews": [
+      [
+        "/screens/buzon/buzon-dark.jpg",
+        "La bandeja unificada de Buzón en el tema oscuro, con una conversación abierta"
+      ],
+      [
+        "/screens/buzon/buzon-light.jpg",
+        "La misma conversación en el tema claro, elegido en Ajustes"
+      ],
+      [
+        "/screens/buzon/buzon-settings-light.jpg",
+        "Los ajustes de apariencia de Buzón, con sus temas y el icono de la aplicación"
+      ]
+    ],
+    "features": [
+      [
+        "Todas tus cuentas",
+        "IMAP, POP3 y JMAP en una bandeja unificada, con envío por SMTP."
+      ],
+      [
+        "Conversaciones",
+        "Los mensajes de un mismo hilo, juntos y en orden, con etiquetas, destacados y adjuntos a la vista."
+      ],
+      [
+        "Privacidad primero",
+        "El contenido remoto y los rastreadores se bloquean por defecto, los enlaces se limpian y las contraseñas viven en el llavero del sistema."
+      ],
+      [
+        "Organiza sin esfuerzo",
+        "Filtros, etiquetas, carpetas inteligentes, búsqueda, posponer mensajes y traducción integrada."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, el rojo de Buzón, controles de ventana propios, menú global del escritorio y temas claro y oscuro en Ajustes."
+      ],
+      [
+        "OpenPGP",
+        "Firma y cifra tus mensajes y comprueba los que recibes."
+      ]
+    ],
+    "formats": [
+      "IMAP",
+      "POP3",
+      "JMAP",
+      "SMTP",
+      "OpenPGP"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "AGPL-3.0-or-later"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm (Linux x86_64)"
+      ],
+      [
+        "Protocolos",
+        "IMAP · POP3 · JMAP · SMTP"
+      ],
+      [
+        "Requisitos",
+        "GTK 4.20 o posterior"
+      ],
+      [
+        "Tecnología",
+        "Rust · GTK 4 · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Buzón es un retrato de Rowland Hill, que inventó el sello de correos y el franqueo a un precio único.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el AppImage de la última versión publicada en GitHub. También hay paquetes .deb y .rpm."
+      ],
+      [
+        "¿Qué cuentas admite?",
+        "Cualquier servidor IMAP, POP3 o JMAP, con envío por SMTP. Funciona con la mayoría de proveedores, incluidos los que usan inicio de sesión con contraseña de aplicación."
+      ],
+      [
+        "¿Dónde guarda mis contraseñas?",
+        "En el llavero del sistema (Secret Service). Buzón nunca las escribe en disco, en registros ni en mensajes de error."
+      ],
+      [
+        "¿Hay versión para macOS o Windows?",
+        "Todavía no. Buzón es por ahora una app para Linux."
+      ]
+    ],
+    "limitation": "Buzón está en una fase temprana. Guarda una copia de tu correo importante en tu servidor; la lista de lo que funciona y lo que falta está en el repositorio.",
+    "cta": "Descargar Buzón",
+    "accent": "scarlet",
+    "downloads": {
+      "linux": "^Buzon-x86_64\\.AppImage$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64 y GTK 4.20 o posterior."
+    },
+    "otherPackages": "Otros paquetes: .deb y .rpm para Linux"
   },
   {
     "id": "letra",

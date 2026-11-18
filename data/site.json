@@ -120,6 +120,10 @@
       "trama"
     ],
     [
+      "Pliego",
+      "pliego"
+    ],
+    [
       "Ágora",
       "agora"
     ],
@@ -138,6 +142,10 @@
     [
       "Papel",
       "papel"
+    ],
+    [
+      "Buzón",
+      "buzon"
     ],
     [
       "Nodalia Cards",
@@ -182,18 +190,6 @@
         "pulso",
         "Composición y motion graphics",
         "pulso"
-      ],
-      [
-        "Pliego",
-        "pliego",
-        "Maquetación editorial",
-        "pliego"
-      ],
-      [
-        "Buzón",
-        "buzon",
-        "Correo electrónico",
-        "buzon"
       ]
     ]
   }
