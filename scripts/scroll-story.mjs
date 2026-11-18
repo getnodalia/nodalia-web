@@ -143,6 +143,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  pulso: {
+    title: 'De la idea al movimiento.',
+    chapters: [
+      ['Anima', 'Compón capas, añade fotogramas clave y efectos, y ajusta el ritmo en la línea de tiempo.'],
+      ['Empieza desde Inicio', 'Crea una composición, abre el proyecto de demostración o parte de una plantilla, en el Inicio que comparten las aplicaciones creativas.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma sin cerrar el proyecto.'],
+    ],
+    next: 'funciones',
+  },
   papel: {
     title: 'Del documento a la firma.',
     chapters: [
@@ -214,6 +223,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     celdas: () => `<div class="story-artboard">${screenshot(0, 'story-celdas-dark')}${screenshot(2, 'story-celdas-home')}${screenshot(1, 'story-celdas-light')}</div>`,
     buzon: () => `<div class="story-artboard">${screenshot(0, 'story-buzon-dark')}${screenshot(2, 'story-buzon-settings')}${screenshot(1, 'story-buzon-light')}</div>`,
     lamina: () => `<div class="story-artboard">${screenshot(0, 'story-lamina-dark')}${screenshot(2, 'story-lamina-prefs')}${screenshot(1, 'story-lamina-light')}</div>`,
+    pulso: () => `<div class="story-artboard">${screenshot(0, 'story-pulso-dark')}${screenshot(2, 'story-pulso-home')}${screenshot(1, 'story-pulso-light')}</div>`,
     papel: () => `<div class="story-artboard">${screenshot(0, 'story-papel-dark')}${screenshot(2, 'story-papel-home')}${screenshot(1, 'story-papel-light')}</div>`,
     nodalix: () => `<div class="story-monitor">${screenshot(0, 'story-desktop')}${screenshot(1, 'story-settings')}
       <span class="story-system-cursor"></span>${screenshot(2, 'story-updates')}</div>`,

@@ -21,7 +21,7 @@ assert.equal(storyCut(.70, 'vortia'), 0);
 assert.equal(storyCut(.70, 'lienzo'), 0);
 assert.equal(storyCut(.9, 'vinilo'), 1);
 
-for (const site of ['portal', 'brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'torno', 'nodalix']) {
+for (const site of ['portal', 'brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'torno', 'nodalix']) {
   for (const locale of ['', 'en/', 'fr/', 'de/', 'pt/']) {
     const page = await readFile(new URL(`../dist/portal/${site === 'portal' ? '' : `${site}/`}${locale}index.html`, import.meta.url), 'utf8');
     const story = page.match(/<section id="demostracion"[\s\S]*?<\/section>/)?.[0];
@@ -39,4 +39,4 @@ for (const site of ['portal', 'brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 
     assert.match(page, /type="module" src="\/scroll-story\.js\?v=[0-9a-f]{10}"/);
   }
 }
-console.log('✓ Demostraciones: dieciséis páginas, cinco idiomas, tres etapas y alternativa estática.');
+console.log('✓ Demostraciones: diecinueve páginas, cinco idiomas, tres etapas y alternativa estática.');

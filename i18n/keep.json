@@ -170,5 +170,9 @@
  "POP3",
  "JMAP",
  "SMTP",
- "Papel"
+ "Papel",
+ "Pulso",
+ "ProRes",
+ "EXR",
+ "AEP"
 ]
