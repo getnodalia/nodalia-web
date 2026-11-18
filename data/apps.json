@@ -984,6 +984,123 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
   },
   {
+    "id": "pliego",
+    "name": "Pliego",
+    "category": "Creatividad",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Maquetación editorial",
+    "headline": "Cada página, en su retícula.",
+    "tagline": "Maquetación editorial nativa, sin cuenta ni nube.",
+    "description": "Una aplicación de maquetación nativa, escrita en Rust y con el diseño de Nodalia, para componer revistas, libros y folletos página a página y exportarlos a PDF o EPUB. Sin cuenta y sin nube.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "pliego",
+    "icon": "/screens/pliego/pliego-icon.png",
+    "previews": [
+      [
+        "/screens/pliego/pliego-dark.jpg",
+        "La revista de ejemplo abierta en Pliego, en el tema oscuro, con la retícula de columnas y el panel de propiedades"
+      ],
+      [
+        "/screens/pliego/pliego-light.jpg",
+        "La misma revista en el tema claro, elegido en Preferencias"
+      ],
+      [
+        "/screens/pliego/pliego-home-light.jpg",
+        "Inicio de Pliego: archivos recientes, la revista de ejemplo y los tamaños de página para empezar un documento"
+      ]
+    ],
+    "features": [
+      [
+        "Páginas y retículas",
+        "Páginas enfrentadas, márgenes, columnas, guías, retícula base y páginas maestras."
+      ],
+      [
+        "Texto que fluye",
+        "Marcos de texto enlazados, estilos de párrafo y de carácter, tablas, notas al pie y composición tipográfica cuidada."
+      ],
+      [
+        "Imágenes y objetos",
+        "Coloca imágenes y PDF, dibuja formas y trazados, y ordénalos en capas."
+      ],
+      [
+        "Salida profesional",
+        "Exporta a PDF para imprenta, incluido PDF/X-4, a PDF interactivo y a EPUB, y empaqueta el documento con sus fuentes e imágenes."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, la barra de la app con su selector de espacios de trabajo, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro."
+      ],
+      [
+        "Todo es un comando",
+        "Cada acción se puede automatizar con pliego-cli o con agentes de IA a través de MCP."
+      ]
+    ],
+    "formats": [
+      "PDF",
+      "PDF/X-4",
+      "EPUB",
+      "IDML",
+      "HTML",
+      "RTF",
+      "XML",
+      "PNG"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · MSI y zip portátil (Windows)"
+      ],
+      [
+        "Formato propio",
+        ".pliego, con intercambio IDML"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Pliego es un retrato de Johannes Gutenberg, que introdujo la imprenta de tipos móviles.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Abre documentos de otras aplicaciones?",
+        "Sí, a través de IDML, el formato de intercambio abierto de la maquetación editorial, que Pliego lee y escribe. También coloca PDF e imágenes."
+      ],
+      [
+        "¿Se puede automatizar?",
+        "Sí. Todo es un comando: pliego-cli exporta documentos sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
+      ],
+      [
+        "¿Mis documentos salen de mi equipo?",
+        "No. Todo se maqueta en local y la aplicación no necesita cuenta ni servidor. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Pliego está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los documentos importantes.",
+    "cta": "Descargar Pliego",
+    "accent": "indigo",
+    "downloads": {
+      "linux": "^pliego-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^pliego-[0-9].*-macos-(universal|arm64)\\.dmg$",
+      "windows": "^pliego-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
+  },
+  {
     "id": "agora",
     "name": "Ágora",
     "category": "Comunicación",

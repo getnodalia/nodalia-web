@@ -80,6 +80,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  pliego: {
+    title: 'De la retícula a la imprenta.',
+    chapters: [
+      ['Maqueta', 'Compón páginas con retículas, marcos de texto enlazados, estilos e imágenes, y expórtalas a PDF o EPUB.'],
+      ['Empieza desde Inicio', 'Abre los recientes, la revista de ejemplo o un documento nuevo del tamaño que necesites, en el Inicio que comparten las aplicaciones creativas.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma sin cerrar el documento.'],
+    ],
+    next: 'funciones',
+  },
   agora: {
     title: 'Conversaciones que son tuyas.',
     chapters: [
@@ -188,6 +197,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     toma: () => `<div class="story-artboard">${screenshot(0, 'story-toma-dark')}${screenshot(2, 'story-toma-home')}${screenshot(1, 'story-toma-light')}</div>`,
     anima: () => `<div class="story-artboard">${screenshot(0, 'story-anima-dark')}${screenshot(2, 'story-anima-home')}${screenshot(1, 'story-anima-light')}</div>`,
     trama: () => `<div class="story-artboard">${screenshot(0, 'story-trama-dark')}${screenshot(2, 'story-trama-home')}${screenshot(1, 'story-trama-light')}</div>`,
+    pliego: () => `<div class="story-artboard">${screenshot(0, 'story-pliego-dark')}${screenshot(2, 'story-pliego-home')}${screenshot(1, 'story-pliego-light')}</div>`,
     agora: () => `<div class="story-artboard">${screenshot(0, 'story-agora-dark')}${screenshot(2, 'story-agora-home')}${screenshot(1, 'story-agora-light')}</div>`,
     torno: () => `<div class="story-artboard">${screenshot(0, 'story-torno-dark')}${screenshot(2, 'story-torno-home')}${screenshot(1, 'story-torno-light')}</div>`,
     pluma: () => `<div class="story-artboard">${screenshot(0, 'story-pluma-dark')}${screenshot(2, 'story-pluma-home')}${screenshot(1, 'story-pluma-light')}</div>`,
