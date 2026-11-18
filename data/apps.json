@@ -984,6 +984,123 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
   },
   {
+    "id": "pulso",
+    "name": "Pulso",
+    "category": "Creatividad",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Composición y motion graphics",
+    "headline": "Cada fotograma, con ritmo.",
+    "tagline": "Motion graphics y efectos visuales nativos, sin cuenta ni nube.",
+    "description": "Una aplicación nativa de composición, motion graphics y efectos visuales, escrita en Rust y con el diseño de Nodalia. Anima capas con fotogramas clave y expresiones, aplica efectos y exporta tus vídeos, sin cuenta y sin nube.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "pulso",
+    "icon": "/screens/pulso/pulso-icon.png",
+    "previews": [
+      [
+        "/screens/pulso/pulso-dark.jpg",
+        "La composición de demostración abierta en Pulso, en el tema oscuro, con el visor y la línea de tiempo"
+      ],
+      [
+        "/screens/pulso/pulso-light.jpg",
+        "La misma composición en el tema claro, elegido en Preferencias"
+      ],
+      [
+        "/screens/pulso/pulso-home-light.jpg",
+        "Inicio de Pulso: nueva composición, proyecto de demostración, importar material o empezar desde una plantilla"
+      ]
+    ],
+    "features": [
+      [
+        "Capas y fotogramas clave",
+        "Composiciones con capas de vídeo, forma, texto y sólidos, fotogramas clave con curvas de velocidad y editor de gráficos."
+      ],
+      [
+        "Expresiones",
+        "Vincula propiedades entre sí con expresiones en JavaScript, con comprobación de errores mientras escribes."
+      ],
+      [
+        "Efectos",
+        "Más de 300 efectos propios: desenfoques, color, distorsión, generadores, máscaras y mates."
+      ],
+      [
+        "Importa y exporta",
+        "Abre PSD, SVG, Lottie e imágenes, importa proyectos de After Effects y exporta vídeo, secuencias de imágenes y Lottie."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, la barra de la app con su selector de espacios de trabajo, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro."
+      ],
+      [
+        "Todo es un comando",
+        "Cada acción se puede automatizar con pulso-cli o con agentes de IA a través de MCP."
+      ]
+    ],
+    "formats": [
+      "H.264",
+      "HEVC",
+      "ProRes",
+      "AV1",
+      "WebM",
+      "GIF",
+      "PNG",
+      "EXR",
+      "PSD",
+      "SVG",
+      "Lottie",
+      "AEP"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · MSI y zip portátil (Windows)"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Pulso es un retrato de Eadweard Muybridge, pionero de la fotografía del movimiento.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Abre proyectos de After Effects?",
+        "Importa proyectos .aep e informa de lo que no puede traducir todavía, para que sepas qué revisar."
+      ],
+      [
+        "¿Se puede automatizar?",
+        "Sí. Todo es un comando: pulso-cli renderiza composiciones sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
+      ],
+      [
+        "¿Mis proyectos salen de mi equipo?",
+        "No. Todo se edita en local y la aplicación no necesita cuenta ni servidor. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Pulso está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los proyectos importantes.",
+    "cta": "Descargar Pulso",
+    "accent": "lime",
+    "downloads": {
+      "linux": "^pulso-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^pulso-[0-9].*-macos-(universal|arm64)\\.dmg$",
+      "windows": "^pulso-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
+  },
+  {
     "id": "agora",
     "name": "Ágora",
     "category": "Comunicación",
