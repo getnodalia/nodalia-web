@@ -45,6 +45,7 @@
 .accent-periwinkle{--accent:#afadf1;--accent-rgb:175,173,241}
 .accent-lilac{--accent:#c7a5f2;--accent-rgb:199,165,242}
 .accent-teal{--accent:#5cc2bf;--accent-rgb:92,194,191}
+.accent-scarlet{--accent:#f07a6e;--accent-rgb:240,122,110}
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -202,6 +203,7 @@ html:not(.js) .scroll-progress{display:none}
 .product-card--anima{--card-rgb:175,173,241}
 .product-card--trama{--card-rgb:199,165,242}
 .product-card--agora{--card-rgb:92,194,191}
+.product-card--buzon{--card-rgb:240,122,110}
 /* An odd product out spans the row, its screenshot beside the text instead of below it. */
 @media(min-width:861px){
   .product-grid>.product-card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-rows:1fr auto;min-height:440px}
@@ -837,6 +839,21 @@ html:not(.js) .scroll-progress{display:none}
 @keyframes cell-pick-in{from{opacity:0;transform:scale(1.25)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.js .cell-pick{animation:none}}
 
+/* Buzón: the inbox with its unread count, which ticks up as a message arrives. */
+.sig-inbox{position:relative}
+.sig-inbox .product-preview{z-index:0}
+.inbox-chip{position:absolute;left:-14px;bottom:-22px;z-index:1;display:flex;align-items:center;gap:12px;padding:10px 12px 10px 14px;border-radius:14px;background:var(--island);border:1px solid rgba(255,255,255,.08);font-family:var(--display);font-size:18px;color:var(--ink);pointer-events:none}
+.inbox-chip svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.inbox-count{position:relative;display:inline-grid;min-width:34px;height:26px;padding:0 9px;border-radius:999px;background:var(--accent);color:#14171c;font-weight:600;font-size:15px;overflow:hidden}
+.inbox-count b{grid-area:1/1;display:flex;align-items:center;justify-content:center}
+.inbox-count b+b{opacity:0}
+.js .inbox-chip{animation:present-in .6s cubic-bezier(.2,.8,.2,1) .5s both}
+.js .inbox-count b:first-child{animation:inbox-out .35s ease-in 1.6s both}
+.js .inbox-count b+b{animation:inbox-in .4s cubic-bezier(.2,.8,.2,1) 1.8s both}
+@keyframes inbox-out{to{opacity:0;transform:translateY(-100%)}}
+@keyframes inbox-in{from{opacity:0;transform:translateY(100%)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.js .inbox-chip,.js .inbox-count b{animation:none}.inbox-count b:first-child{opacity:0}.inbox-count b+b{opacity:1}}
+
 /* Lámina: the slide counter and Present button of the presenter, resting over the screenshot. */
 .sig-present{position:relative}
 .sig-present .product-preview{z-index:0}
@@ -1192,6 +1209,11 @@ a.soon-card--released .i{color:var(--ink)}
 .scroll-story--lamina .story-stage{background:#121014}
 .story-lamina-prefs{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
 .story-lamina-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
+
+/* Buzón: the inbox in the dark theme, Settings rising over it, then the light theme wiping in. */
+.scroll-story--buzon .story-stage{background:#101114}
+.story-buzon-settings{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
+.story-buzon-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
 
 /* Torno: the part in the dark theme, Home rising over it, then the light theme wiping in. */
 .scroll-story--torno .story-stage{background:#1d1f27}
