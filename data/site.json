@@ -136,6 +136,10 @@
       "lamina"
     ],
     [
+      "Papel",
+      "papel"
+    ],
+    [
       "Nodalia Cards",
       "nodalia-cards"
     ]
@@ -184,12 +188,6 @@
         "pliego",
         "Maquetación editorial",
         "pliego"
-      ],
-      [
-        "Papel",
-        "papel",
-        "Editor de documentos PDF",
-        "papel"
       ],
       [
         "Buzón",

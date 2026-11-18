@@ -1427,6 +1427,116 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
   },
   {
+    "id": "papel",
+    "name": "Papel",
+    "category": "Productividad",
+    "status": "Primeras versiones · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Documentos PDF",
+    "headline": "Cada página, en su sitio.",
+    "tagline": "Lee, firma y edita PDF, sin cuenta ni nube.",
+    "description": "Una aplicación de PDF nativa, escrita en Rust y con el diseño de Nodalia, para leer, anotar, rellenar, firmar, editar y organizar documentos. Funciona sin conexión. Sin cuenta, sin nube.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "papel",
+    "icon": "assets/app-icon/hicolor/512x512/apps/dev.danielmiguelt.Papel.png",
+    "previews": [
+      [
+        "/screens/papel/papel-dark.jpg",
+        "Un documento abierto en Papel, en el tema oscuro, con el panel de todas las herramientas"
+      ],
+      [
+        "/screens/papel/papel-light.jpg",
+        "El mismo documento en el tema claro, elegido en Preferencias"
+      ],
+      [
+        "/screens/papel/papel-home-light.jpg",
+        "La pantalla de inicio de Papel con las herramientas recomendadas"
+      ]
+    ],
+    "features": [
+      [
+        "Leer y anotar",
+        "Pestañas, miniaturas, marcadores, búsqueda, notas adhesivas, resaltado y dibujo a mano alzada."
+      ],
+      [
+        "Rellenar y firmar",
+        "Formularios, firmas dibujadas o escritas y firmas digitales con certificado, con su validación."
+      ],
+      [
+        "Editar y organizar",
+        "Edita texto e imágenes, combina archivos, reordena, gira, recorta y extrae páginas."
+      ],
+      [
+        "Proteger y convertir",
+        "Contraseñas, censura de información, OCR de documentos escaneados y exportación a otros formatos."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, el color de Papel, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro que se elige en Preferencias."
+      ],
+      [
+        "Todo es un comando",
+        "Cada acción se puede automatizar con papel-cli o con agentes de IA a través de MCP."
+      ]
+    ],
+    "formats": [
+      "PDF",
+      "DOCX",
+      "PPTX",
+      "HTML",
+      "PNG"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · MSI y zip portátil (Windows)"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Papel es un retrato de Aldo Manucio, el impresor veneciano que llevó el libro al bolsillo.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Puedo firmar documentos?",
+        "Sí. Puedes dibujar o escribir tu firma, y firmar digitalmente con un certificado. Papel también comprueba las firmas que ya tiene un documento."
+      ],
+      [
+        "¿Se puede automatizar?",
+        "Sí. Todo es un comando: papel-cli edita, combina y convierte PDF sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
+      ],
+      [
+        "¿Mis archivos salen de mi equipo?",
+        "No. Todo se procesa en local, sin telemetría y sin cuenta. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Papel está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los documentos importantes.",
+    "cta": "Descargar Papel",
+    "accent": "slate",
+    "downloads": {
+      "linux": "^papel-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^papel-[0-9].*-macos-universal\\.dmg$",
+      "windows": "^papel-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
+  },
+  {
     "id": "torno",
     "name": "Torno",
     "category": "Diseño técnico",
