@@ -1885,6 +1885,125 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
   },
   {
+    "id": "hito",
+    "name": "Hito",
+    "category": "Gestión de proyectos",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Tareas, hitos y progreso",
+    "headline": "Cada tarea, hacia su hito.",
+    "tagline": "Tareas, hitos y progreso para empresas, cifrados de extremo a extremo en un servidor que tú controlas.",
+    "description": "Un gestor de trabajo nativo, escrito en Rust y con el diseño de Nodalia: espacios de trabajo, proyectos, hitos, tareas con listas de comprobación, comentarios y el progreso de cada proyecto, en un servidor que instalas tú. El texto de las tareas va cifrado de extremo a extremo y el servidor solo guarda texto cifrado.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "hito",
+    "icon": "/screens/hito/hito-icon.png",
+    "previews": [
+      [
+        "/screens/hito/hito-dark.jpg",
+        "El tablero de un proyecto de Hito en el tema oscuro, con sus tareas por columnas y el progreso arriba"
+      ],
+      [
+        "/screens/hito/hito-light.jpg",
+        "El mismo tablero en el tema claro, con una tarea abierta a la derecha"
+      ],
+      [
+        "/screens/hito/hito-home-light.jpg",
+        "El Inicio de Hito, con plantillas para empezar un proyecto y los proyectos recientes"
+      ]
+    ],
+    "features": [
+      [
+        "Proyectos, hitos y tareas",
+        "Tablero por columnas, lista y vista de hitos. Cada tarea tiene responsable, prioridad, fecha límite, etiquetas, lista de comprobación y comentarios."
+      ],
+      [
+        "El progreso, a la vista",
+        "Cada proyecto y cada hito muestran cuánto falta; Mis tareas reúne lo que te toca en todos los proyectos, y el registro de actividad dice quién hizo qué."
+      ],
+      [
+        "Cifrado de extremo a extremo",
+        "Títulos, descripciones, comentarios y nombres de hito se cifran en tu equipo con MLS (RFC 9420). El servidor guarda solo texto cifrado."
+      ],
+      [
+        "Conectado con tu equipo",
+        "Tokens de API y webhooks firmados avisan a Ágora o a tus propias herramientas cuando una tarea cambia o se alcanza un hito, sin enseñarles el texto cifrado."
+      ],
+      [
+        "Tu propio servidor",
+        "Un solo programa con un archivo SQLite y su propio paquete: .deb, .rpm o un .tar.gz con install.sh que lo deja como servicio de systemd. Funciona sin internet y sin servicios externos."
+      ],
+      [
+        "Nativo de verdad",
+        "Escrito en Rust con egui y el diseño de Nodalia, en el idioma de tu sistema. Sin Electron, sin Chromium y sin vista web."
+      ]
+    ],
+    "formats": [
+      "Español",
+      "English"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · zip portátil (Windows)"
+      ],
+      [
+        "Servidor",
+        "hito-server · .deb, .rpm y .tar.gz con install.sh (Linux) · zip (macOS) · SQLite"
+      ],
+      [
+        "Cifrado",
+        "MLS (RFC 9420) con OpenMLS · XChaCha20-Poly1305"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Hito es un retrato de Henry Gantt, que dibujó el diagrama de barras con el que se siguen los proyectos.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece la aplicación para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64. El servidor va aparte, en la misma versión: hito-server en Linux y un zip en macOS; en Windows viene en el mismo zip que la aplicación."
+      ],
+      [
+        "¿Necesito un servidor?",
+        "Sí, uno que instalas tú: hito-server es un único programa con un archivo SQLite. Puede funcionar en tu propio ordenador para probarlo o detrás de un proxy con TLS para tu empresa. La primera cuenta se crea con un código de un solo uso que da el propio servidor."
+      ],
+      [
+        "¿Qué protege el cifrado?",
+        "El texto: títulos, descripciones, etiquetas, listas de comprobación, comentarios y nombres de hito. El servidor sí ve los estados, las prioridades, las fechas, los responsables y el registro de actividad, porque los necesita para ordenar, contar y avisar."
+      ],
+      [
+        "¿Funciona con Ágora?",
+        "Sí, por tokens de API y webhooks: Ágora o cualquier otra herramienta puede recibir un aviso firmado cuando se completa una tarea o se alcanza un hito. Esas integraciones ven los datos de la tarea, nunca su texto cifrado."
+      ],
+      [
+        "¿Funciona en macOS?",
+        "Sí. La aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Hito está en una fase temprana: todavía no hay archivos adjuntos, diagrama de Gantt, aplicación móvil ni lista de dispositivos con su huella. La lista de lo que funciona y lo que falta está en el repositorio.",
+    "cta": "Descargar Hito",
+    "accent": "leaf",
+    "downloads": {
+      "linux": "^hito-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^hito-[0-9].*-macos-universal\\.dmg$",
+      "windows": "^hito-[0-9].*-windows-x64\\.zip$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Zip portátil para Windows de 64 bits con arquitectura x64, con la aplicación y el servidor."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y el servidor para macOS"
+  },
+  {
     "id": "torno",
     "name": "Torno",
     "category": "Diseño técnico",
