@@ -170,6 +170,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  hito: {
+    title: 'De la tarea al hito.',
+    chapters: [
+      ['Organiza', 'Reparte el trabajo en un tablero por columnas, con responsable, fecha y prioridad, y mira el progreso del proyecto arriba.'],
+      ['Empieza desde Inicio', 'Crea un proyecto en blanco o parte de una plantilla: lanzamiento de producto, proyecto de cliente, sprint o evento.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma y abre una tarea sin perder el tablero de vista.'],
+    ],
+    next: 'funciones',
+  },
   nodalix: {
     title: 'Del escritorio a los ajustes.',
     chapters: [
@@ -222,6 +231,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     letra: () => `<div class="story-artboard">${screenshot(0, 'story-letra-dark')}${screenshot(2, 'story-letra-prefs')}${screenshot(1, 'story-letra-light')}</div>`,
     celdas: () => `<div class="story-artboard">${screenshot(0, 'story-celdas-dark')}${screenshot(2, 'story-celdas-home')}${screenshot(1, 'story-celdas-light')}</div>`,
     buzon: () => `<div class="story-artboard">${screenshot(0, 'story-buzon-dark')}${screenshot(2, 'story-buzon-settings')}${screenshot(1, 'story-buzon-light')}</div>`,
+    hito: () => `<div class="story-artboard">${screenshot(0, 'story-hito-dark')}${screenshot(2, 'story-hito-home')}${screenshot(1, 'story-hito-light')}</div>`,
     lamina: () => `<div class="story-artboard">${screenshot(0, 'story-lamina-dark')}${screenshot(2, 'story-lamina-prefs')}${screenshot(1, 'story-lamina-light')}</div>`,
     pulso: () => `<div class="story-artboard">${screenshot(0, 'story-pulso-dark')}${screenshot(2, 'story-pulso-home')}${screenshot(1, 'story-pulso-light')}</div>`,
     papel: () => `<div class="story-artboard">${screenshot(0, 'story-papel-dark')}${screenshot(2, 'story-papel-home')}${screenshot(1, 'story-papel-light')}</div>`,

@@ -140,6 +140,8 @@ const cellPick = `<span class="cell-pick" aria-hidden="true"></span><p class="fo
 const easeCurve = `<span class="ease" aria-hidden="true"><svg viewBox="0 0 120 60"><path class="ease-path" d="M10 50 C 55 50, 65 10, 110 10"/></svg><i class="ease-key ease-key-a"></i><i class="ease-key ease-key-b"></i></span>`;
 // Papel: a signature field with its stroke, and the badge that says it is valid.
 const signed = `<p class="signed-chip" aria-hidden="true"><svg class="signed-stroke" viewBox="0 0 120 40"><path d="M4 30c10-22 18-26 20-14s-4 18 2 10 12-22 18-16-2 18 6 12 10-14 16-10 4 10 12 6 14-8 20-6"/></svg><span class="signed-badge"><i></i>Firma válida</span></p>`;
+// Hito: a milestone and the progress of the tasks that lead to it, filling up.
+const milestone = `<p class="milestone-chip" aria-hidden="true"><i class="milestone-mark"></i><span class="milestone-name">Lanzamiento 1.0</span><span class="milestone-bar"><b></b></span><span class="milestone-pct">75 %</span></p>`;
 // Buzón: the inbox and its unread count, which ticks up as a message arrives.
 const inbox = `<p class="inbox-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5"/><path d="M5.5 5h13L21 13v5.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V13z"/></svg><span>Bandeja de entrada</span><span class="inbox-count"><b>4</b><b>5</b></span></p>`;
 const present = `<p class="present-chip" aria-hidden="true"><span class="present-count">1 / 8</span><span class="present-btn"><i></i>Presentar</span></p>`;
@@ -165,11 +167,11 @@ const faqBlock = (items) => `<section class="section faq-section" id="faq"><div 
 </div></section>`;
 const table = (head, rows) => `<div class="table-wrap" data-reveal><table class="table"><thead><tr>${head.map((h) => `<th scope="col">${e(h)}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell, i) => (i === 0 ? `<th scope="row">${e(cell)}</th>` : `<td>${e(cell)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div>`;
 const specCard = (app) => `<div class="spec-card" data-reveal="left"><div class="spec-card-head">${iconImg(app, 'spec-icon', 60)}<div><strong>${e(app.name)}</strong><span>${e(app.category)}</span></div></div><dl class="spec-list">${app.specs.map(([k, v]) => `<div><dt>${e(k)}</dt><dd>${e(v)}</dd></div>`).join('')}</dl></div>`;
-const order = ['nodalix', 'brujula', 'vinilo', 'vortia', 'lienzo', 'forja', 'torno', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon'];
+const order = ['nodalix', 'brujula', 'vinilo', 'vortia', 'lienzo', 'forja', 'torno', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito'];
 const byId = Object.fromEntries(apps.map((app) => [app.id, app]));
 const ordered = order.map((id) => byId[id]);
 // The tint each product uses on the portal (tabs, stacked cards), the same values as .product-card--<id>.
-const cardRgb = { nodalix: '143,184,255', brujula: '95,217,161', vinilo: '185,168,255', vortia: '90,169,255', lienzo: '242,163,184', forja: '232,166,111', pluma: '255,154,87', letra: '108,182,236', celdas: '79,207,125', lamina: '238,125,157', torno: '227,182,90', toma: '234,111,198', anima: '175,173,241', trama: '199,165,242', agora: '92,194,191', pliego: '127,136,242', pulso: '158,219,101', papel: '172,180,193', buzon: '240,122,110' };
+const cardRgb = { nodalix: '143,184,255', brujula: '95,217,161', vinilo: '185,168,255', vortia: '90,169,255', lienzo: '242,163,184', forja: '232,166,111', pluma: '255,154,87', letra: '108,182,236', celdas: '79,207,125', lamina: '238,125,157', torno: '227,182,90', toma: '234,111,198', anima: '175,173,241', trama: '199,165,242', agora: '92,194,191', pliego: '127,136,242', pulso: '158,219,101', papel: '172,180,193', buzon: '240,122,110', hito: '108,195,90' };
 
 const globe = svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/>');
 const langSelect = (base) => `<details class="lang"><summary aria-label="Idioma">${globe}<span>${locale.toUpperCase()}</span></summary><ul>${locales.map(({ code, name }) => `<li><a href="${safeUrl(base + localePath(code).slice(1))}" hreflang="${code}" lang="${code}" data-lang="${code}"${code === locale ? ' aria-current="true"' : ''}>${name}</a></li>`).join('')}</ul></details>`;
@@ -190,7 +192,7 @@ const nav = (active = '', base = brand.portal + '/') => `<header class="topbar">
 </div></header>`;
 // The footer lists every product by suite, so a growing catalogue widens the band instead of
 // lengthening one column. An app missing from these groups still shows, under "Más".
-const footerSuites = [['Sistema', ['nodalix', 'brujula']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel']], ['Creatividad', ['lienzo', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso']], ['Ingeniería', ['torno', 'vortia', 'forja']], ['Más', ['vinilo', 'agora', 'buzon']]];
+const footerSuites = [['Sistema', ['nodalix', 'brujula']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel', 'hito']], ['Creatividad', ['lienzo', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso']], ['Ingeniería', ['torno', 'vortia', 'forja']], ['Más', ['vinilo', 'agora', 'buzon']]];
 const footerGroups = (() => {
   const grouped = new Set(footerSuites.flatMap(([, ids]) => ids));
   const link = (app) => [app.name, app.url];
@@ -257,7 +259,7 @@ const support = () => brand.coffee ? `<section class="section support" id="apoya
 async function home() {
   const vinilo = byId.vinilo, lienzo = byId.lienzo, nodalix = byId.nodalix;
   const previewUrl = (app, i = 0) => safeUrl(app.previews[i][0]);
-  const headlines = {nodalix:'Tu ordenador. Con otra perspectiva.',brujula:'Tu rumbo en la web.',vortia:'Ingeniería de fluidos sin cajas negras.',vinilo:'Escucha como tú quieras.',lienzo:'Un espacio para crear.',forja:'Del primer trazo al plano.',pluma:'Cada curva, en su sitio.',letra:'Escribe sin distracciones.',celdas:'Tus números, en orden.',lamina:'Cuenta tu historia.',torno:'Cada pieza, paso a paso.',toma:'Cada corte, en su fotograma.',anima:'Cada dibujo, en movimiento.',trama:'Cada pantalla, bien tejida.',agora:'Tu equipo, en tu servidor.',pliego:'Cada página, en su retícula.',pulso:'Cada fotograma, con ritmo.',papel:'Cada página, en su sitio.',buzon:'Tu correo, en orden.'};
+  const headlines = {nodalix:'Tu ordenador. Con otra perspectiva.',brujula:'Tu rumbo en la web.',vortia:'Ingeniería de fluidos sin cajas negras.',vinilo:'Escucha como tú quieras.',lienzo:'Un espacio para crear.',forja:'Del primer trazo al plano.',pluma:'Cada curva, en su sitio.',letra:'Escribe sin distracciones.',celdas:'Tus números, en orden.',lamina:'Cuenta tu historia.',torno:'Cada pieza, paso a paso.',toma:'Cada corte, en su fotograma.',anima:'Cada dibujo, en movimiento.',trama:'Cada pantalla, bien tejida.',agora:'Tu equipo, en tu servidor.',pliego:'Cada página, en su retícula.',pulso:'Cada fotograma, con ritmo.',papel:'Cada página, en su sitio.',buzon:'Tu correo, en orden.',hito:'Cada tarea, hacia su hito.'};
   const card = (app) => {
     const media = app.previews.length
       ? `<div class="product-card-image"><img class="screen" src="${previewUrl(app)}" alt="${e(app.previews[0][1])}" loading="lazy" decoding="async"/></div>`
@@ -281,7 +283,7 @@ async function home() {
   ];
   return shell({
     title: 'Nodalia — Nodalix OS, aplicaciones de escritorio y Home Assistant',
-    description: 'Nodalia crea Nodalix OS, Brújula, Vinilo, Vortia, Lienzo, Forja, Torno, Pluma, Toma, Ánima, Trama, Pliego, Pulso, Ágora, Letra, Celdas, Lámina, Papel, Buzón y Nodalia Cards: software independiente para Linux, el escritorio y Home Assistant, desarrollado en público por Daniel Miguel Tejedor.',
+    description: 'Nodalia crea Nodalix OS, Brújula, Vinilo, Vortia, Lienzo, Forja, Torno, Pluma, Toma, Ánima, Trama, Pliego, Pulso, Ágora, Letra, Celdas, Lámina, Papel, Buzón, Hito y Nodalia Cards: software independiente para Linux, el escritorio y Home Assistant, desarrollado en público por Daniel Miguel Tejedor.',
     canonical: brand.portal + '/',
     preview: vinilo.previews[0][0],
     previewAlt: vinilo.previews[0][1],
@@ -306,7 +308,7 @@ async function home() {
     </div></div>
     ${scrollStory('portal', apps, { e, safeUrl })}
     <section class="catalogue" id="aplicaciones"><div class="container">
-      <div class="section-head"><div data-reveal><h2 data-reveal>Diecinueve ideas.<br/>Una forma de hacerlas.</h2></div><p data-reveal>Un sistema operativo y dieciocho aplicaciones, cada una con un problema concreto que resolver. Todas indican su estado real antes de que descargues nada.</p></div>
+      <div class="section-head"><div data-reveal><h2 data-reveal>Veinte ideas.<br/>Una forma de hacerlas.</h2></div><p data-reveal>Un sistema operativo y diecinueve aplicaciones, cada una con un problema concreto que resolver. Todas indican su estado real antes de que descargues nada.</p></div>
       <div class="product-grid" data-stack>${ordered.map(card).join('')}</div>
     </div></section>
     <section class="spotlight"><div class="container spotlight-content">
@@ -428,7 +430,7 @@ function appDownloadsSection(app) {
 }
 
 function product(app) {
-  const title = ({brujula:'Navega rápido, seguro y a tu manera.',vortia:'La simulación de fluidos, a tu alcance.',vinilo:'Disfruta de toda tu música.',lienzo:'Un lugar para crear sin límites.',nodalix:'Tu ordenador. Tu sistema.',forja:'Dibuja planos con precisión.',pluma:'Ilustra con precisión vectorial.',letra:'Tus documentos, en tu equipo.',celdas:'Calcula, analiza y presenta.',lamina:'Presenta tus ideas con claridad.',torno:'Modela piezas en 3D, paso a paso.',toma:'Monta tus vídeos con precisión.',anima:'Da vida a tus dibujos.',trama:'Diseña y prototipa interfaces.',agora:'Habla con tu equipo, en privado.',pliego:'Maqueta revistas y libros con precisión.',pulso:'Da movimiento a tus ideas.',papel:'Lee, firma y organiza tus PDF.',buzon:'Todo tu correo, en una sola app.'})[app.id] || app.headline;
+  const title = ({brujula:'Navega rápido, seguro y a tu manera.',vortia:'La simulación de fluidos, a tu alcance.',vinilo:'Disfruta de toda tu música.',lienzo:'Un lugar para crear sin límites.',nodalix:'Tu ordenador. Tu sistema.',forja:'Dibuja planos con precisión.',pluma:'Ilustra con precisión vectorial.',letra:'Tus documentos, en tu equipo.',celdas:'Calcula, analiza y presenta.',lamina:'Presenta tus ideas con claridad.',torno:'Modela piezas en 3D, paso a paso.',toma:'Monta tus vídeos con precisión.',anima:'Da vida a tus dibujos.',trama:'Diseña y prototipa interfaces.',agora:'Habla con tu equipo, en privado.',pliego:'Maqueta revistas y libros con precisión.',pulso:'Da movimiento a tus ideas.',papel:'Lee, firma y organiza tus PDF.',buzon:'Todo tu correo, en una sola app.',hito:'Lleva el trabajo de tu equipo hasta el final.'})[app.id] || app.headline;
   const hasDownloads = app.id === 'vortia' || app.id === 'nodalix' || Boolean(app.downloads);
   const figure = app.previews.length
     ? `<figure><img src="${safeUrl(app.previews[0][0])}" alt="${e(app.previews[0][1])}" loading="eager" fetchpriority="high" decoding="async"/><figcaption>${e(app.previews[0][1])} · Captura publicada por el proyecto</figcaption></figure>`
@@ -452,6 +454,7 @@ function product(app) {
     buzon: () => `<div class="sig-inbox" data-reveal="right"><div class="product-preview">${figure}</div>${inbox}</div>`,
     lamina: () => `<div class="sig-present" data-reveal="right"><div class="product-preview">${figure}</div>${present}</div>`,
     pulso: () => `<div class="sig-ease" data-reveal="right"><div class="product-preview">${figure}</div>${easeCurve}</div>`,
+    hito: () => `<div class="sig-milestone" data-reveal="right"><div class="product-preview">${figure}</div>${milestone}</div>`,
     papel: () => `<div class="sig-signed" data-reveal="right"><div class="product-preview">${figure}</div>${signed}</div>`,
   })[app.id]?.() ?? `<div class="product-preview" data-reveal="right">${figure}</div>`;
   const primaryDownload = app.id === 'vortia'
