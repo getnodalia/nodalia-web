@@ -120,6 +120,10 @@
       "trama"
     ],
     [
+      "Pliego",
+      "pliego"
+    ],
+    [
       "Pulso",
       "pulso"
     ],
@@ -138,6 +142,14 @@
     [
       "Lámina",
       "lamina"
+    ],
+    [
+      "Papel",
+      "papel"
+    ],
+    [
+      "Buzón",
+      "buzon"
     ],
     [
       "Nodalia Cards",
@@ -176,24 +188,6 @@
         "luz",
         "Revelado RAW y biblioteca fotográfica",
         "luz"
-      ],
-      [
-        "Pliego",
-        "pliego",
-        "Maquetación editorial",
-        "pliego"
-      ],
-      [
-        "Papel",
-        "papel",
-        "Editor de documentos PDF",
-        "papel"
-      ],
-      [
-        "Buzón",
-        "buzon",
-        "Correo electrónico",
-        "buzon"
       ]
     ]
   }
