@@ -45,6 +45,7 @@
 .accent-periwinkle{--accent:#afadf1;--accent-rgb:175,173,241}
 .accent-lilac{--accent:#c7a5f2;--accent-rgb:199,165,242}
 .accent-teal{--accent:#5cc2bf;--accent-rgb:92,194,191}
+.accent-slate{--accent:#acb4c1;--accent-rgb:172,180,193}
 .accent-indigo{--accent:#7f88f2;--accent-rgb:127,136,242}
 .accent-scarlet{--accent:#f07a6e;--accent-rgb:240,122,110}
 
@@ -199,6 +200,7 @@ html:not(.js) .scroll-progress{display:none}
 .product-card--letra{--card-rgb:108,182,236}
 .product-card--celdas{--card-rgb:79,207,125}
 .product-card--lamina{--card-rgb:238,125,157}
+.product-card--papel{--card-rgb:172,180,193}
 .product-card--torno{--card-rgb:227,182,90}
 .product-card--toma{--card-rgb:234,111,198}
 .product-card--anima{--card-rgb:175,173,241}
@@ -841,6 +843,17 @@ html:not(.js) .scroll-progress{display:none}
 @keyframes cell-pick-in{from{opacity:0;transform:scale(1.25)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.js .cell-pick{animation:none}}
 
+/* Papel: a handwritten signature drawing itself, and the badge that says it is valid. */
+.sig-signed{position:relative}
+.sig-signed .product-preview{z-index:0}
+.signed-chip{position:absolute;left:-14px;bottom:-22px;z-index:1;display:flex;align-items:center;gap:14px;padding:8px 12px 8px 14px;border-radius:14px;background:var(--island);border:1px solid rgba(255,255,255,.08);font-family:var(--display);font-size:17px;color:var(--ink);pointer-events:none}
+.signed-stroke{width:120px;height:40px;fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:260;stroke-dashoffset:0}
+.signed-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:var(--accent);color:#14171c;font-weight:600}
+.signed-badge i{width:10px;height:5px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(-45deg)}
+.js .signed-stroke{animation:signed-draw 1.4s cubic-bezier(.4,0,.2,1) .5s both}
+.js .signed-badge{animation:present-in .5s cubic-bezier(.2,.8,.2,1) 1.8s both}
+@keyframes signed-draw{from{stroke-dashoffset:260}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.js .signed-stroke,.js .signed-badge{animation:none}}
 /* Buzón: the inbox with its unread count, which ticks up as a message arrives. */
 .sig-inbox{position:relative}
 .sig-inbox .product-preview{z-index:0}
@@ -1233,6 +1246,10 @@ a.soon-card--released .i{color:var(--ink)}
 .story-lamina-prefs{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
 .story-lamina-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
 
+/* Papel: the document in the dark theme, the start screen rising over it, then the light theme wiping in. */
+.scroll-story--papel .story-stage{background:#101114}
+.story-papel-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
+.story-papel-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
 /* Buzón: the inbox in the dark theme, Settings rising over it, then the light theme wiping in. */
 .scroll-story--buzon .story-stage{background:#101114}
 .story-buzon-settings{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}

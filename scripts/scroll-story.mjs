@@ -143,6 +143,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  papel: {
+    title: 'Del documento a la firma.',
+    chapters: [
+      ['Lee', 'Pestañas, miniaturas y búsqueda, con todas las herramientas a un lado.'],
+      ['Empieza desde Inicio', 'Las herramientas recomendadas, las que anclas y tus documentos recientes.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma sin cerrar el documento.'],
+    ],
+    next: 'funciones',
+  },
   buzon: {
     title: 'De la bandeja a la respuesta.',
     chapters: [
@@ -205,6 +214,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     celdas: () => `<div class="story-artboard">${screenshot(0, 'story-celdas-dark')}${screenshot(2, 'story-celdas-home')}${screenshot(1, 'story-celdas-light')}</div>`,
     buzon: () => `<div class="story-artboard">${screenshot(0, 'story-buzon-dark')}${screenshot(2, 'story-buzon-settings')}${screenshot(1, 'story-buzon-light')}</div>`,
     lamina: () => `<div class="story-artboard">${screenshot(0, 'story-lamina-dark')}${screenshot(2, 'story-lamina-prefs')}${screenshot(1, 'story-lamina-light')}</div>`,
+    papel: () => `<div class="story-artboard">${screenshot(0, 'story-papel-dark')}${screenshot(2, 'story-papel-home')}${screenshot(1, 'story-papel-light')}</div>`,
     nodalix: () => `<div class="story-monitor">${screenshot(0, 'story-desktop')}${screenshot(1, 'story-settings')}
       <span class="story-system-cursor"></span>${screenshot(2, 'story-updates')}</div>`,
   };

@@ -140,6 +140,10 @@
       "lamina"
     ],
     [
+      "Papel",
+      "papel"
+    ],
+    [
       "Buzón",
       "buzon"
     ],
@@ -186,12 +190,6 @@
         "pulso",
         "Composición y motion graphics",
         "pulso"
-      ],
-      [
-        "Papel",
-        "papel",
-        "Editor de documentos PDF",
-        "papel"
       ]
     ]
   }

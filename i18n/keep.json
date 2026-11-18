@@ -169,5 +169,6 @@
  "IMAP",
  "POP3",
  "JMAP",
- "SMTP"
+ "SMTP",
+ "Papel"
 ]
