@@ -1099,6 +1099,120 @@
     "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y el servidor para macOS"
   },
   {
+    "id": "buzon",
+    "name": "Buzón",
+    "category": "Comunicación",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Correo electrónico",
+    "headline": "Tu correo, en orden.",
+    "tagline": "Todas tus cuentas de correo en una app nativa, rápida y privada.",
+    "description": "Un cliente de correo nativo para Linux, escrito en Rust y con el diseño de Nodalia. Reúne tus cuentas IMAP, POP3 y JMAP en una sola bandeja, envía por SMTP y bloquea el contenido remoto y los rastreadores hasta que tú decidas.",
+    "platforms": "Linux x86_64",
+    "technology": "Rust · GTK 4 · Nodalia Design",
+    "license": "AGPL-3.0-or-later",
+    "repo": "buzon",
+    "icon": "/screens/buzon/buzon-icon.png",
+    "previews": [
+      [
+        "/screens/buzon/buzon-dark.jpg",
+        "La bandeja unificada de Buzón en el tema oscuro, con una conversación abierta"
+      ],
+      [
+        "/screens/buzon/buzon-light.jpg",
+        "La misma conversación en el tema claro, elegido en Ajustes"
+      ],
+      [
+        "/screens/buzon/buzon-settings-light.jpg",
+        "Los ajustes de apariencia de Buzón, con sus temas y el icono de la aplicación"
+      ]
+    ],
+    "features": [
+      [
+        "Todas tus cuentas",
+        "IMAP, POP3 y JMAP en una bandeja unificada, con envío por SMTP."
+      ],
+      [
+        "Conversaciones",
+        "Los mensajes de un mismo hilo, juntos y en orden, con etiquetas, destacados y adjuntos a la vista."
+      ],
+      [
+        "Privacidad primero",
+        "El contenido remoto y los rastreadores se bloquean por defecto, los enlaces se limpian y las contraseñas viven en el llavero del sistema."
+      ],
+      [
+        "Organiza sin esfuerzo",
+        "Filtros, etiquetas, carpetas inteligentes, búsqueda, posponer mensajes y traducción integrada."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, el rojo de Buzón, controles de ventana propios, menú global del escritorio y temas claro y oscuro en Ajustes."
+      ],
+      [
+        "OpenPGP",
+        "Firma y cifra tus mensajes y comprueba los que recibes."
+      ]
+    ],
+    "formats": [
+      "IMAP",
+      "POP3",
+      "JMAP",
+      "SMTP",
+      "OpenPGP"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "AGPL-3.0-or-later"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm (Linux x86_64)"
+      ],
+      [
+        "Protocolos",
+        "IMAP · POP3 · JMAP · SMTP"
+      ],
+      [
+        "Requisitos",
+        "GTK 4.20 o posterior"
+      ],
+      [
+        "Tecnología",
+        "Rust · GTK 4 · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Buzón es un retrato de Rowland Hill, que inventó el sello de correos y el franqueo a un precio único.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el AppImage de la última versión publicada en GitHub. También hay paquetes .deb y .rpm."
+      ],
+      [
+        "¿Qué cuentas admite?",
+        "Cualquier servidor IMAP, POP3 o JMAP, con envío por SMTP. Funciona con la mayoría de proveedores, incluidos los que usan inicio de sesión con contraseña de aplicación."
+      ],
+      [
+        "¿Dónde guarda mis contraseñas?",
+        "En el llavero del sistema (Secret Service). Buzón nunca las escribe en disco, en registros ni en mensajes de error."
+      ],
+      [
+        "¿Hay versión para macOS o Windows?",
+        "Todavía no. Buzón es por ahora una app para Linux."
+      ]
+    ],
+    "limitation": "Buzón está en una fase temprana. Guarda una copia de tu correo importante en tu servidor; la lista de lo que funciona y lo que falta está en el repositorio.",
+    "cta": "Descargar Buzón",
+    "accent": "scarlet",
+    "downloads": {
+      "linux": "^Buzon-x86_64\\.AppImage$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64 y GTK 4.20 o posterior."
+    },
+    "otherPackages": "Otros paquetes: .deb y .rpm para Linux"
+  },
+  {
     "id": "letra",
     "name": "Letra",
     "category": "Productividad",
