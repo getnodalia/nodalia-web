@@ -1221,12 +1221,12 @@
     "id": "agora",
     "name": "Ágora",
     "category": "Comunicación",
-    "status": "Primera versión · fase temprana",
+    "status": "Versión 0.2 · fase temprana",
     "statusKind": "early",
     "eyebrow": "Chat de equipo",
     "headline": "Tu equipo, en tu servidor.",
     "tagline": "Chat de equipo cifrado de extremo a extremo, en un servidor que tú controlas.",
-    "description": "Un chat de equipo nativo, escrito en Rust y con el diseño de Nodalia: espacios de trabajo, canales, mensajes directos, hilos y reacciones en un servidor que instalas tú. Los mensajes van cifrados de extremo a extremo y el servidor solo guarda texto cifrado.",
+    "description": "Un chat de equipo nativo, escrito en Rust y con el diseño de Nodalia: espacios de trabajo, canales, mensajes directos, hilos, reacciones y llamadas de voz y vídeo en un servidor que instalas tú. Los mensajes, los archivos y las llamadas van cifrados de extremo a extremo: el servidor no puede leerlos.",
     "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
@@ -1254,6 +1254,18 @@
       [
         "Cifrado de extremo a extremo",
         "Cada canal y mensaje directo se cifra con MLS (RFC 9420). El servidor guarda solo texto cifrado y cada dispositivo muestra su huella."
+      ],
+      [
+        "Llamadas de voz y vídeo",
+        "Habla y enseña tu cámara en un canal o en un mensaje directo, hasta 12 personas. El audio y el vídeo se cifran en tu equipo y el servidor solo retransmite lo que no puede abrir."
+      ],
+      [
+        "Archivos y confirmaciones",
+        "Envía archivos de cualquier tipo, cifrados en tu equipo, y mira cuándo se han entregado y leído tus mensajes."
+      ],
+      [
+        "Dos pasos e integraciones",
+        "Protege tu cuenta con una app de autenticación y recibe en un canal los avisos de otras apps, como los de Hito."
       ],
       [
         "Tu propio servidor",
@@ -1310,14 +1322,14 @@
       ],
       [
         "¿Qué protege el cifrado?",
-        "El texto de los mensajes: el servidor nunca lo ve. Sí ve quién habla en qué canal y cuándo, las reacciones y la lista de dispositivos. Un dispositivo nuevo no puede leer los mensajes anteriores a su llegada."
+        "El texto de los mensajes, los archivos y el audio y el vídeo de las llamadas: el servidor nunca los ve. Sí ve quién habla en qué canal y cuándo, quién está en una llamada, las reacciones y la lista de dispositivos. Un dispositivo nuevo no puede leer los mensajes anteriores a su llegada."
       ],
       [
         "¿Funciona en macOS?",
         "Sí. La aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
       ]
     ],
-    "limitation": "Ágora está en una fase temprana: todavía no hay archivos adjuntos, notificaciones del sistema ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.",
+    "limitation": "Ágora está en una fase temprana: las llamadas aún no comparten pantalla ni cancelan el eco, y no hay notificaciones del sistema en macOS y Windows ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.",
     "cta": "Descargar Ágora",
     "accent": "teal",
     "downloads": {
