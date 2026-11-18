@@ -140,6 +140,10 @@
       "lamina"
     ],
     [
+      "Buzón",
+      "buzon"
+    ],
+    [
       "Nodalia Cards",
       "nodalia-cards"
     ]
@@ -188,12 +192,6 @@
         "papel",
         "Editor de documentos PDF",
         "papel"
-      ],
-      [
-        "Buzón",
-        "buzon",
-        "Correo electrónico",
-        "buzon"
       ]
     ]
   }

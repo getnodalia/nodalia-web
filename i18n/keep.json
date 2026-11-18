@@ -158,5 +158,16 @@
  "PDF/X-4",
  "EPUB",
  "IDML",
- "XML"
+ "XML",
+ "Buzón",
+ "IMAP · POP3 · JMAP · SMTP",
+ "Rust · GTK 4 · Nodalia Design",
+ "OpenPGP",
+ "Linux x86_64",
+ "AGPL-3.0-or-later",
+ "AppImage · .deb · .rpm (Linux x86_64)",
+ "IMAP",
+ "POP3",
+ "JMAP",
+ "SMTP"
 ]
