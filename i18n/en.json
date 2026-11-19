@@ -1473,5 +1473,13 @@
  "Dos pasos e integraciones": "Two-step verification and integrations",
  "Protege tu cuenta con una app de autenticación y recibe en un canal los avisos de otras apps, como los de Hito.": "Protect your account with an authenticator app and receive notices from other apps, such as Hito's, in a channel.",
  "El texto de los mensajes, los archivos y el audio y el vídeo de las llamadas: el servidor nunca los ve. Sí ve quién habla en qué canal y cuándo, quién está en una llamada, las reacciones y la lista de dispositivos. Un dispositivo nuevo no puede leer los mensajes anteriores a su llegada.": "The text of messages, files, and the audio and video of calls: the server never sees them. It does see who talks in which channel and when, who is in a call, the reactions and the list of devices. A new device cannot read messages sent before it joined.",
- "Ágora está en una fase temprana: las llamadas aún no comparten pantalla ni cancelan el eco, y no hay notificaciones del sistema en macOS y Windows ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.": "Ágora is at an early stage: calls do not share screens or cancel echo yet, and there are no system notifications on macOS and Windows or mobile app. The list of what works and what is missing is in the repository."
+ "Ágora está en una fase temprana: las llamadas aún no comparten pantalla ni cancelan el eco, y no hay notificaciones del sistema en macOS y Windows ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.": "Ágora is at an early stage: calls do not share screens or cancel echo yet, and there are no system notifications on macOS and Windows or mobile app. The list of what works and what is missing is in the repository.",
+ "Cambiar el tema": "Switch theme",
+ "Familias de aplicaciones": "Families of apps",
+ "Comunicación y música": "Communication and music",
+ "Un sistema operativo y un navegador pensados juntos.": "An operating system and a browser designed together.",
+ "Escribe, calcula, presenta, firma y organiza el trabajo del equipo.": "Write, calculate, present, sign and organise your team's work.",
+ "Imagen, vector, vídeo, animación, interfaces, maquetación y movimiento.": "Image, vector, video, animation, interfaces, page layout and motion.",
+ "Modela piezas, dibuja planos y simula fluidos.": "Model parts, draw plans and simulate fluids.",
+ "Escucha música, lee el correo y habla con tu equipo, en tu servidor.": "Listen to music, read your mail and talk with your team, on your own server."
 }

@@ -1473,5 +1473,13 @@
  "Dos pasos e integraciones": "Double authentification et intégrations",
  "Protege tu cuenta con una app de autenticación y recibe en un canal los avisos de otras apps, como los de Hito.": "Protégez votre compte avec une application d'authentification et recevez dans un canal les avis d'autres applications, comme ceux de Hito.",
  "El texto de los mensajes, los archivos y el audio y el vídeo de las llamadas: el servidor nunca los ve. Sí ve quién habla en qué canal y cuándo, quién está en una llamada, las reacciones y la lista de dispositivos. Un dispositivo nuevo no puede leer los mensajes anteriores a su llegada.": "Le texte des messages, les fichiers et l'audio et la vidéo des appels : le serveur ne les voit jamais. Il voit en revanche qui parle dans quel canal et quand, qui participe à un appel, les réactions et la liste des appareils. Un nouvel appareil ne peut pas lire les messages envoyés avant son arrivée.",
- "Ágora está en una fase temprana: las llamadas aún no comparten pantalla ni cancelan el eco, y no hay notificaciones del sistema en macOS y Windows ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.": "Ágora en est à ses débuts : les appels ne partagent pas encore l'écran ni n'annulent l'écho, et il n'y a pas de notifications système sur macOS et Windows ni d'application mobile. La liste de ce qui fonctionne et de ce qui manque est dans le dépôt."
+ "Ágora está en una fase temprana: las llamadas aún no comparten pantalla ni cancelan el eco, y no hay notificaciones del sistema en macOS y Windows ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.": "Ágora en est à ses débuts : les appels ne partagent pas encore l'écran ni n'annulent l'écho, et il n'y a pas de notifications système sur macOS et Windows ni d'application mobile. La liste de ce qui fonctionne et de ce qui manque est dans le dépôt.",
+ "Cambiar el tema": "Changer de thème",
+ "Familias de aplicaciones": "Familles d'applications",
+ "Comunicación y música": "Communication et musique",
+ "Un sistema operativo y un navegador pensados juntos.": "Un système d'exploitation et un navigateur pensés ensemble.",
+ "Escribe, calcula, presenta, firma y organiza el trabajo del equipo.": "Écrivez, calculez, présentez, signez et organisez le travail de l'équipe.",
+ "Imagen, vector, vídeo, animación, interfaces, maquetación y movimiento.": "Image, vectoriel, vidéo, animation, interfaces, mise en page et mouvement.",
+ "Modela piezas, dibuja planos y simula fluidos.": "Modélisez des pièces, dessinez des plans et simulez des fluides.",
+ "Escucha música, lee el correo y habla con tu equipo, en tu servidor.": "Écoutez de la musique, lisez votre courrier et parlez avec votre équipe, sur votre serveur."
 }
