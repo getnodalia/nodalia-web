@@ -8,9 +8,9 @@
     "eyebrow": "Simulación CFD",
     "headline": "La dinámica de fluidos, sin barreras.",
     "tagline": "Engineering the Flow.",
-    "description": "Una aplicación de escritorio libre para simulación de fluidos, con su propio motor de cálculo y OpenFOAM integrado: de la geometría al posproceso 3D sin tocar la terminal ni instalar nada más.",
+    "description": "Una aplicación de escritorio libre para simulación de fluidos, escrita entera en Rust: interfaz, motor de cálculo y mallador 2D propios, de la región dibujada al posproceso sin instalar nada más.",
     "platforms": "Linux x86_64 · macOS Apple Silicon",
-    "technology": "C++20 · Qt 6 · VTK · OpenFOAM",
+    "technology": "Rust · egui",
     "license": "GPL-3.0",
     "repo": "vortia",
     "icon": "resources/icons/vortia.png",
@@ -34,32 +34,32 @@
     ],
     "features": [
       [
-        "Flujo de trabajo integrado",
-        "Geometría, malla, física, ejecución supervisada y posproceso en una sola aplicación, con las herramientas de cada etapa siempre en el mismo sitio."
+        "Todo en Rust",
+        "La interfaz, el motor de cálculo y el mallador 2D son propios: una sola aplicación para Linux y macOS, en español e inglés, sin OpenFOAM, MPI ni Gmsh."
       ],
       [
-        "Motor propio",
-        "Los casos de tobera se calculan por defecto con el motor de Vortia, sin OpenFOAM. Si lo prefieres, vuelves a OpenFOAM en Preferencias › Cálculo."
+        "Casos desde la app",
+        "«Nuevo» crea un canal, una cavidad, una placa, una tobera plana o axisimétrica o un chorro, con su malla, sus campos y sus ajustes, que se editan en la propia aplicación."
       ],
       [
-        "OpenFOAM y mallador dentro",
-        "Los instaladores incluyen OpenFOAM, MPI y el mallador (Python y Gmsh). No hay que instalar ni configurar nada aparte."
+        "Región dibujada",
+        "Dibuja la región en un lienzo con líneas, arcos y cotas, con rejilla e imán; guarda o abre el croquis y el mallador 2D propio hace la malla."
       ],
       [
-        "Laminar, turbulento y con calor",
-        "Flujo incompresible laminar, transitorio o estacionario, turbulencia k-ω SST estacionaria con funciones de pared y convección natural de un fluido de Boussinesq, con paredes que ceden o reciben calor."
+        "Laminar, turbulento y compresible",
+        "Flujo incompresible laminar y turbulento (k-ω SST), flujo compresible de toberas y chorros y convección natural, con el seguimiento de residuos y el balance de masa mientras corre."
       ],
       [
-        "Visualización 3D",
-        "Inspecciona modelos, mallas y resultados con VTK sin salir de la interfaz. El comando vortia da sondas, perfiles, caudales, esfuerzos en paredes y líneas de corriente, y exporta a CSV o a ParaView."
+        "Resultados completos",
+        "Campos, cortes, líneas de corriente, sondas, perfiles, magnitudes de pared, análisis de sección con informe HTML, CSV o JSON, fuerzas y coeficientes, y comparación entre ejecuciones."
       ],
       [
-        "Verificación a la vista",
-        "Tres casos se ejecutan con OpenFOAM real y se comparan con su referencia: Poiseuille, cavidad de Ghia y placa plana turbulenta."
+        "Contrastado con OpenFOAM",
+        "El motor se compara con OpenFOAM v1912 sobre las mismas mallas. Revisa siempre convergencia, balance de masa y dependencia de malla."
       ],
       [
-        "Instaladores que abren a la primera",
-        "AppImage probada en nueve distribuciones Linux y dos DMG para macOS, la aplicación Qt y Vortia Native, cada uno con su suma SHA-256."
+        "Casos y mallas ajenos",
+        "Vista de archivos STL y de casos de Fluent (.cas.h5, .msh.h5), e importación de mallas .msh de Fluent, CGNS y Gmsh."
       ]
     ],
     "flow": [
@@ -91,25 +91,25 @@
       ],
       [
         "Instaladores",
-        "AppImage (Linux x86_64) · DMG Qt y DMG Vortia Native (macOS arm64)"
+        "AppImage y tar.gz (Linux x86_64) · DMG (macOS arm64)"
       ],
       [
         "Motor de cálculo",
-        "Motor propio para toberas · OpenFOAM integrado: v2606 en macOS, v2412 en Linux"
+        "Motor propio en Rust · sin OpenFOAM, MPI ni Gmsh"
       ],
       [
         "Requisitos",
-        "macOS 14 o posterior · Linux con glibc 2.31 o posterior"
+        "Linux x86_64 con glibc 2.35 o posterior · macOS con Apple Silicon"
       ],
       [
         "Tecnología",
-        "C++20 · Qt 6 · VTK"
+        "Rust · egui"
       ]
     ],
     "faq": [
       [
         "¿Necesito instalar OpenFOAM?",
-        "No. Los casos de tobera usan el motor propio de Vortia, y para el resto los instaladores incluyen OpenFOAM, MPI y el mallador. Puedes comprobar la instalación con vortia --verify-engine, que ejecuta un caso real en serie y en paralelo."
+        "No. Vortia ya no incluye ni necesita OpenFOAM, MPI ni Gmsh: el motor de cálculo y el mallador 2D son propios. Todavía no calcula en paralelo."
       ],
       [
         "¿Qué tengo que hacer la primera vez que lo abro?",
@@ -121,15 +121,19 @@
       ],
       [
         "¿Qué queda fuera?",
-        "LES y DES, transferencia de calor más allá de la convección natural laminar, multifase, combustión, mallas móviles y geometría 3D general con mallado automático de volumen. El flujo compresible para toberas es experimental y no está disponible en la AppImage de Linux."
+        "Los resultados de los archivos .dat.h5 de Fluent todavía no se leen, no hay cálculo en paralelo y el visor de .cas.h5 está comprobado con un archivo hecho en este proyecto, no con uno real de Fluent."
       ],
       [
-        "¿Qué es Vortia Native?",
-        "Una segunda edición para macOS, escrita en SwiftUI, que usa el motor de casos de Vortia sin interfaz. Añade el resultado en 3D, el flujo compresible con contorno y toberas, y el informe de ingeniería. Se instala con su propio DMG, junto al de la aplicación Qt."
+        "¿Qué pasó con Vortia Native?",
+        "Deja de publicarse. La versión 0.11.0 es una sola aplicación en Rust para Linux y macOS, con la misma interfaz en las dos."
       ],
       [
         "¿Funciona en Windows o en Mac con Intel?",
         "No hay instalador para esas plataformas. Los paquetes publicados son para Linux x86_64 y macOS con Apple Silicon; en el resto puedes intentar compilar desde el código fuente."
+      ],
+      [
+        "¿Hay línea de comandos?",
+        "Sí. El comando vortia hace, calcula e inspecciona casos sin la interfaz; vortia help lista sus órdenes."
       ],
       [
         "¿Tiene relación con ANSYS?",
