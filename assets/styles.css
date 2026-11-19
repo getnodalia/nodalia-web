@@ -1101,8 +1101,9 @@ a.soon-card--released .i{color:var(--ink)}
   row-gap:28px;
   align-items:center;
 }
-.story-heading{grid-area:heading;align-self:end}
-.story-heading h2{font-size:clamp(31px,3.8vw,58px);letter-spacing:-.061em;text-wrap:balance}
+.story-heading{grid-area:heading;align-self:end;min-width:0;container-type:inline-size}
+/* The size follows the column, not the viewport: a long word ("Conversaciones") must fit it, and any longer one breaks instead of sliding under the stage. */
+.story-heading h2{font-size:clamp(28px,12.5cqw,58px);letter-spacing:-.061em;text-wrap:balance;overflow-wrap:break-word;hyphens:auto}
 .story-details{grid-area:details;align-self:start;min-width:0}
 .story-chapters{display:grid;gap:20px;margin:0;padding:0;list-style:none}
 .story-chapters h3{font-size:clamp(18px,2vw,25px);letter-spacing:-.032em}
@@ -1821,3 +1822,11 @@ h1,h2,h3{letter-spacing:-.03em}
 .hero-split .actions{grid-row:3}
 @media (max-width:980px){.hero-split{grid-template-rows:none}}
 .portraits-note{padding-bottom:30px}
+
+/* Ágora's three captures differ by a few pixels in width and are left-aligned; the stage takes their ratio so no layer is cropped differently from the others. */
+.scroll-story--agora .story-stage{aspect-ratio:1200/760;max-height:none;width:min(100%,calc(min(66svh,585px)*1.579));justify-self:center}
+.scroll-story--agora .story-artboard .story-screen img{object-fit:fill}
+/* The light capture shows the same screen as the dark one, not the Home, preferences or encryption view in the middle: let that view dissolve as the wipe begins so both sides of the line match. */
+.story-artboard .story-screen:nth-child(2),.story-forja-home{opacity:clamp(0, calc(1 - var(--story-c) * 8), 1)}
+/* Long compound words (German above all) hyphenate instead of running past the column. */
+.product-hero h1,.hero h1,.hero-split h1,.story-heading h2,.section-head h2{overflow-wrap:break-word;hyphens:auto}
