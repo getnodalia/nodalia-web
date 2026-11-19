@@ -94,8 +94,25 @@ channel variables (`--fg`, `--shade`, `--bg-rgb`) so they follow the theme.
 
 ## Motion
 
-Short (200–500ms) ease-out on hover and reveal; the product signatures animate once on view. Everything is
-disabled with `prefers-reduced-motion`, and content is visible without JavaScript.
+Motion is native CSS, layered on top of a page that already reads without it. Every effect sits behind
+`@supports` and `prefers-reduced-motion: no-preference`; without them the page shows its final state.
+
+- **Between pages.** Cross-document view transitions (`@view-transition { navigation: auto }`): the top bar
+  stays put, content cross-fades, and an app's icon morphs from its home tile to its product page
+  (`view-transition-name: vt-<app>`).
+- **On scroll.** Scroll-driven animations (`animation-timeline: view()` / `scroll()`), all on the
+  compositor: a native progress line under the top bar, tile entrances and a slight screenshot drift,
+  sticky family headings, and the light/dark wipe (a `clip-path` driven by a named view timeline).
+- **Numbers.** The facts strip counts up with an `@property` integer; the markup holds the final value.
+- **Hero and marquee.** One staged entrance for the giant headline; the portrait strip scrolls slowly and
+  pauses on hover and focus, with masked edges.
+- Durations are 200-500ms ease-out for hover and reveal. Nothing animates forever except the marquee,
+  which stops under `prefers-reduced-motion`. Content is visible without JavaScript.
+
+## Home page rhythm
+
+Hero (giant Sora headline, suite index) → portrait strip → release strip → light/dark wipe over real
+Lienzo, Toma and Torno screenshots (radio tabs, `:has()`, no JavaScript) → facts → five families.
 
 ## Accessibility
 
