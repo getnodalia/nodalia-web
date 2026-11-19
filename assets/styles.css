@@ -1679,3 +1679,145 @@ h1,h2,h3{letter-spacing:-.03em}
   .topbar-tools{gap:2px}
   .theme-toggle{width:36px;height:36px}
 }
+
+/* ---------- Motion layer: native CSS only (view transitions, scroll-driven animations, :has) ----------
+   Everything here is progressive enhancement: without support, or with reduced motion,
+   the page shows its final state and nothing is hidden. */
+
+@media (prefers-reduced-motion:no-preference){
+  /* Cross-document view transitions: pages cross-fade, the top bar stays put, and a tile's icon
+     becomes the icon of its product page (same view-transition-name on both). */
+  @view-transition{navigation:auto}
+  .topbar{view-transition-name:topbar}
+  ::view-transition-group(root){animation-duration:.45s}
+  ::view-transition-old(root){animation:.25s ease-in both vt-out}
+  ::view-transition-new(root){animation:.45s var(--ease) both vt-in}
+  ::view-transition-group(*){animation-timing-function:var(--ease)}
+  @keyframes vt-out{to{opacity:0;transform:translateY(-10px)}}
+  @keyframes vt-in{from{opacity:0;transform:translateY(18px)}}
+
+  /* Hero: the five families arrive one after another. */
+  .suite-row{animation:rise-in .8s var(--ease) both;animation-delay:calc(.25s + var(--i,0) * 80ms)}
+  .suite-row:nth-child(2){--i:1}.suite-row:nth-child(3){--i:2}.suite-row:nth-child(4){--i:3}.suite-row:nth-child(5){--i:4}
+  @keyframes rise-in{from{opacity:0;transform:translateY(22px)}}
+}
+
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    /* The showcase settles into place as it scrolls into view. */
+    .hero-stage{animation:stage-in linear both;animation-timeline:view();animation-range:entry 0% entry 80%}
+    @keyframes stage-in{from{transform:translateY(48px) scale(.95)}to{transform:none}}
+
+    /* Tiles rise in; their screenshots drift slowly against the card (parallax on the compositor). */
+    .app-tile{animation:tile-in linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+    @keyframes tile-in{from{opacity:0;transform:translateY(44px) scale(.97)}to{opacity:1;transform:none}}
+    .tile-shot:not(.tile-shot--icon) img{scale:1.1;animation:shot-drift linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+    @keyframes shot-drift{from{translate:0 -3.5%}to{translate:0 3.5%}}
+
+    /* Light/dark wipe: the dark screenshot is revealed as the frame crosses the screen. */
+    .modes-frames{view-timeline:--wipe block}
+    .wipe-dark{animation:wipe-clip linear both;animation-timeline:--wipe;animation-range:cover 12% cover 62%}
+    .wipe-line{animation:wipe-line linear both;animation-timeline:--wipe;animation-range:cover 12% cover 62%}
+    @keyframes wipe-clip{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+    @keyframes wipe-line{from{transform:translateX(100%)}to{transform:translateX(0)}}
+
+    /* Numbers count up while they enter the screen. */
+    .facts dd{animation:count linear both;animation-timeline:view();animation-range:entry 10% entry 100%}
+    @keyframes count{from{--n:0}}
+
+    /* Slim scroll progress for the page, no script. */
+    .scroll-progress{animation:grow-x linear both;animation-timeline:scroll(root block)}
+    @keyframes grow-x{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  }
+}
+@property --n{syntax:"<integer>";inherits:false;initial-value:0}
+
+/* Hover: the screenshot grows inside its frame (scale is separate from the drift's translate). */
+.tile-shot img{transition:scale .6s var(--ease)}
+@media (hover:hover){
+  .app-tile{transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+  .app-tile:hover{translate:0 -4px;border-color:var(--line-2);box-shadow:0 30px 60px -36px rgb(var(--shade) / calc(.55 * var(--sh)))}
+  .app-tile:hover .tile-shot:not(.tile-shot--icon) img{scale:1.16}
+}
+
+/* A family's heading stays under the top bar while its tiles pass beneath. */
+.suite-head{position:sticky;top:var(--bar);z-index:5;background:var(--bg);padding-top:14px}
+
+/* ---------- Light / dark wipe section ---------- */
+.modes{padding:112px 0 40px}
+.modes-radio{position:absolute;opacity:0;pointer-events:none}
+.modes-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.modes-tabs label{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:7px 18px 7px 8px;border:1px solid var(--line-2);border-radius:999px;background:var(--surface);color:var(--ink);font-size:14px;font-weight:600;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.modes-tabs label:hover{border-color:var(--ink)}
+.modes-icon{width:30px;height:30px;border-radius:9px;object-fit:cover}
+.modes:has(#mode-lienzo:checked) label[for=mode-lienzo],
+.modes:has(#mode-toma:checked) label[for=mode-toma],
+.modes:has(#mode-torno:checked) label[for=mode-torno]{background:var(--ink);color:var(--on-ink);border-color:transparent}
+.modes:has(#mode-lienzo:focus-visible) label[for=mode-lienzo],
+.modes:has(#mode-toma:focus-visible) label[for=mode-toma],
+.modes:has(#mode-torno:focus-visible) label[for=mode-torno]{outline:2px solid var(--accent);outline-offset:3px}
+.modes-frames{position:relative;overflow:hidden;border:1px solid var(--line-2);border-radius:var(--radius-lg);background:#0B0C10;box-shadow:0 50px 90px -50px rgb(var(--shade) / calc(.7 * var(--sh)))}
+.wipe{display:none;position:relative;margin:0;aspect-ratio:1440/900;--wipe-accent:var(--accent-fill-l,#fff)}
+.modes:has(#mode-lienzo:checked) .wipe[data-app=lienzo],
+.modes:has(#mode-toma:checked) .wipe[data-app=toma],
+.modes:has(#mode-torno:checked) .wipe[data-app=torno]{display:block}
+.wipe>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left}
+.wipe-dark{clip-path:inset(0 0 0 50%)}
+.wipe-line{position:absolute;inset:0;border-left:2px solid #fff;transform:translateX(50%);pointer-events:none;box-shadow:-1px 0 0 rgb(0 0 0 / .25)}
+.wipe-line::after{content:"";position:absolute;top:50%;left:-17px;width:32px;height:32px;margin-top:-16px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315171E' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 7l-5 5 5 5M15 7l5 5-5 5'/%3E%3C/svg%3E") center/18px no-repeat;box-shadow:0 4px 14px rgb(0 0 0 / .35)}
+.wipe-label{position:absolute;bottom:14px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.02em;background:#fff;color:#15171E;box-shadow:0 2px 8px rgb(0 0 0 / .25)}
+.wipe-label--light{left:14px}
+.wipe-label--dark{right:14px;background:#15171E;color:#EEF0F4;border:1px solid rgba(255,255,255,.18)}
+
+/* ---------- Facts ---------- */
+.facts{padding:24px 0 112px}
+.facts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:0}
+.facts-grid>div{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:10px;padding:30px 32px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--surface)}
+.facts dt{font-size:15px;color:var(--text)}
+.facts dd{margin:0;font-family:var(--display);font-size:clamp(56px,8vw,112px);font-weight:600;letter-spacing:-.05em;line-height:1;color:var(--ink);counter-reset:n var(--n);font-variant-numeric:tabular-nums}
+.facts dd span::before{content:counter(n)}
+@media (max-width:760px){
+  .facts-grid{grid-template-columns:1fr}
+  .facts-grid>div{padding:22px 24px}
+  .modes{padding-top:72px}
+  .suite-head{position:static;padding-top:0}
+}
+@media (prefers-reduced-motion:reduce){.wipe-dark{clip-path:inset(0 0 0 50%)}}
+
+/* ---------- Hero: oversized headline across the full width ---------- */
+.hero-split{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:start;column-gap:56px;row-gap:0}
+.hero-copy-block{display:contents}
+.hero-split .hero-title{grid-column:1 / -1;max-width:none;font-size:clamp(52px,10.2vw,148px);line-height:.94;letter-spacing:-.06em;margin-bottom:12px}
+.hero-split .hero-lead{grid-column:1;margin-top:20px}
+.hero-split .actions{grid-column:1;align-self:start;margin-top:28px}
+.hero-split .suite-index{grid-column:2;grid-row:2 / span 2;margin-top:20px}
+@media (max-width:980px){
+  .hero-split{grid-template-columns:1fr}
+  .hero-split .hero-lead,.hero-split .actions,.hero-split .suite-index{grid-column:1;grid-row:auto}
+  .hero-split .suite-index{margin-top:32px}
+}
+
+/* ---------- Portrait strip: one historical figure per app ---------- */
+.portraits{overflow:hidden;padding:8px 0 4px;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.portraits-track{display:flex;width:max-content}
+.portraits ul{display:flex;gap:22px;margin:0;padding:0 11px;list-style:none}
+.portraits li{flex:none}
+.portraits img{display:block;width:104px;height:104px;border-radius:26px;box-shadow:0 14px 30px -18px rgb(var(--shade) / calc(.7 * var(--sh)))}
+.portraits-note{margin:14px auto 0;text-align:center;font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){
+  .portraits-track{animation:portraits-roll 70s linear infinite}
+  .portraits:hover .portraits-track{animation-play-state:paused}
+  @keyframes portraits-roll{to{transform:translateX(-50%)}}
+}
+@media (prefers-reduced-motion:reduce){
+  .portraits{mask-image:none;-webkit-mask-image:none}
+  .portraits-track{width:auto;justify-content:center}
+  .portraits ul{flex-wrap:wrap;justify-content:center}
+  .portraits .dup{display:none}
+}
+@media (max-width:640px){.portraits img{width:72px;height:72px;border-radius:18px}.portraits ul{gap:14px}}
+.hero-split{grid-template-rows:auto auto 1fr}
+.hero-split .hero-lead{grid-row:2}
+.hero-split .actions{grid-row:3}
+@media (max-width:980px){.hero-split{grid-template-rows:none}}
+.portraits-note{padding-bottom:30px}

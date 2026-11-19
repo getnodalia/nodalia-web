@@ -66,7 +66,10 @@ const icon = {
   github: '<svg class="i i-fill" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>',
 };
 const A = (url, text, className = '', external = false) => `<a href="${safeUrl(url)}" class="${e(className)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${text}</a>`;
-const iconImg = (app, cls = 'app-icon', size = 80) => `<img class="${e(cls)}" src="${safeUrl(app.icon)}" alt="Icono de ${e(app.name)}" width="${size}" height="${size}" loading="lazy" decoding="async" />`;
+// A tile's icon and the icon of its product page share a view-transition name, so the browser
+// can carry one into the other on navigation (cross-document view transitions).
+const morphing = new Set(['tile-icon', 'product-icon']);
+const iconImg = (app, cls = 'app-icon', size = 80) => `<img class="${e(cls)}" src="${safeUrl(app.icon)}" alt="Icono de ${e(app.name)}" width="${size}" height="${size}" loading="lazy" decoding="async"${morphing.has(cls) ? ` style="view-transition-name:vt-${e(app.id)}"` : ''} />`;
 const chips = (app) => `<ul class="chips" aria-label="Tecnología">${app.technology.split(' · ').map((t) => `<li class="chip">${e(t)}</li>`).join('')}</ul>`;
 const jsonLd = (data) => `<script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>`;
 // Iconos de las apps en camino: se sirven desde la portada porque no todas tienen repositorio.
@@ -298,6 +301,9 @@ async function home() {
     [icon.desktop, 'Diseñado para escritorio.', 'Herramientas pensadas para el ordenador, no simples envoltorios web.'],
     [icon.check, 'Sin promesas vacías.', 'El estado de cada proyecto y sus limitaciones se explican antes de descargarlo.'],
   ];
+  const portraitApps = suiteList.flatMap((suite) => suite.ids.map((id) => byId[id]));
+  const modeApps = ['lienzo', 'toma', 'torno'].map((id) => byId[id]);
+  const facts = [[suiteList.reduce((n, suite) => n + suite.ids.length, 0), 'productos'], [5, 'idiomas'], [0, 'cookies ni rastreadores']];
   return shell({
     title: 'Nodalia — Nodalix OS, aplicaciones de escritorio y Home Assistant',
     description: 'Nodalia crea Nodalix OS, Brújula, Vinilo, Vortia, Lienzo, Forja, Torno, Pluma, Toma, Ánima, Trama, Pliego, Pulso, Ágora, Letra, Celdas, Lámina, Papel, Buzón, Hito y Nodalia Cards: software independiente para Linux, el escritorio y Home Assistant, desarrollado en público por Daniel Miguel Tejedor.',
@@ -319,6 +325,8 @@ async function home() {
       <div class="showcase-tabs" role="tablist" aria-label="Productos de Nodalia">${ordered.map((app, i) => `<button type="button" role="tab" class="showcase-tab" aria-selected="${i === 0}" data-slide="${i}" style="--tab-rgb:${e(cardRgb[app.id])}"><img src="${safeUrl(app.icon)}" alt="" width="24" height="24" decoding="async"/><span>${e(app.name)}</span><i class="showcase-progress" aria-hidden="true"></i></button>`).join('')}</div>
       <div class="showcase-frame">${ordered.map((app, i) => `<figure class="shot${i === 0 ? ' shot-main is-active' : i === 1 ? ' shot-secondary' : ''}" data-slide="${i}"${i ? ' aria-hidden="true"' : ''}><img src="${previewUrl(app)}" alt="${e(app.previews[0][1])}" decoding="async" loading="${i ? 'lazy' : 'eager'}"${i ? '' : ' fetchpriority="high"'}/><figcaption><span>${e(app.name)}</span>${e(app.previews[0][1])}<a class="showcase-link" href="${safeUrl(app.url)}">Conocer ${e(app.name)} ${icon.arrow}</a></figcaption></figure>`).join('')}</div>
     </div></div></section>
+    <div class="portraits" aria-hidden="true"><div class="portraits-track">${[0, 1].map((copy) => `<ul${copy ? ' class="dup"' : ''}>${portraitApps.map((app) => `<li><img src="${safeUrl(app.icon)}" alt="" width="104" height="104" loading="lazy" decoding="async"/></li>`).join('')}</ul>`).join('')}</div></div>
+    <p class="portraits-note container">Cada icono es un personaje histórico ligado a lo que hace la aplicación.</p>
     <div class="release-strip"><div class="container release-strip-inner"><span class="release-label">Últimas versiones</span>
       <ul>${site.releases.map(([name, repo]) => {
         // Un proyecto aún sin versión se incluye oculto: releases.js lo muestra en cuanto se publique.
@@ -330,6 +338,15 @@ async function home() {
       <div class="section-head"><div data-reveal><h2 data-reveal>Veinte ideas.<br/>Una forma de hacerlas.</h2></div><p data-reveal>Un sistema operativo y diecinueve aplicaciones, cada una con un problema concreto que resolver. Todas indican su estado real antes de que descargues nada.</p></div>
       ${suiteList.map(suiteBlock).join('')}
     </div></section>
+    <section class="modes" id="modos"><div class="container">
+      <div class="section-head"><div data-reveal><h2>Claro u oscuro.<br/>Tú eliges.</h2></div><p data-reveal>Capturas reales de Lienzo, Toma y Torno en sus dos temas. Esta web hace lo mismo: sigue a tu sistema y puedes cambiarla con el botón de la cabecera.</p></div>
+      ${modeApps.map((app, i) => `<input class="modes-radio" type="radio" name="mode-app" id="mode-${e(app.id)}"${i === 0 ? ' checked' : ''}/>`).join('')}
+      <div class="modes-tabs" role="group" aria-label="Aplicación de ejemplo">${modeApps.map((app) => `<label for="mode-${e(app.id)}" class="accent-${e(app.accent)}">${iconImg(app, 'modes-icon', 28)}<span translate="no">${e(app.name)}</span></label>`).join('')}</div>
+      <div class="modes-frames">${modeApps.map((app) => `<figure class="wipe accent-${e(app.accent)}" data-app="${e(app.id)}"><img class="wipe-light" src="${previewUrl(app, 1)}" alt="${e(app.previews[1][1])}" loading="lazy" decoding="async"/><img class="wipe-dark" src="${previewUrl(app, 0)}" alt="${e(app.previews[0][1])}" loading="lazy" decoding="async"/><i class="wipe-line" aria-hidden="true"></i><span class="wipe-label wipe-label--light">Claro</span><span class="wipe-label wipe-label--dark">Oscuro</span></figure>`).join('')}</div>
+    </div></section>
+    <section class="facts" aria-label="Nodalia en cifras"><div class="container"><dl class="facts-grid">
+      ${facts.map(([n, label]) => `<div><dt>${e(label)}</dt><dd class="count" style="--n:${n}"><span></span></dd></div>`).join('')}
+    </dl></div></section>
     <section class="spotlight"><div class="container spotlight-content">
       <div data-reveal="left"><h2 data-reveal>El sistema operativo también cuenta.</h2><p>Un escritorio GNOME sobre Arch Linux desarrollado como un solo sistema: instalador y actualizador propios, paquetes ajustados a tu procesador e integración con iPhone desde el primer arranque.</p><div class="actions">${A(nodalix.url, `Conocer Nodalix OS ${icon.arrow}`, 'btn btn-primary')}${A(`${nodalix.domain}/#descargas`, 'Descargas e instalación', 'btn btn-secondary')}</div></div>
       <div class="spec-card" data-reveal="right"><div class="spec-card-head"><img src="${safeUrl(nodalix.icon)}" alt="Logo de Nodalix OS" width="60" height="60" loading="lazy" decoding="async"/><div><strong>${e(nodalix.name)}</strong><span>${e(nodalix.tagline)}</span></div></div>
