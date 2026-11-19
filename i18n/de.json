@@ -1473,5 +1473,13 @@
  "Dos pasos e integraciones": "Zwei Faktoren und Integrationen",
  "Protege tu cuenta con una app de autenticación y recibe en un canal los avisos de otras apps, como los de Hito.": "Schützen Sie Ihr Konto mit einer Authentifizierungs-App und erhalten Sie in einem Kanal Hinweise anderer Apps, etwa von Hito.",
  "El texto de los mensajes, los archivos y el audio y el vídeo de las llamadas: el servidor nunca los ve. Sí ve quién habla en qué canal y cuándo, quién está en una llamada, las reacciones y la lista de dispositivos. Un dispositivo nuevo no puede leer los mensajes anteriores a su llegada.": "Den Text der Nachrichten, die Dateien sowie Audio und Video der Anrufe: Der Server sieht sie nie. Er sieht aber, wer wann in welchem Kanal schreibt, wer an einem Anruf teilnimmt, die Reaktionen und die Geräteliste. Ein neues Gerät kann Nachrichten von vor seiner Anmeldung nicht lesen.",
- "Ágora está en una fase temprana: las llamadas aún no comparten pantalla ni cancelan el eco, y no hay notificaciones del sistema en macOS y Windows ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.": "Ágora steht noch am Anfang: Anrufe können noch keinen Bildschirm teilen und das Echo nicht unterdrücken, und Systembenachrichtigungen unter macOS und Windows sowie eine Mobil-App gibt es noch nicht. Was funktioniert und was fehlt, steht im Repository."
+ "Ágora está en una fase temprana: las llamadas aún no comparten pantalla ni cancelan el eco, y no hay notificaciones del sistema en macOS y Windows ni aplicación móvil. La lista de lo que funciona y lo que falta está en el repositorio.": "Ágora steht noch am Anfang: Anrufe können noch keinen Bildschirm teilen und das Echo nicht unterdrücken, und Systembenachrichtigungen unter macOS und Windows sowie eine Mobil-App gibt es noch nicht. Was funktioniert und was fehlt, steht im Repository.",
+ "Cambiar el tema": "Design wechseln",
+ "Familias de aplicaciones": "App-Familien",
+ "Comunicación y música": "Kommunikation und Musik",
+ "Un sistema operativo y un navegador pensados juntos.": "Ein Betriebssystem und ein Browser, gemeinsam gedacht.",
+ "Escribe, calcula, presenta, firma y organiza el trabajo del equipo.": "Schreiben, rechnen, präsentieren, unterschreiben und die Arbeit des Teams organisieren.",
+ "Imagen, vector, vídeo, animación, interfaces, maquetación y movimiento.": "Bild, Vektor, Video, Animation, Oberflächen, Layout und Bewegung.",
+ "Modela piezas, dibuja planos y simula fluidos.": "Bauteile modellieren, Pläne zeichnen und Strömungen simulieren.",
+ "Escucha música, lee el correo y habla con tu equipo, en tu servidor.": "Musik hören, E-Mails lesen und mit dem Team sprechen, auf deinem eigenen Server."
 }
