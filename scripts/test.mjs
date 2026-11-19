@@ -236,8 +236,9 @@ for (const [id, accent] of [['anima', 'periwinkle'], ['trama', 'lilac'], ['plieg
   const html = await readFile(path.join(root, `dist/portal/${id}/index.html`), 'utf8');
   assert.match(html, new RegExp(`<body class="accent-${accent}">`));
   assert.ok(portal.includes(`data-release="${id}"`), `${id} no está en las últimas versiones`);
-  assert.ok((await stat(path.join(root, `dist/portal/${id}/screens/${id}/${id}-icon.png`))).size > 1000, `Falta el icono de ${id}`);
-  assert.ok(portal.includes(`https://getnodalia.com/${id}/screens/${id}/${id}-icon.png`), `El portal no usa el icono local de ${id}`);
+  const iconFile = ['trama', 'pliego', 'hito'].includes(id) ? `${id}-icon-2.png` : `${id}-icon.png`; // renamed to bypass browser caches of the old portraits
+  assert.ok((await stat(path.join(root, `dist/portal/${id}/screens/${id}/${iconFile}`))).size > 1000, `Falta el icono de ${id}`);
+  assert.ok(portal.includes(`https://getnodalia.com/${id}/screens/${id}/${iconFile}`), `El portal no usa el icono local de ${id}`);
 }
 const brujulaHtml = await readFile(path.join(root, 'dist/portal/brujula/index.html'), 'utf8');
 assert.match(brujulaHtml, /<body class="accent-green">/);
