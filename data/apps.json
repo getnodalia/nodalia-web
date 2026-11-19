@@ -764,7 +764,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "anima",
-    "icon": "/screens/anima/anima-icon.png",
+    "icon": "/screens/anima/anima-icon-2.png",
     "previews": [
       [
         "/screens/anima/anima-dark.jpg",
@@ -1358,7 +1358,7 @@
     "technology": "Rust · GTK 4 · Nodalia Design",
     "license": "AGPL-3.0-or-later",
     "repo": "buzon",
-    "icon": "/screens/buzon/buzon-icon.png",
+    "icon": "/screens/buzon/buzon-icon-2.png",
     "previews": [
       [
         "/screens/buzon/buzon-dark.jpg",
