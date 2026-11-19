@@ -90,8 +90,7 @@ for(const item of releases.isos){
 const vortiaHtml = await readFile(path.join(root, 'dist/portal/vortia/index.html'), 'utf8');
 for (const id of [
   'vortia-primary-download', 'vortia-downloads', 'vortia-linux-link',
-  'vortia-mac-link', 'vortia-linux-sha', 'vortia-mac-sha',
-  'vortia-macnative-link', 'vortia-macnative-sha'
+  'vortia-mac-link', 'vortia-linux-sha', 'vortia-mac-sha'
 ]) {
   assert.ok(vortiaHtml.includes('id="' + id + '"'), 'Vortia UI missing ' + id);
 }

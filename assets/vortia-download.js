@@ -12,38 +12,28 @@ export const ASSET_PREFIX = `https://github.com/${OWNER}/${REPO}/releases/downlo
 
 /** Last verified stable assets, used only when the public GitHub API is unavailable. */
 export const FALLBACK = {
-  tag_name: 'v0.7.0',
-  html_url: `${RELEASES}/tag/v0.7.0`,
+  tag_name: 'v0.11.0',
+  html_url: `${RELEASES}/tag/v0.11.0`,
   assets: [
     {
-      name: 'Vortia-0.7.0-linux-x86_64.AppImage',
-      size: 293247480,
-      browser_download_url: `${ASSET_PREFIX}v0.7.0/Vortia-0.7.0-linux-x86_64.AppImage`,
+      name: 'Vortia-0.11.0-linux-x86_64.AppImage',
+      size: 9837048,
+      browser_download_url: `${ASSET_PREFIX}v0.11.0/Vortia-0.11.0-linux-x86_64.AppImage`,
     },
     {
-      name: 'Vortia-0.7.0-linux-x86_64.AppImage.sha256',
-      size: 101,
-      browser_download_url: `${ASSET_PREFIX}v0.7.0/Vortia-0.7.0-linux-x86_64.AppImage.sha256`,
-    },
-    {
-      name: 'Vortia-0.7.0-macos-arm64.dmg',
-      size: 408183098,
-      browser_download_url: `${ASSET_PREFIX}v0.7.0/Vortia-0.7.0-macos-arm64.dmg`,
-    },
-    {
-      name: 'Vortia-0.7.0-macos-arm64.dmg.sha256',
-      size: 95,
-      browser_download_url: `${ASSET_PREFIX}v0.7.0/Vortia-0.7.0-macos-arm64.dmg.sha256`,
-    },
-    {
-      name: 'Vortia-0.7.0-native-macos-arm64.dmg',
-      size: 407107408,
-      browser_download_url: `${ASSET_PREFIX}v0.7.0/Vortia-0.7.0-native-macos-arm64.dmg`,
-    },
-    {
-      name: 'Vortia-0.7.0-native-macos-arm64.dmg.sha256',
+      name: 'Vortia-0.11.0-linux-x86_64.AppImage.sha256',
       size: 102,
-      browser_download_url: `${ASSET_PREFIX}v0.7.0/Vortia-0.7.0-native-macos-arm64.dmg.sha256`,
+      browser_download_url: `${ASSET_PREFIX}v0.11.0/Vortia-0.11.0-linux-x86_64.AppImage.sha256`,
+    },
+    {
+      name: 'Vortia-0.11.0-macos-arm64.dmg',
+      size: 8696575,
+      browser_download_url: `${ASSET_PREFIX}v0.11.0/Vortia-0.11.0-macos-arm64.dmg`,
+    },
+    {
+      name: 'Vortia-0.11.0-macos-arm64.dmg.sha256',
+      size: 96,
+      browser_download_url: `${ASSET_PREFIX}v0.11.0/Vortia-0.11.0-macos-arm64.dmg.sha256`,
     },
   ],
 };
@@ -66,12 +56,11 @@ export function findPlatformAssets(release, Url = URL, assetPrefix = ASSET_PREFI
     ? release.assets.map((asset) => safeAsset(asset, Url, assetPrefix)).filter(Boolean)
     : [];
   const linux = assets.find((a) => /^Vortia-.+-linux-(x86_64|amd64)\.AppImage$/i.test(a.name)) || null;
-  // The Qt installer is the main macOS download; Vortia Native (SwiftUI) is a second DMG on its own card.
+  // Older releases also carried a separate Vortia Native DMG; it is no longer offered, so it is never picked.
   const macAssets = assets.filter((a) => /^Vortia-(?!.*-native-).+-macos-(arm64|aarch64|universal)\.dmg$/i.test(a.name));
   const mac = macAssets.find((a) => /universal/i.test(a.name)) || macAssets[0] || null;
-  const macNative = assets.find((a) => /^Vortia-.+-native-macos-(arm64|aarch64|universal)\.dmg$/i.test(a.name)) || null;
   const checksum = (asset) => (asset ? assets.find((a) => a.name === `${asset.name}.sha256`) || null : null);
-  return { linux, mac, macNative, linuxSha: checksum(linux), macSha: checksum(mac), macNativeSha: checksum(macNative) };
+  return { linux, mac, linuxSha: checksum(linux), macSha: checksum(mac) };
 }
 
 export function formatMegabytes(bytes) {
@@ -126,7 +115,6 @@ export function renderRelease(get, release, os, arch, isFallback) {
 
   setOption(get, 'linux', packages.linux, packages.linuxSha, release);
   setOption(get, 'mac', packages.mac, packages.macSha, release);
-  setOption(get, 'macnative', packages.macNative, packages.macNativeSha, release);
 
   let selected = null;
   let icon = '';

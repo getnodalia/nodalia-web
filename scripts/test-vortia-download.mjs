@@ -11,7 +11,6 @@ const ids = [
   'vortia-downloads', 'vortia-release-config', 'vortia-release-version', 'vortia-release-source',
   'vortia-linux-link', 'vortia-linux-size', 'vortia-linux-sha',
   'vortia-mac-link', 'vortia-mac-size', 'vortia-mac-sha',
-  'vortia-macnative-link', 'vortia-macnative-size', 'vortia-macnative-sha',
   'vortia-primary-download', 'vortia-primary-icon',
   'vortia-primary-title', 'vortia-primary-detail',
 ];
@@ -132,7 +131,7 @@ const offline = await simulate({
   userAgent: 'Mozilla/5.0 (X11; Linux x86_64)',
   fail: true,
 });
-assert.match(offline['vortia-primary-download'].href, /v0\.7\.0\/Vortia-0\.7\.0-linux-x86_64\.AppImage$/);
+assert.match(offline['vortia-primary-download'].href, /v0\.11\.0\/Vortia-0\.11\.0-linux-x86_64\.AppImage$/);
 assert.match(offline['vortia-release-source'].textContent, /Referencia local/);
 
 const universalRelease = {
@@ -147,8 +146,8 @@ const universalRelease = {
 };
 assert.match(findPlatformAssets(universalRelease).mac.name, /universal/);
 
-// Two macOS installers: the Qt DMG stays the main one and Vortia Native gets its own card.
-const twoMacs = {
+// An old Vortia Native DMG in a release is never offered: the Rust app is the only macOS edition.
+const withNative = {
   ...latest,
   assets: [
     {
@@ -163,24 +162,17 @@ const twoMacs = {
   ],
 };
 {
-  const found = findPlatformAssets(twoMacs);
+  const found = findPlatformAssets(withNative);
   assert.equal(found.mac.name, 'Vortia-0.2.0-macos-arm64.dmg');
-  assert.equal(found.macNative.name, 'Vortia-0.7.0-native-macos-arm64.dmg');
-  assert.equal(found.macNativeSha.name, 'Vortia-0.7.0-native-macos-arm64.dmg.sha256');
   assert.equal(found.macSha, null);
-  assert.equal(findPlatformAssets(latest).macNative, null);
-  const onlyNative = findPlatformAssets({ ...latest, assets: twoMacs.assets.slice(0, 2) });
-  assert.equal(onlyNative.mac, null);
-}
-{
+  assert.equal('macNative' in found, false);
+  assert.equal(findPlatformAssets({ ...latest, assets: withNative.assets.slice(0, 2) }).mac, null);
   const el = await simulate({
     platform: 'MacIntel',
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X)',
     architecture: 'arm',
-    release: twoMacs,
+    release: withNative,
   });
-  assert.match(el['vortia-macnative-link'].href, /native-macos-arm64\.dmg$/);
-  assert.equal(el['vortia-macnative-sha'].hidden, false);
   assert.match(el['vortia-mac-link'].href, /0\.2\.0-macos-arm64\.dmg$/);
   assert.match(el['vortia-primary-download'].href, /0\.2\.0-macos-arm64\.dmg$/);
 }
