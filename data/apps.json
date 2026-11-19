@@ -883,7 +883,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "trama",
-    "icon": "/screens/trama/trama-icon-2.png",
+    "icon": "/screens/trama/trama-icon-3.png",
     "previews": [
       [
         "/screens/trama/trama-dark.jpg",
@@ -997,7 +997,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "pliego",
-    "icon": "/screens/pliego/pliego-icon-2.png",
+    "icon": "/screens/pliego/pliego-icon-3.png",
     "previews": [
       [
         "/screens/pliego/pliego-dark.jpg",
@@ -1910,7 +1910,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "hito",
-    "icon": "/screens/hito/hito-icon-2.png",
+    "icon": "/screens/hito/hito-icon-3.png",
     "previews": [
       [
         "/screens/hito/hito-dark.jpg",
@@ -2029,7 +2029,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "torno",
-    "icon": "docs/nodalia/torno-icon.png",
+    "icon": "/screens/torno/torno-icon-1.png",
     "previews": [
       [
         "/screens/torno/torno-dark.jpg",
