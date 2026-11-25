@@ -322,6 +322,10 @@
       [
         "/screens/lienzo/lienzo-home-dark.jpg",
         "Inicio de Lienzo, compartido con las aplicaciones creativas de Nodalia"
+      ],
+      [
+        "/screens/lienzo/lienzo-templates.jpg",
+        "El inicio de Lienzo con la galería «Empieza desde una plantilla»: doce tarjetas con filtros de Social, Impresión y papel y Web y arte"
       ]
     ],
     "features": [
@@ -332,6 +336,10 @@
       [
         "Compatible con PSD",
         "Abre y guarda documentos PSD y PSB, además de su propio formato y los formatos de imagen habituales."
+      ],
+      [
+        "Galería de plantillas",
+        "Doce puntos de partida serenos en el inicio: citas, notas, miniatura de vídeo, cartel, postal, invitación, tarjeta de visita, paisaje, banner web, portada y paleta. Cada uno se abre con capas con nombre y texto editable."
       ],
       [
         "Selección, trazados y texto",
@@ -379,6 +387,10 @@
       [
         "¿Dónde lo descargo?",
         "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Hay plantillas para empezar?",
+        "Sí. Desde la 0.4.0, el inicio muestra una galería con doce plantillas, en español o inglés según el idioma de la interfaz. Un clic abre una como documento nuevo sin guardar, con capas con nombre y texto vivo."
       ],
       [
         "¿Hay versión para macOS o Windows?",
@@ -549,6 +561,10 @@
       [
         "/screens/pluma/pluma-home-light.jpg",
         "Inicio de Pluma: archivos recientes y tamaños para empezar un archivo nuevo"
+      ],
+      [
+        "/screens/pluma/pluma-templates.jpg",
+        "La galería de plantillas de Pluma abierta sobre el inicio, con un folleto de evento seleccionado y las categorías Impresión, Marca y Social y web"
       ]
     ],
     "features": [
@@ -559,6 +575,10 @@
       [
         "Texto",
         "Texto de punto, de área y sobre trazado, con funciones OpenType y estilos de párrafo y carácter."
+      ],
+      [
+        "Galería de plantillas",
+        "Doce plantillas originales para empezar: cartel, folleto, papel de cartas, tarjeta de visita, tablero de marca, icono de app, patrón, publicaciones y stories, miniatura de vídeo, banner web e infografía. Se abren con texto vivo, capas con nombre y mesas de trabajo."
       ],
       [
         "Color y apariencia",
@@ -604,6 +624,10 @@
       [
         "¿Dónde lo descargo?",
         "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Hay plantillas para empezar?",
+        "Sí. Desde la 0.2.0, Archivo › Galería de plantillas (y el inicio) ofrece doce plantillas originales, en español o inglés según el idioma de la interfaz. Cada una se abre como un documento nuevo sin título, con texto editable, capas con nombre y degradados."
       ],
       [
         "¿Qué archivos abre?",
@@ -1817,6 +1841,10 @@
       [
         "/screens/papel/papel-home-light.jpg",
         "La pantalla de inicio de Papel con las herramientas recomendadas"
+      ],
+      [
+        "/screens/papel/papel-templates.jpg",
+        "El inicio de Papel con «Empieza desde una plantilla»: trece páginas de negocio, formularios y personales"
       ]
     ],
     "features": [
@@ -1827,6 +1855,10 @@
       [
         "Rellenar y firmar",
         "Formularios, firmas dibujadas o escritas y firmas digitales con certificado, con su validación."
+      ],
+      [
+        "Plantillas rellenables",
+        "Trece páginas listas en el inicio: factura, presupuesto, recibo, carta, acta de reunión, formularios, hoja de horas, informe de gastos, currículum, planificador, lista de tareas, apuntes y certificado. Son PDF normales con campos reales para rellenar al momento."
       ],
       [
         "Editar y organizar",
@@ -1871,6 +1903,10 @@
       [
         "¿Dónde lo descargo?",
         "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Hay plantillas?",
+        "Sí. Desde la 0.2.0, el inicio ofrece trece plantillas de una página (negocio, formularios y personales), en español o inglés y con el papel de tu región, Carta o A4. Cada una es un PDF normal con campos de formulario reales."
       ],
       [
         "¿Puedo firmar documentos?",
