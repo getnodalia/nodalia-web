@@ -70,6 +70,7 @@ body{--accent-l:#086770;--accent-l-rgb:8,103,112;--accent-d:#2CC5D3;--accent-d-r
 .accent-emerald{--accent-l:#1D6A3B;--accent-l-rgb:29,106,59;--accent-d:#49CB78;--accent-d-rgb:73,203,120;--accent-fill-l:#27864B;--accent-fill-d:#49CB78;--accent-subtle-l:#DFF7E4;--accent-subtle-d:#103B20}
 .accent-magenta{--accent-l:#A72E5A;--accent-l-rgb:167,46,90;--accent-d:#F09CB1;--accent-d-rgb:240,156,177;--accent-fill-l:#D13B72;--accent-fill-d:#F09CB1;--accent-subtle-l:#F7EFF0;--accent-subtle-d:#5F1A32}
 .accent-slate{--accent-l:#515D71;--accent-l-rgb:81,93,113;--accent-d:#ACB4C1;--accent-d-rgb:172,180,193;--accent-fill-l:#68768E;--accent-fill-d:#ACB4C1;--accent-subtle-l:#F0F0F2;--accent-subtle-d:#2D3440}
+.accent-amber{--accent-l:#8A4B00;--accent-l-rgb:138,75,0;--accent-d:#FFB23D;--accent-d-rgb:255,178,61;--accent-fill-l:#C26A00;--accent-fill-d:#FFB23D;--accent-subtle-l:#FBF0DC;--accent-subtle-d:#4A2D00}
 .accent-leaf{--accent-l:#286A1C;--accent-l-rgb:40,106,28;--accent-d:#59CB44;--accent-d-rgb:89,203,68;--accent-fill-l:#348624;--accent-fill-d:#59CB44;--accent-subtle-l:#E2F6DE;--accent-subtle-d:#163C0F}
 .accent-gold{--accent-l:#6F5B13;--accent-l-rgb:111,91,19;--accent-d:#D2B137;--accent-d-rgb:210,177,55;--accent-fill-l:#8B7319;--accent-fill-d:#D2B137;--accent-subtle-l:#F7F1DB;--accent-subtle-d:#3E330B}
 .accent-blue{--accent-l:#06657F;--accent-l-rgb:6,101,127;--accent-d:#2AC2EF;--accent-d-rgb:42,194,239;--accent-fill-l:#0780A0;--accent-fill-d:#2AC2EF;--accent-subtle-l:#E6F3F8;--accent-subtle-d:#073948}
@@ -228,6 +229,7 @@ html:not(.js) .scroll-progress{display:none}
 .product-card--celdas{--card-rgb:79,207,125}
 .product-card--lamina{--card-rgb:238,125,157}
 .product-card--papel{--card-rgb:172,180,193}
+.product-card--luz{--card-rgb:255,178,61}
 .product-card--torno{--card-rgb:227,182,90}
 .product-card--toma{--card-rgb:234,111,198}
 .product-card--anima{--card-rgb:175,173,241}
@@ -882,6 +884,22 @@ html:not(.js) .scroll-progress{display:none}
 .js .signed-badge{animation:present-in .5s cubic-bezier(.2,.8,.2,1) 1.8s both}
 @keyframes signed-draw{from{stroke-dashoffset:260}to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){.js .signed-stroke,.js .signed-badge{animation:none}}
+/* Luz: a histogram with the exposure slider of the develop module, settling on its value. */
+.sig-histo{position:relative}
+.sig-histo .product-preview{z-index:0}
+.histo-chip{position:absolute;left:-14px;bottom:-22px;z-index:1;display:flex;align-items:center;gap:14px;margin:0;padding:10px 14px;border-radius:14px;background:var(--island);border:1px solid rgb(var(--fg) / .08);font-size:13px;color:var(--ink);pointer-events:none}
+.histo{width:96px;height:40px}
+.histo-fill{fill:rgba(var(--accent-rgb),.28)}
+.histo-line{fill:none;stroke:var(--accent);stroke-width:2;stroke-linejoin:round}
+.histo-slider{display:flex;align-items:center;gap:10px;font-weight:500}
+.histo-track{position:relative;width:84px;height:4px;border-radius:2px;background:rgb(var(--fg) / .16)}
+.histo-track i{position:absolute;top:50%;left:62%;width:12px;height:12px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%)}
+.histo-slider b{font-variant-numeric:tabular-nums;color:var(--accent)}
+.js .histo-fill{animation:histo-in 1s cubic-bezier(.2,.8,.2,1) .4s both;transform-origin:bottom}
+.js .histo-track i{animation:histo-slide 1.1s cubic-bezier(.2,.8,.2,1) .6s both}
+@keyframes histo-in{from{opacity:0;transform:scaleY(.2)}to{opacity:1;transform:none}}
+@keyframes histo-slide{from{left:30%}to{left:62%}}
+@media (prefers-reduced-motion:reduce){.js .histo-fill,.js .histo-track i{animation:none}}
 /* Buzón: the inbox with its unread count, which ticks up as a message arrives. */
 .sig-inbox{position:relative}
 .sig-inbox .product-preview{z-index:0}
@@ -1312,6 +1330,9 @@ a.soon-card--released .i{color:var(--ink)}
 .story-buzon-settings{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
 .story-buzon-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
 /* Hito: the board in the dark theme, Home rising over it, then the light theme wiping in. */
+.scroll-story--luz .story-stage{background:#101114}
+.story-luz-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
+.story-luz-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}
 .scroll-story--hito .story-stage{background:#101114}
 .story-hito-home{clip-path:inset(calc((1 - var(--story-b))*100%) 0 0)}
 .story-hito-light{clip-path:inset(0 0 0 calc((1 - var(--story-cut))*100%))}

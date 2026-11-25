@@ -161,6 +161,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  luz: {
+    title: 'Del raw a la foto revelada.',
+    chapters: [
+      ['Revela', 'Ajusta la luz, el color y las curvas de cada foto; el original no se toca nunca.'],
+      ['Ordena', 'Álbumes, palabras clave, banderas y estrellas, y toda tu biblioteca en una cuadrícula.'],
+      ['Trabaja a tu manera', 'Cambia al tema claro o a otro idioma sin cerrar la biblioteca.'],
+    ],
+    next: 'funciones',
+  },
   buzon: {
     title: 'De la bandeja a la respuesta.',
     chapters: [
@@ -234,6 +243,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     hito: () => `<div class="story-artboard">${screenshot(0, 'story-hito-dark')}${screenshot(2, 'story-hito-home')}${screenshot(1, 'story-hito-light')}</div>`,
     lamina: () => `<div class="story-artboard">${screenshot(0, 'story-lamina-dark')}${screenshot(2, 'story-lamina-prefs')}${screenshot(1, 'story-lamina-light')}</div>`,
     pulso: () => `<div class="story-artboard">${screenshot(0, 'story-pulso-dark')}${screenshot(2, 'story-pulso-home')}${screenshot(1, 'story-pulso-light')}</div>`,
+    luz: () => `<div class="story-artboard">${screenshot(0, 'story-luz-dark')}${screenshot(2, 'story-luz-home')}${screenshot(1, 'story-luz-light')}</div>`,
     papel: () => `<div class="story-artboard">${screenshot(0, 'story-papel-dark')}${screenshot(2, 'story-papel-home')}${screenshot(1, 'story-papel-light')}</div>`,
     nodalix: () => `<div class="story-monitor">${screenshot(0, 'story-desktop')}${screenshot(1, 'story-settings')}
       <span class="story-system-cursor"></span>${screenshot(2, 'story-updates')}</div>`,

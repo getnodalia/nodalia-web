@@ -299,7 +299,7 @@
     "id": "lienzo",
     "name": "Lienzo",
     "category": "Creatividad",
-    "status": "Primeras versiones · 0.3.2 para Linux, macOS y Windows",
+    "status": "Primeras versiones · para Linux, macOS y Windows",
     "statusKind": "early",
     "eyebrow": "Edición de imagen",
     "headline": "Tu espacio para crear, capa a capa.",
@@ -378,7 +378,7 @@
     "faq": [
       [
         "¿Dónde lo descargo?",
-        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub. La versión 0.3.2 está disponible para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
       ],
       [
         "¿Hay versión para macOS o Windows?",
@@ -526,7 +526,7 @@
     "id": "pluma",
     "name": "Pluma",
     "category": "Creatividad",
-    "status": "Primeras versiones · 0.1.0 para Linux, macOS y Windows",
+    "status": "Primeras versiones · para Linux, macOS y Windows",
     "statusKind": "early",
     "eyebrow": "Ilustración vectorial",
     "headline": "Cada curva, en su sitio.",
@@ -1225,7 +1225,7 @@
     "id": "agora",
     "name": "Ágora",
     "category": "Comunicación",
-    "status": "Versión 0.2 · fase temprana",
+    "status": "Primeras versiones · fase temprana",
     "statusKind": "early",
     "eyebrow": "Chat de equipo",
     "headline": "Tu equipo, en tu servidor.",
@@ -1577,7 +1577,7 @@
     "id": "celdas",
     "name": "Celdas",
     "category": "Productividad",
-    "status": "Primeras versiones · 0.1.0 para Linux, macOS y Windows",
+    "status": "Primeras versiones · para Linux, macOS y Windows",
     "statusKind": "early",
     "eyebrow": "Hoja de cálculo",
     "headline": "Tus números, en orden.",
@@ -1892,6 +1892,116 @@
       "linux": "^papel-[0-9].*-linux-x86_64\\.AppImage$",
       "mac": "^papel-[0-9].*-macos-universal\\.dmg$",
       "windows": "^papel-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz y zip portátil de Windows"
+  },
+  {
+    "id": "luz",
+    "name": "Luz",
+    "category": "Fotografía",
+    "status": "Primeras versiones · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Fotografía y revelado RAW",
+    "headline": "Cada foto, con su luz.",
+    "tagline": "Biblioteca de fotos y revelador de raws, sin cuenta ni nube.",
+    "description": "Una biblioteca de fotos y un revelador de raws nativos, escritos en Rust y con el diseño de Nodalia. Importa, ordena y revela sin tocar el original: las ediciones son instrucciones. Funciona sin conexión. Sin cuenta, sin nube.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "luz",
+    "icon": "assets/app-icon/hicolor/512x512/apps/dev.danielmiguelt.Luz.png",
+    "previews": [
+      [
+        "/screens/luz/luz-dark.jpg",
+        "La biblioteca de Luz con una foto en revelado, en el tema oscuro"
+      ],
+      [
+        "/screens/luz/luz-light.jpg",
+        "La misma biblioteca en el tema claro, elegido en Preferencias"
+      ],
+      [
+        "/screens/luz/luz-library.jpg",
+        "La biblioteca de Luz en cuadrícula, con los álbumes y las palabras clave a un lado"
+      ]
+    ],
+    "features": [
+      [
+        "Biblioteca",
+        "Importa fotos y raws y ordénalas en álbumes, con palabras clave, banderas y estrellas."
+      ],
+      [
+        "Revelado no destructivo",
+        "Luz, color, curvas, máscaras locales, recorte y gradación de color. El original no se modifica nunca."
+      ],
+      [
+        "Sin cuenta, sin nube",
+        "Todo se queda en tu equipo. Sin suscripción, sin telemetría y sin subir tus fotos a ningún sitio."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, el color de Luz, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro que se elige en Preferencias."
+      ],
+      [
+        "Actualizaciones desde la app",
+        "Luz avisa cuando hay una versión nueva y la instala sin salir de la aplicación."
+      ],
+      [
+        "Todo es un comando",
+        "Cada acción se puede automatizar con luz-cli, con el canal de control o con agentes de IA a través de MCP."
+      ]
+    ],
+    "formats": [
+      "RAW",
+      "JPEG",
+      "PNG",
+      "TIFF",
+      "XMP"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · MSI y zip portátil (Windows)"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Luz es un retrato de Louis Daguerre, pionero de la fotografía.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub, para Linux x86_64, macOS (Apple Silicon e Intel) y Windows x64."
+      ],
+      [
+        "¿Luz modifica mis fotos originales?",
+        "No. Las ediciones se guardan como instrucciones y el archivo original no se toca. Aun así, conviene tener siempre una copia de seguridad."
+      ],
+      [
+        "¿Se puede automatizar?",
+        "Sí. Todo es un comando: luz-cli revela y exporta sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
+      ],
+      [
+        "¿Mis fotos salen de mi equipo?",
+        "No. Todo se procesa en local, sin telemetría y sin cuenta. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+      ]
+    ],
+    "limitation": "Luz está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de tus fotos originales.",
+    "cta": "Descargar Luz",
+    "accent": "amber",
+    "downloads": {
+      "linux": "^luz-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^luz-[0-9].*-macos-universal\\.dmg$",
+      "windows": "^luz-[0-9].*-windows-x64\\.msi$"
     },
     "downloadDescriptions": {
       "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
@@ -2270,7 +2380,7 @@
     "id": "brujula",
     "name": "Brújula",
     "category": "Navegador",
-    "status": "Versión 0.9 · solo Linux",
+    "status": "Versión 0.10 · solo Linux",
     "statusKind": "early",
     "eyebrow": "El navegador de Nodalix",
     "headline": "Navega rápido, seguro y a tu manera.",

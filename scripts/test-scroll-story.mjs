@@ -22,7 +22,7 @@ assert.equal(storyCut(.70, 'lienzo'), 0);
 assert.equal(storyCut(.9, 'vinilo'), 1);
 
 // The home page is an index of suites now; the guided demonstrations live on the product pages.
-for (const site of ['brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito', 'torno', 'nodalix']) {
+for (const site of ['brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito', 'torno', 'nodalix']) {
   for (const locale of ['', 'en/', 'fr/', 'de/', 'pt/']) {
     const page = await readFile(new URL(`../dist/portal/${site}/${locale}index.html`, import.meta.url), 'utf8');
     const story = page.match(/<section id="demostracion"[\s\S]*?<\/section>/)?.[0];
@@ -40,4 +40,4 @@ for (const site of ['brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', '
     assert.match(page, /type="module" src="\/scroll-story\.js\?v=[0-9a-f]{10}"/);
   }
 }
-console.log('✓ Demostraciones: veinte páginas de producto, cinco idiomas, tres etapas y alternativa estática.');
+console.log('✓ Demostraciones: veintiuna páginas de producto, cinco idiomas, tres etapas y alternativa estática.');
