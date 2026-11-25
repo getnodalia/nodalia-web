@@ -186,6 +186,46 @@ assert.equal(render(() => null, null, lienzo, 'linux'), false);
   await pending;
 }
 
+// The Nodalia Launcher offer on a product page is a second block with its own ids and its own release.
+{
+  const launcher = { repo: 'nodalia-launcher', patterns: { linux: '^nodalia-launcher-[0-9.]+-linux-x86_64\\.AppImage$', mac: '^nodalia-launcher-[0-9.]+-macos-universal\\.dmg$', windows: '^nodalia-launcher-[0-9.]+-windows-x64\\.msi$' } };
+  const l020 = {
+    tag_name: 'v0.2.0',
+    html_url: 'https://github.com/getnodalia/nodalia-launcher/releases/tag/v0.2.0',
+    assets: [
+      dl('nodalia-launcher', 'v0.2.0', 'nodalia-launcher-0.2.0-linux-x86_64.AppImage', 9e6),
+      dl('nodalia-launcher', 'v0.2.0', 'nodalia-launcher-0.2.0-linux-x86_64.AppImage.zsync'),
+      dl('nodalia-launcher', 'v0.2.0', 'nodalia-launcher-0.2.0-macos-universal.dmg', 12e6),
+      dl('nodalia-launcher', 'v0.2.0', 'nodalia-launcher-0.2.0-windows-x64.msi', 8e6),
+      dl('nodalia-launcher', 'v0.2.0', 'nodalia-launcher-0.2.0-windows-x64-portable.zip'),
+    ],
+  };
+  assert.equal(choose(l020, launcher, 'linux', 'x86').asset.name, 'nodalia-launcher-0.2.0-linux-x86_64.AppImage');
+  assert.equal(choose(l020, launcher, 'mac', 'x86').asset.name, 'nodalia-launcher-0.2.0-macos-universal.dmg');
+  assert.equal(choose(l020, launcher, 'windows').asset.name, 'nodalia-launcher-0.2.0-windows-x64.msi');
+  const ids = ['primary-download', 'primary-icon', 'primary-title', 'primary-detail'];
+  const els = { ...elements(), ...Object.fromEntries(ids.map((id) => [`launcher-${id}`, { hidden: false, href: '', textContent: '', src: '' }])) };
+  els['app-download-config'] = { textContent: JSON.stringify({ ...lienzo, release: first }) };
+  els['launcher-download-config'] = { textContent: JSON.stringify({ ...launcher, release: l020 }) };
+  const urls = [];
+  const both = async (url) => {
+    urls.push(url);
+    return { ok: true, json: async () => (url.includes('/nodalia-launcher/') ? [l020] : [first]) };
+  };
+  assert.equal(await bootAppDownload({ document: { getElementById: (id) => els[id] }, navigator: mac, fetch: both }), true);
+  assert.equal(urls.length, 2);
+  assert.match(els['launcher-primary-download'].href, /nodalia-launcher-0\.2\.0-macos-universal\.dmg$/);
+  assert.equal(els['launcher-primary-icon'].src, '/platform-apple.svg');
+  assert.match(els['launcher-primary-detail'].textContent, /DMG · Universal/);
+  // The app's own button is untouched by the launcher's release.
+  assert.equal(els['app-primary-download'].href, first.html_url);
+  // A page with only the launcher block (the home page, Vortia) works too, and offline keeps the built release.
+  const only = { 'launcher-download-config': els['launcher-download-config'], 'launcher-primary-download': { href: '' }, 'launcher-primary-icon': { hidden: false, src: '' }, 'launcher-primary-title': { textContent: '' }, 'launcher-primary-detail': { textContent: '' } };
+  assert.equal(await bootAppDownload({ document: { getElementById: (id) => only[id] }, navigator: linux, fetch: async () => { throw new Error('offline'); } }), true);
+  assert.match(only['launcher-primary-download'].href, /nodalia-launcher-0\.2\.0-linux-x86_64\.AppImage$/);
+  assert.equal(only['launcher-primary-title'].textContent, 'Descargar para Linux');
+}
+
 // The build keeps only what the page needs, from the app's own releases.
 assert.equal(slim('vinilo', { ...v2, draft: true }), null);
 assert.equal(slim('vinilo', { ...v2, tag_name: '<b>' }), null);

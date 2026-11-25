@@ -2611,5 +2611,115 @@
         "Cada sitio en su ventana, con su lanzador y un perfil aparte"
       ]
     ]
+  },
+  {
+    "id": "launcher",
+    "name": "Nodalia Launcher",
+    "category": "Instalador",
+    "status": "Primera versión · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Instalador y actualizador",
+    "headline": "Todas las apps, en un solo sitio.",
+    "tagline": "Instala, actualiza y abre las aplicaciones de Nodalia desde una sola ventana.",
+    "description": "Nodalia Launcher lista las aplicaciones de Nodalia, instala la versión adecuada para tu sistema y tu procesador, comprueba su suma SHA-256 y las mantiene al día. Es una app nativa, escrita en Rust, que puede quedarse en la bandeja del sistema o en la barra de menús.",
+    "platforms": "Linux · macOS · Windows",
+    "technology": "Rust · egui · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "nodalia-launcher",
+    "icon": "/screens/launcher/launcher-icon.png",
+    "previews": [],
+    "features": [
+      [
+        "Instala con un clic",
+        "Elige la compilación correcta para tu sistema y tu procesador (DMG, MSI, AppImage, .deb, .rpm…) y la instala donde tu sistema guarda las aplicaciones."
+      ],
+      [
+        "Descargas verificadas",
+        "Todo viene de las versiones que Nodalia publica en GitHub y se comprueba con su suma SHA-256 antes de instalarse. Nunca sustituye una app que está abierta."
+      ],
+      [
+        "Siempre al día",
+        "Revisa las versiones nuevas cada cierto tiempo, te avisa con una notificación y puede instalar las actualizaciones por sí solo. Se actualiza a sí mismo con el mismo flujo."
+      ],
+      [
+        "Todas las apps a mano",
+        "Ve cuáles tienes y en qué versión, y abre cualquiera desde su ventana, desde la bandeja del sistema o desde la barra de menús."
+      ],
+      [
+        "También las que ya tenías",
+        "Reconoce las aplicaciones de Nodalia que instalaste por tu cuenta y las actualiza igual."
+      ],
+      [
+        "Nativo y en tu idioma",
+        "Escrito en Rust con el diseño de Nodalia, sin Electron ni vistas web, y disponible en 14 idiomas."
+      ]
+    ],
+    "flow": [
+      [
+        "Elige",
+        "Abre la lista de aplicaciones y elige la que quieras."
+      ],
+      [
+        "Instala",
+        "El Launcher descarga el instalador de tu sistema, lo verifica y lo instala."
+      ],
+      [
+        "Actualiza",
+        "Te avisa de cada versión nueva y puede instalarla por ti."
+      ]
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG universal (macOS) · MSI y versión portátil (Windows)"
+      ],
+      [
+        "Requisitos",
+        "macOS 11 o posterior · Windows 10 u 11 · Linux x86_64"
+      ],
+      [
+        "Tecnología",
+        "Rust · egui · Nodalia Design"
+      ]
+    ],
+    "faq": [
+      [
+        "¿Necesito el Launcher para usar las apps?",
+        "No. Cada aplicación tiene su propia descarga en su página. El Launcher es una forma más cómoda de instalarlas y mantenerlas al día, y puedes usarlo o no."
+      ],
+      [
+        "¿Qué aplicaciones instala?",
+        "Las aplicaciones de Nodalia que publican instaladores para tu sistema: Letra, Celdas, Lámina, Papel, Buzón, Hito, Ágora, Lienzo, Pluma, Pliego, Luz, Toma, Pulso, Ánima, Trama, Forja, Torno, Vortia, Vinilo y Brújula."
+      ],
+      [
+        "¿De dónde descarga?",
+        "Solo de las versiones que Nodalia publica en GitHub, y comprueba la suma SHA-256 de cada archivo antes de instalarlo. Nunca ejecuta un instalador con permisos elevados sin avisarte."
+      ],
+      [
+        "¿Se actualiza solo?",
+        "Sí. Comprueba las versiones nuevas cada cierto tiempo y puede instalarlas automáticamente; en Ajustes › Actualizaciones lo activas o lo desactivas y eliges cada cuánto. Él mismo se reemplaza con el mismo flujo."
+      ],
+      [
+        "¿Dónde instala las apps?",
+        "Donde tu sistema las guarda normalmente: la carpeta Aplicaciones en macOS, tu carpeta de programas en Windows y los paquetes del sistema (.deb o .rpm) en Linux."
+      ]
+    ],
+    "limitation": "Nodalia Launcher está en una fase temprana. Solo instala las aplicaciones que publican un instalador para tu sistema: si una no lo tiene todavía, tendrás que esperar a que lo publique.",
+    "cta": "Descargar Nodalia Launcher",
+    "accent": "",
+    "downloads": {
+      "linux": "^nodalia-launcher-[0-9.]+-linux-x86_64\\.AppImage$",
+      "mac": "^nodalia-launcher-[0-9.]+-macos-universal\\.dmg$",
+      "windows": "^nodalia-launcher-[0-9.]+-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para Linux de 64 bits (x86_64). También hay paquetes .deb y .rpm y un .tar.gz en la página de versiones.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI de 64 bits. Las versiones x86, ARM64 y portátiles están en la página de versiones."
+    }
   }
 ]

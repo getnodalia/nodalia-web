@@ -3536,6 +3536,192 @@
    }
   ]
  },
+ "nodalia-launcher": {
+  "tag_name": "v0.2.0",
+  "published_at": "2026-11-19T17:22:06Z",
+  "html_url": "https://github.com/getnodalia/nodalia-launcher/releases/tag/v0.2.0",
+  "assets": [
+   {
+    "name": "nodalia-launcher-0.2.0-linux-x86_64.AppImage",
+    "size": 13629944,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-linux-x86_64.AppImage"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-linux-x86_64.AppImage.zsync",
+    "size": 46851,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-linux-x86_64.AppImage.zsync"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-linux-x86_64.deb",
+    "size": 14171906,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-linux-x86_64.deb"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-linux-x86_64.rpm",
+    "size": 14583921,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-linux-x86_64.rpm"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-linux-x86_64.tar.gz",
+    "size": 13832202,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-linux-x86_64.tar.gz"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-macos-universal.dmg",
+    "size": 21220952,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-macos-universal.dmg"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-windows-arm64-portable.zip",
+    "size": 10475099,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-windows-arm64-portable.zip"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-windows-arm64.msi",
+    "size": 9326592,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-windows-arm64.msi"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-windows-x64-portable.zip",
+    "size": 11130473,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-windows-x64-portable.zip"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-windows-x64.msi",
+    "size": 10043392,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-windows-x64.msi"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-windows-x86-portable.zip",
+    "size": 10415902,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-windows-x86-portable.zip"
+   },
+   {
+    "name": "nodalia-launcher-0.2.0-windows-x86.msi",
+    "size": 9572352,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/nodalia-launcher-0.2.0-windows-x86.msi"
+   },
+   {
+    "name": "SHA256SUMS",
+    "size": 549,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/SHA256SUMS"
+   },
+   {
+    "name": "SHA256SUMS-macos",
+    "size": 109,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/SHA256SUMS-macos"
+   },
+   {
+    "name": "SHA256SUMS-windows-arm64",
+    "size": 225,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/SHA256SUMS-windows-arm64"
+   },
+   {
+    "name": "SHA256SUMS-windows-x64",
+    "size": 221,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/SHA256SUMS-windows-x64"
+   },
+   {
+    "name": "SHA256SUMS-windows-x86",
+    "size": 221,
+    "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.2.0/SHA256SUMS-windows-x86"
+   }
+  ],
+  "previous": [
+   {
+    "tag_name": "v0.1.0",
+    "published_at": "2026-11-19T12:03:57Z",
+    "html_url": "https://github.com/getnodalia/nodalia-launcher/releases/tag/v0.1.0",
+    "assets": [
+     {
+      "name": "nodalia-launcher-0.1.0-linux-x86_64.AppImage",
+      "size": 13597176,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-linux-x86_64.AppImage"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-linux-x86_64.AppImage.zsync",
+      "size": 46739,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-linux-x86_64.AppImage.zsync"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-linux-x86_64.deb",
+      "size": 14107200,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-linux-x86_64.deb"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-linux-x86_64.rpm",
+      "size": 14531198,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-linux-x86_64.rpm"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-linux-x86_64.tar.gz",
+      "size": 13767743,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-linux-x86_64.tar.gz"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-macos-universal.dmg",
+      "size": 21092911,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-macos-universal.dmg"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-windows-arm64-portable.zip",
+      "size": 10411580,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-windows-arm64-portable.zip"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-windows-arm64.msi",
+      "size": 9306112,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-windows-arm64.msi"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-windows-x64-portable.zip",
+      "size": 11065984,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-windows-x64-portable.zip"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-windows-x64.msi",
+      "size": 10018816,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-windows-x64.msi"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-windows-x86-portable.zip",
+      "size": 10348917,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-windows-x86-portable.zip"
+     },
+     {
+      "name": "nodalia-launcher-0.1.0-windows-x86.msi",
+      "size": 9551872,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/nodalia-launcher-0.1.0-windows-x86.msi"
+     },
+     {
+      "name": "SHA256SUMS",
+      "size": 549,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/SHA256SUMS"
+     },
+     {
+      "name": "SHA256SUMS-macos",
+      "size": 109,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/SHA256SUMS-macos"
+     },
+     {
+      "name": "SHA256SUMS-windows-arm64",
+      "size": 225,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/SHA256SUMS-windows-arm64"
+     },
+     {
+      "name": "SHA256SUMS-windows-x64",
+      "size": 221,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/SHA256SUMS-windows-x64"
+     },
+     {
+      "name": "SHA256SUMS-windows-x86",
+      "size": 221,
+      "browser_download_url": "https://github.com/getnodalia/nodalia-launcher/releases/download/v0.1.0/SHA256SUMS-windows-x86"
+     }
+    ]
+   }
+  ]
+ },
  "nodalix-os": {
   "tag_name": "0.6.1",
   "published_at": "2026-11-18T04:26:33Z",

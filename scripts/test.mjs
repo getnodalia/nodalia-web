@@ -11,7 +11,7 @@ const sourceCss = await readFile(path.join(root, 'assets', 'styles.css'), 'utf8'
 const hash = createHash('sha256').update(sourceCss).digest('hex').slice(0, 12);
 const versionedCss = `styles.${hash}.css`;
 // One site: the portal at the root of dist/portal and each product in dist/portal/<id>/.
-const SITES = ['portal', 'brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito', 'torno', 'nodalix'];
+const SITES = ['portal', 'brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito', 'torno', 'launcher', 'nodalix'];
 const site = path.join(root, 'dist', 'portal');
 const dirOf = (id) => (id === 'portal' ? site : path.join(site, id));
 const baseOf = (id) => (id === 'portal' ? 'https://getnodalia.com' : `https://getnodalia.com/${id}`);
@@ -109,7 +109,7 @@ assert.equal(identity.probe(0, 0.5), null);
 assert.ok(Math.abs(identity.probe(-1, 0).cp - 1) < 1e-9, 'Cp de remanso debe ser 1');
 assert.ok(Math.abs(identity.probe(0, 1).cp + 3) < 1e-9, 'Cp mínimo debe ser -3');
 assert.equal(identity.speedColor(2), 'rgb(255,255,255)');
-for (const [id, marker] of [['vortia', 'data-identity="flow"'], ['nodalix', 'class="boot-log"'], ['brujula', 'class="compass"'], ['vinilo', 'class="record"'], ['lienzo', 'data-identity="select"'], ['forja', 'class="crosshair"'], ['pluma', 'class="bezier"'], ['luz', 'class="histo-chip"'], ['letra', 'class="typed"'], ['celdas', 'class="cell-pick"'], ['lamina', 'class="present-chip"'], ['torno', 'class="triad"'], ['toma', 'class="playhead"'], ['anima', 'class="onion"'], ['trama', 'class="peer-cursor"'], ['pliego', 'class="text-thread"'], ['pulso', 'class="ease"'], ['agora', 'class="typing"'], ['papel', 'class="signed-chip"'], ['buzon', 'class="inbox-chip"'], ['hito', 'class="milestone-chip"']]) {
+for (const [id, marker] of [['vortia', 'data-identity="flow"'], ['nodalix', 'class="boot-log"'], ['brujula', 'class="compass"'], ['vinilo', 'class="record"'], ['lienzo', 'data-identity="select"'], ['forja', 'class="crosshair"'], ['pluma', 'class="bezier"'], ['luz', 'class="histo-chip"'], ['letra', 'class="typed"'], ['celdas', 'class="cell-pick"'], ['lamina', 'class="present-chip"'], ['torno', 'class="triad"'], ['toma', 'class="playhead"'], ['anima', 'class="onion"'], ['trama', 'class="peer-cursor"'], ['pliego', 'class="text-thread"'], ['pulso', 'class="ease"'], ['agora', 'class="typing"'], ['papel', 'class="signed-chip"'], ['buzon', 'class="inbox-chip"'], ['hito', 'class="milestone-chip"'], ['launcher', 'class="launcher-grid"']]) {
   const page = await readFile(path.join(dirOf(id), 'index.html'), 'utf8');
   assert.ok(page.includes(marker), `Falta la firma visual de ${id}`);
   assert.match(page, /src="\/identity\.js\?v=[0-9a-f]+"/);
@@ -135,7 +135,7 @@ for (const id of SITES) {
     assert.ok(page.includes(`<link rel="canonical" href="${base}/${code}/"/>`), `${id}/${code} sin canonical propio`);
     for (const other of i18n.localeCodes) assert.ok(page.includes(`hreflang="${other}" href="${base}${i18n.localePath(other)}"`), `${id}/${code} sin alternate ${other}`);
     assert.ok(page.includes(`hreflang="x-default" href="${base}/"`));
-    assert.ok(!/href="https:\/\/getnodalia\.com(?:\/(?:vortia|vinilo|lienzo|forja|pluma|luz|toma|anima|trama|pliego|pulso|agora|letra|celdas|lamina|papel|buzon|hito|torno|nodalix))?\/(?:#[^"]*)?"/.test(page.split('<').filter((tag) => !tag.includes('hreflang')).join('<')), `${id}/${code} enlaza a la versión en español`);
+    assert.ok(!/href="https:\/\/getnodalia\.com(?:\/(?:vortia|vinilo|lienzo|forja|pluma|luz|toma|anima|trama|pliego|pulso|agora|letra|celdas|lamina|papel|buzon|hito|torno|launcher|nodalix))?\/(?:#[^"]*)?"/.test(page.split('<').filter((tag) => !tag.includes('hreflang')).join('<')), `${id}/${code} enlaza a la versión en español`);
     assert.notEqual(page.match(/<h1[^>]*>([^<]*)/)[1], spanish.match(/<h1[^>]*>([^<]*)/)[1], `${id}/${code} con titular sin traducir`);
     JSON.parse(page.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
   }
@@ -186,6 +186,29 @@ for (const id of ['vinilo', 'lienzo', 'forja', 'pluma', 'luz', 'toma', 'anima', 
   assert.match(html, /src="\/app-download\.js\?v=[0-9a-f]{10}"/);
 }
 assert.ok((await stat(path.join(site, 'app-download.js'))).size > 100);
+// Every product page offers Nodalia Launcher next to its own download, in every language; the Launcher's own page and the OS do not.
+for (const id of SITES.filter((name) => name !== 'portal')) {
+  for (const code of ['', 'en/', 'fr/', 'de/', 'pt/']) {
+    const html = await readFile(path.join(dirOf(id), code, 'index.html'), 'utf8');
+    const offered = id !== 'launcher' && id !== 'nodalix';
+    assert.equal(html.includes('id="instalar-con-launcher"'), offered, `${id}/${code}: oferta de Nodalia Launcher`);
+    assert.equal(html.includes('id="launcher-download-config"'), offered, `${id}/${code}: descarga del Launcher`);
+    assert.equal(html.includes('href="#instalar-con-launcher"'), offered, `${id}/${code}: enlace desde la cabecera`);
+    if (offered) {
+      assert.match(html, /id="launcher-primary-download" class="btn btn-primary" href="https:\/\/github\.com\/getnodalia\/nodalia-launcher\//, `${id}/${code}: botón del Launcher`);
+      assert.match(html, /src="\/app-download\.js\?v=[0-9a-f]{10}"/, `${id}/${code}: script de descarga`);
+    }
+  }
+}
+{
+  const html = await readFile(path.join(dirOf('launcher'), 'index.html'), 'utf8');
+  assert.match(html, /id="app-primary-download" class="btn btn-primary" href="https:\/\/github\.com\/getnodalia\/nodalia-launcher\//, 'launcher: botón de descarga');
+  assert.equal((html.match(/<article class="vortia-package"/g) ?? []).length, 3, 'launcher: tarjetas de Linux, macOS y Windows');
+  assert.ok(!html.includes('class="launcher-offer"'), 'el Launcher no se ofrece a sí mismo');
+  assert.ok(html.includes('translate="no">Letra</span>') && html.includes('translate="no">Vortia</span>'), 'launcher: muestra las apps que instala');
+}
+assert.ok(portal.includes('id="launcher-download-config"') && portal.includes('href="https://getnodalia.com/launcher/"'), 'la portada ofrece Nodalia Launcher');
+
 // The page is built from Vinilo's live latest release. While its installers are still being
 // uploaded the button links to the release page instead; that must not block the deploy of
 // every site. Which file is chosen is checked with fixed data in test-app-download.mjs.

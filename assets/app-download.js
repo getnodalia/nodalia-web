@@ -138,13 +138,17 @@ function setCardLabel(card, fileKind) {
   card.replaceChildren(`${t('Descargar')} `, span);
 }
 
-export function render(get, release, config, os, arch) {
+/**
+ * Fills one download block. `prefix` names it: the app's own is "app", and the Nodalia Launcher offer
+ * that every product page carries is "launcher" (see SLOTS), each with its own set of element ids.
+ */
+export function render(get, release, config, os, arch, prefix = 'app') {
   const choice = choose(release, config, os, arch);
   if (!choice.version) return false;
-  const link = get('app-primary-download');
-  const icon = get('app-primary-icon');
-  const title = get('app-primary-title');
-  const info = get('app-primary-detail');
+  const link = get(`${prefix}-primary-download`);
+  const icon = get(`${prefix}-primary-icon`);
+  const title = get(`${prefix}-primary-title`);
+  const info = get(`${prefix}-primary-detail`);
   if (link) link.href = choice.href;
   // Literal keys, so the build ships their translations with the page.
   const titles = { linux: t('Descargar para Linux'), mac: t('Descargar para macOS'), windows: t('Descargar para Windows'), other: t('Descargar') };
@@ -155,22 +159,31 @@ export function render(get, release, config, os, arch) {
     if (choice.icon) icon.src = choice.icon;
   }
   // The downloads section lists every system's installer, whichever one the button offers.
-  const versionLabel = get('app-release-version');
+  const versionLabel = get(`${prefix}-release-version`);
   if (versionLabel) versionLabel.textContent = choice.version;
   for (const other of CARDS) {
-    const card = get(`app-card-${other}`);
+    const card = get(`${prefix}-card-${other}`);
     if (!card) continue;
     const asset = choice.found[other];
     card.href = asset ? asset.url : choice.page;
     setCardLabel(card, asset ? kind(other, asset) : '');
-    const size = get(`app-card-${other}-size`);
+    const size = get(`${prefix}-card-${other}-size`);
     if (size) size.textContent = asset ? megabytes(asset.size) : '';
   }
   return true;
 }
 
-export async function bootAppDownload({ document: doc, navigator: nav, fetch: fetchImpl = fetch } = globalThis) {
-  const holder = doc?.getElementById?.('app-download-config');
+/**
+ * The download blocks a page can carry: the app's own (every product page) and the Nodalia Launcher
+ * offer (every product page and the home page). Each one is a JSON config plus elements named after its prefix.
+ */
+const SLOTS = [
+  { holder: 'app-download-config', prefix: 'app', section: 'app-download' },
+  { holder: 'launcher-download-config', prefix: 'launcher', section: '' },
+];
+
+async function bootSlot({ document: doc, fetch: fetchImpl }, slot, os, architecturePromise) {
+  const holder = doc.getElementById(slot.holder);
   if (!holder) return false;
   let config;
   try {
@@ -179,25 +192,21 @@ export async function bootAppDownload({ document: doc, navigator: nav, fetch: fe
     return false;
   }
   const get = (id) => doc.getElementById(id);
-  const os = detectPlatform(nav);
-  const architecturePromise = os === 'mac' || os === 'linux'
-    ? detectArchitecture(nav)
-    : Promise.resolve('unknown');
   // Keep the primary button safe while architecture detection is still pending.
-  if (config.release) render(get, config.release, config, os, 'pending');
+  if (config.release) render(get, config.release, config, os, 'pending', slot.prefix);
   const latestPromise = Promise.resolve().then(() => fetchImpl(
     `https://api.github.com/repos/${OWNER}/${encodeURIComponent(config.repo)}/releases?per_page=10`,
     { headers: { Accept: 'application/vnd.github+json' }, cache: 'no-store' },
   )).catch(() => null);
   const arch = await architecturePromise;
-  if (config.release) render(get, config.release, config, os, arch);
+  if (config.release) render(get, config.release, config, os, arch, slot.prefix);
   try {
     const response = await latestPromise;
     if (!response?.ok) return Boolean(config.release);
     // The newest releases, so that a platform whose latest release has no package keeps its last one.
     const latest = combine(await response.json(), config);
-    if (render(get, latest, config, os, arch)) {
-      const section = get('app-download');
+    if (render(get, latest, config, os, arch, slot.prefix)) {
+      const section = slot.section ? get(slot.section) : null;
       if (section) section.hidden = false;
       return true;
     }
@@ -205,6 +214,16 @@ export async function bootAppDownload({ document: doc, navigator: nav, fetch: fe
     /* Offline or rate-limited: the built-in release stays. */
   }
   return Boolean(config.release);
+}
+
+export async function bootAppDownload({ document: doc, navigator: nav, fetch: fetchImpl = fetch } = globalThis) {
+  if (typeof doc?.getElementById !== 'function' || !SLOTS.some((slot) => doc.getElementById(slot.holder))) return false;
+  const os = detectPlatform(nav);
+  const architecturePromise = os === 'mac' || os === 'linux'
+    ? detectArchitecture(nav)
+    : Promise.resolve('unknown');
+  const results = await Promise.all(SLOTS.map((slot) => bootSlot({ document: doc, fetch: fetchImpl }, slot, os, architecturePromise)));
+  return results.some(Boolean);
 }
 
 if (typeof document !== 'undefined' && typeof document.getElementById === 'function') {
