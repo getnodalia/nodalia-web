@@ -148,6 +148,8 @@ const easeCurve = `<span class="ease" aria-hidden="true"><svg viewBox="0 0 120 6
 const signed = `<p class="signed-chip" aria-hidden="true"><svg class="signed-stroke" viewBox="0 0 120 40"><path d="M4 30c10-22 18-26 20-14s-4 18 2 10 12-22 18-16-2 18 6 12 10-14 16-10 4 10 12 6 14-8 20-6"/></svg><span class="signed-badge"><i></i>Firma válida</span></p>`;
 // Hito: a milestone and the progress of the tasks that lead to it, filling up.
 const milestone = `<p class="milestone-chip" aria-hidden="true"><i class="milestone-mark"></i><span class="milestone-name">Lanzamiento 1.0</span><span class="milestone-bar"><b></b></span><span class="milestone-pct">75 %</span></p>`;
+// Luz: a histogram and the exposure slider of the develop module, settling on its value.
+const histogram = `<p class="histo-chip" aria-hidden="true"><svg class="histo" viewBox="0 0 120 48"><path class="histo-fill" d="M2 46C14 46 18 30 28 26S44 14 54 8 70 16 80 24 98 36 118 46Z"/><path class="histo-line" d="M2 46C14 46 18 30 28 26S44 14 54 8 70 16 80 24 98 36 118 46"/></svg><span class="histo-slider"><span>Exposición</span><span class="histo-track"><i></i></span><b>+0,35</b></span></p>`;
 // Buzón: the inbox and its unread count, which ticks up as a message arrives.
 const inbox = `<p class="inbox-chip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 13h5l1.5 2.5h5L16 13h5"/><path d="M5.5 5h13L21 13v5.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V13z"/></svg><span>Bandeja de entrada</span><span class="inbox-count"><b>4</b><b>5</b></span></p>`;
 const present = `<p class="present-chip" aria-hidden="true"><span class="present-count">1 / 8</span><span class="present-btn"><i></i>Presentar</span></p>`;
@@ -173,11 +175,11 @@ const faqBlock = (items) => `<section class="section faq-section" id="faq"><div 
 </div></section>`;
 const table = (head, rows) => `<div class="table-wrap" data-reveal><table class="table"><thead><tr>${head.map((h) => `<th scope="col">${e(h)}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell, i) => (i === 0 ? `<th scope="row">${e(cell)}</th>` : `<td>${e(cell)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div>`;
 const specCard = (app) => `<div class="spec-card" data-reveal="left"><div class="spec-card-head">${iconImg(app, 'spec-icon', 60)}<div><strong>${e(app.name)}</strong><span>${e(app.category)}</span></div></div><dl class="spec-list">${app.specs.map(([k, v]) => `<div><dt>${e(k)}</dt><dd>${e(v)}</dd></div>`).join('')}</dl></div>`;
-const order = ['nodalix', 'brujula', 'vinilo', 'vortia', 'lienzo', 'forja', 'torno', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito'];
+const order = ['nodalix', 'brujula', 'vinilo', 'vortia', 'lienzo', 'forja', 'torno', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito'];
 const byId = Object.fromEntries(apps.map((app) => [app.id, app]));
 const ordered = order.map((id) => byId[id]);
 // The tint each product uses on the portal (tabs, stacked cards), the same values as .product-card--<id>.
-const cardRgb = { nodalix: '143,184,255', brujula: '95,217,161', vinilo: '185,168,255', vortia: '90,169,255', lienzo: '242,163,184', forja: '232,166,111', pluma: '255,154,87', letra: '108,182,236', celdas: '79,207,125', lamina: '238,125,157', torno: '227,182,90', toma: '234,111,198', anima: '175,173,241', trama: '199,165,242', agora: '92,194,191', pliego: '127,136,242', pulso: '158,219,101', papel: '172,180,193', buzon: '240,122,110', hito: '108,195,90' };
+const cardRgb = { nodalix: '143,184,255', brujula: '95,217,161', vinilo: '185,168,255', vortia: '90,169,255', lienzo: '242,163,184', forja: '232,166,111', pluma: '255,154,87', letra: '108,182,236', celdas: '79,207,125', lamina: '238,125,157', torno: '227,182,90', toma: '234,111,198', anima: '175,173,241', trama: '199,165,242', agora: '92,194,191', pliego: '127,136,242', pulso: '158,219,101', papel: '172,180,193', luz: '255,178,61', buzon: '240,122,110', hito: '108,195,90' };
 
 const globe = svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/>');
 const langSelect = (base) => `<details class="lang"><summary aria-label="Idioma">${globe}<span>${locale.toUpperCase()}</span></summary><ul>${locales.map(({ code, name }) => `<li><a href="${safeUrl(base + localePath(code).slice(1))}" hreflang="${code}" lang="${code}" data-lang="${code}"${code === locale ? ' aria-current="true"' : ''}>${name}</a></li>`).join('')}</ul></details>`;
@@ -201,7 +203,7 @@ const nav = (active = '', base = brand.portal + '/') => `<header class="topbar">
 </div></header>`;
 // The footer lists every product by suite, so a growing catalogue widens the band instead of
 // lengthening one column. An app missing from these groups still shows, under "Más".
-const footerSuites = [['Sistema', ['nodalix', 'brujula']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel', 'hito']], ['Creatividad', ['lienzo', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso']], ['Ingeniería', ['torno', 'vortia', 'forja']], ['Más', ['vinilo', 'agora', 'buzon']]];
+const footerSuites = [['Sistema', ['nodalix', 'brujula']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel', 'hito']], ['Creatividad', ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso']], ['Ingeniería', ['torno', 'vortia', 'forja']], ['Más', ['vinilo', 'agora', 'buzon']]];
 const footerGroups = (() => {
   const grouped = new Set(footerSuites.flatMap(([, ids]) => ids));
   const link = (app) => [app.name, app.url];
@@ -269,14 +271,14 @@ const support = () => brand.coffee ? `<section class="section support" id="apoya
 const suiteList = [
   { id: 'sistema', label: 'Sistema', blurb: 'Un sistema operativo y un navegador pensados juntos.', ids: ['nodalix', 'brujula'] },
   { id: 'oficina', label: 'Oficina', blurb: 'Escribe, calcula, presenta, firma y organiza el trabajo del equipo.', ids: ['letra', 'celdas', 'lamina', 'papel', 'hito'] },
-  { id: 'creatividad', label: 'Creatividad', blurb: 'Imagen, vector, vídeo, animación, interfaces, maquetación y movimiento.', ids: ['lienzo', 'pluma', 'toma', 'anima', 'trama', 'pliego', 'pulso'] },
+  { id: 'creatividad', label: 'Creatividad', blurb: 'Imagen, vector, fotografía, vídeo, animación, interfaces, maquetación y movimiento.', ids: ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso'] },
   { id: 'ingenieria', label: 'Ingeniería', blurb: 'Modela piezas, dibuja planos y simula fluidos.', ids: ['torno', 'vortia', 'forja'] },
   { id: 'dia-a-dia', label: 'Comunicación y música', blurb: 'Escucha música, lee el correo y habla con tu equipo, en tu servidor.', ids: ['vinilo', 'buzon', 'agora'] },
 ];
 async function home() {
   const vinilo = byId.vinilo, lienzo = byId.lienzo, nodalix = byId.nodalix;
   const previewUrl = (app, i = 0) => safeUrl(app.previews[i][0]);
-  const headlines = {nodalix:'Tu ordenador. Con otra perspectiva.',brujula:'Tu rumbo en la web.',vortia:'Ingeniería de fluidos sin cajas negras.',vinilo:'Escucha como tú quieras.',lienzo:'Un espacio para crear.',forja:'Del primer trazo al plano.',pluma:'Cada curva, en su sitio.',letra:'Escribe sin distracciones.',celdas:'Tus números, en orden.',lamina:'Cuenta tu historia.',torno:'Cada pieza, paso a paso.',toma:'Cada corte, en su fotograma.',anima:'Cada dibujo, en movimiento.',trama:'Cada pantalla, bien tejida.',agora:'Tu equipo, en tu servidor.',pliego:'Cada página, en su retícula.',pulso:'Cada fotograma, con ritmo.',papel:'Cada página, en su sitio.',buzon:'Tu correo, en orden.',hito:'Cada tarea, hacia su hito.'};
+  const headlines = {nodalix:'Tu ordenador. Con otra perspectiva.',brujula:'Tu rumbo en la web.',vortia:'Ingeniería de fluidos sin cajas negras.',vinilo:'Escucha como tú quieras.',lienzo:'Un espacio para crear.',forja:'Del primer trazo al plano.',pluma:'Cada curva, en su sitio.',letra:'Escribe sin distracciones.',celdas:'Tus números, en orden.',lamina:'Cuenta tu historia.',torno:'Cada pieza, paso a paso.',toma:'Cada corte, en su fotograma.',anima:'Cada dibujo, en movimiento.',trama:'Cada pantalla, bien tejida.',agora:'Tu equipo, en tu servidor.',pliego:'Cada página, en su retícula.',pulso:'Cada fotograma, con ritmo.',luz:'Cada foto, con su luz.',papel:'Cada página, en su sitio.',buzon:'Tu correo, en orden.',hito:'Cada tarea, hacia su hito.'};
   const tile = (app) => {
     const status = `<span class="tag ${e(app.statusKind)}">${e(app.statusKind === 'active' ? 'En desarrollo' : 'Experimental')}</span>`;
     const shot = app.previews.length
@@ -306,7 +308,7 @@ async function home() {
   const facts = [[suiteList.reduce((n, suite) => n + suite.ids.length, 0), 'productos'], [5, 'idiomas'], [0, 'cookies ni rastreadores']];
   return shell({
     title: 'Nodalia — Nodalix OS, aplicaciones de escritorio y Home Assistant',
-    description: 'Nodalia crea Nodalix OS, Brújula, Vinilo, Vortia, Lienzo, Forja, Torno, Pluma, Toma, Ánima, Trama, Pliego, Pulso, Ágora, Letra, Celdas, Lámina, Papel, Buzón, Hito y Nodalia Cards: software independiente para Linux, el escritorio y Home Assistant, desarrollado en público por Daniel Miguel Tejedor.',
+    description: 'Nodalia crea Nodalix OS, Brújula, Vinilo, Vortia, Lienzo, Forja, Torno, Pluma, Luz, Toma, Ánima, Trama, Pliego, Pulso, Ágora, Letra, Celdas, Lámina, Papel, Buzón, Hito y Nodalia Cards: software independiente para Linux, el escritorio y Home Assistant, desarrollado en público por Daniel Miguel Tejedor.',
     canonical: brand.portal + '/',
     preview: vinilo.previews[0][0],
     previewAlt: vinilo.previews[0][1],
@@ -335,7 +337,7 @@ async function home() {
       }).join('')}</ul>
     </div></div>
     <section class="catalogue" id="aplicaciones"><div class="container">
-      <div class="section-head"><div data-reveal><h2 data-reveal>Veinte ideas.<br/>Una forma de hacerlas.</h2></div><p data-reveal>Un sistema operativo y diecinueve aplicaciones, cada una con un problema concreto que resolver. Todas indican su estado real antes de que descargues nada.</p></div>
+      <div class="section-head"><div data-reveal><h2 data-reveal>Veintiuna ideas.<br/>Una forma de hacerlas.</h2></div><p data-reveal>Un sistema operativo y veinte aplicaciones, cada una con un problema concreto que resolver. Todas indican su estado real antes de que descargues nada.</p></div>
       ${suiteList.map(suiteBlock).join('')}
     </div></section>
     <section class="modes" id="modos"><div class="container">
@@ -362,7 +364,7 @@ async function home() {
       </div>
       <div class="more-grid">${eco.more.map(([name, repo, text]) => `<a class="more-card more-card--text" data-reveal href="${safeUrl(repoUrl(repo))}" target="_blank" rel="noopener noreferrer"><div><strong>${e(name)}</strong><span>${e(text)}</span></div>${icon.arrow}</a>`).join('')}</div>
     </div></section>
-    <section class="section soon" id="en-camino"><div class="container">
+    ${site.upcoming.apps.length ? `<section class="section soon" id="en-camino"><div class="container">
       <div class="section-head"><div data-reveal><h2>Más en camino.</h2></div><p data-reveal>${e(site.upcoming.intro)}</p></div>
       <ul class="soon-grid">${site.upcoming.apps.map(([name, key, what, repo]) => {
         // Con una versión publicada, la tarjeta lleva a la descarga y muestra la versión.
@@ -372,7 +374,7 @@ async function home() {
         return `<li data-reveal>${repo ? `<a class="soon-card${release ? ' soon-card--released' : ''}" href="${safeUrl(href)}" target="_blank" rel="noopener noreferrer">${inner}${release ? icon.down : icon.arrow}</a>` : `<div class="soon-card soon-card--plain">${inner}<em>Sin repositorio aún</em></div>`}</li>`;
       }).join('')}</ul>
       <p class="small-label" data-reveal>Cada icono es un personaje histórico ligado a lo que hace la aplicación.</p>
-    </div></section>
+    </div></section>` : ''}
     <section class="section studium" id="studium"><div class="container">
       <div class="section-head"><div data-reveal><h2>Studium.</h2></div><p data-reveal>${e(studium.intro)}</p></div>
       <div class="eco-card" data-reveal>
@@ -466,7 +468,7 @@ function appDownloadsSection(app) {
 }
 
 function product(app) {
-  const title = ({brujula:'Navega rápido, seguro y a tu manera.',vortia:'La simulación de fluidos, a tu alcance.',vinilo:'Disfruta de toda tu música.',lienzo:'Un lugar para crear sin límites.',nodalix:'Tu ordenador. Tu sistema.',forja:'Dibuja planos con precisión.',pluma:'Ilustra con precisión vectorial.',letra:'Tus documentos, en tu equipo.',celdas:'Calcula, analiza y presenta.',lamina:'Presenta tus ideas con claridad.',torno:'Modela piezas en 3D, paso a paso.',toma:'Monta tus vídeos con precisión.',anima:'Da vida a tus dibujos.',trama:'Diseña y prototipa interfaces.',agora:'Habla con tu equipo, en privado.',pliego:'Maqueta revistas y libros con precisión.',pulso:'Da movimiento a tus ideas.',papel:'Lee, firma y organiza tus PDF.',buzon:'Todo tu correo, en una sola app.',hito:'Lleva el trabajo de tu equipo hasta el final.'})[app.id] || app.headline;
+  const title = ({brujula:'Navega rápido, seguro y a tu manera.',vortia:'La simulación de fluidos, a tu alcance.',vinilo:'Disfruta de toda tu música.',lienzo:'Un lugar para crear sin límites.',nodalix:'Tu ordenador. Tu sistema.',forja:'Dibuja planos con precisión.',pluma:'Ilustra con precisión vectorial.',letra:'Tus documentos, en tu equipo.',celdas:'Calcula, analiza y presenta.',lamina:'Presenta tus ideas con claridad.',torno:'Modela piezas en 3D, paso a paso.',toma:'Monta tus vídeos con precisión.',anima:'Da vida a tus dibujos.',trama:'Diseña y prototipa interfaces.',agora:'Habla con tu equipo, en privado.',pliego:'Maqueta revistas y libros con precisión.',pulso:'Da movimiento a tus ideas.',papel:'Lee, firma y organiza tus PDF.',luz:'Revela tus fotos sin tocar el original.',buzon:'Todo tu correo, en una sola app.',hito:'Lleva el trabajo de tu equipo hasta el final.'})[app.id] || app.headline;
   const hasDownloads = app.id === 'vortia' || app.id === 'nodalix' || Boolean(app.downloads);
   const figure = app.previews.length
     ? `<figure><img src="${safeUrl(app.previews[0][0])}" alt="${e(app.previews[0][1])}" loading="eager" fetchpriority="high" decoding="async"/><figcaption>${e(app.previews[0][1])} · Captura publicada por el proyecto</figcaption></figure>`
@@ -491,6 +493,7 @@ function product(app) {
     lamina: () => `<div class="sig-present" data-reveal="right"><div class="product-preview">${figure}</div>${present}</div>`,
     pulso: () => `<div class="sig-ease" data-reveal="right"><div class="product-preview">${figure}</div>${easeCurve}</div>`,
     hito: () => `<div class="sig-milestone" data-reveal="right"><div class="product-preview">${figure}</div>${milestone}</div>`,
+    luz: () => `<div class="sig-histo" data-reveal="right"><div class="product-preview">${figure}</div>${histogram}</div>`,
     papel: () => `<div class="sig-signed" data-reveal="right"><div class="product-preview">${figure}</div>${signed}</div>`,
   })[app.id]?.() ?? `<div class="product-preview" data-reveal="right">${figure}</div>`;
   const primaryDownload = app.id === 'vortia'

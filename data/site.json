@@ -152,6 +152,10 @@
       "buzon"
     ],
     [
+      "Luz",
+      "luz"
+    ],
+    [
       "Hito",
       "hito"
     ],
@@ -186,13 +190,6 @@
   },
   "upcoming": {
     "intro": "Además de lo publicado, Nodalia prepara una suite completa de aplicaciones de escritorio. Cada una mostrará aquí su versión y su descarga en cuanto se publique.",
-    "apps": [
-      [
-        "Luz",
-        "luz",
-        "Revelado RAW y biblioteca fotográfica",
-        "luz"
-      ]
-    ]
+    "apps": []
   }
 }
