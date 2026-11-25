@@ -203,7 +203,7 @@ const nav = (active = '', base = brand.portal + '/') => `<header class="topbar">
 </div></header>`;
 // The footer lists every product by suite, so a growing catalogue widens the band instead of
 // lengthening one column. An app missing from these groups still shows, under "Más".
-const footerSuites = [['Sistema', ['nodalix', 'brujula']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel', 'hito']], ['Creatividad', ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso']], ['Ingeniería', ['torno', 'vortia', 'forja']], ['Más', ['vinilo', 'agora', 'buzon']]];
+const footerSuites = [['Sistema', ['nodalix', 'brujula', 'launcher']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel', 'hito']], ['Creatividad', ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso']], ['Ingeniería', ['torno', 'vortia', 'forja']], ['Más', ['vinilo', 'agora', 'buzon']]];
 const footerGroups = (() => {
   const grouped = new Set(footerSuites.flatMap(([, ids]) => ids));
   const link = (app) => [app.name, app.url];
@@ -340,6 +340,7 @@ async function home() {
       <div class="section-head"><div data-reveal><h2 data-reveal>Veintiuna ideas.<br/>Una forma de hacerlas.</h2></div><p data-reveal>Un sistema operativo y veinte aplicaciones, cada una con un problema concreto que resolver. Todas indican su estado real antes de que descargues nada.</p></div>
       ${suiteList.map(suiteBlock).join('')}
     </div></section>
+    <section class="section launcher-band" id="launcher"><div class="container">${launcherOffer()}</div></section>
     <section class="modes" id="modos"><div class="container">
       <div class="section-head"><div data-reveal><h2>Claro u oscuro.<br/>Tú eliges.</h2></div><p data-reveal>Capturas reales de Lienzo, Toma y Torno en sus dos temas. Esta web hace lo mismo: sigue a tu sistema y puedes cambiarla con el botón de la cabecera.</p></div>
       ${modeApps.map((app, i) => `<input class="modes-radio" type="radio" name="mode-app" id="mode-${e(app.id)}"${i === 0 ? ' checked' : ''}/>`).join('')}
@@ -463,9 +464,38 @@ function appDownloadsSection(app) {
         <p>Los instaladores se descargan directamente de GitHub Releases.</p>
         ${A(releasesUrl(app.repoName), 'Ver todas las versiones ↗', 'text-link', true)}
       </div>
+      ${offersLauncher(app) ? launcherOffer(app) : ''}
     </div>
   </section>`;
 }
+
+
+// Nodalia Launcher, offered on every product page (and the home page) next to the app's own download:
+// it installs and updates every Nodalia app, so each page can send visitors to it for that app.
+// The block has its own OS-aware button, filled by app-download.js from the Launcher's latest release.
+const launcher = byId.launcher;
+const offersLauncher = (app) => Boolean(launcher) && app.id !== 'launcher' && app.id !== 'nodalix';
+const launcherOffer = (app = null) => {
+  const config = appDownloadConfig(launcher);
+  const choice = choose(config.release, config, 'linux', 'x86');
+  return `<aside class="launcher-offer" id="instalar-con-launcher" data-reveal aria-labelledby="launcher-offer-title">
+      ${iconImg(launcher, 'launcher-offer-icon', 64)}
+      <div class="launcher-offer-copy">
+        <span class="kicker">Otra forma de instalar</span>
+        <h3 id="launcher-offer-title">${app ? 'También con Nodalia Launcher' : 'Instala todas las apps con Nodalia Launcher'}</h3>
+        <p>Nodalia Launcher instala, actualiza y abre todas las aplicaciones de Nodalia desde una sola ventana. Elige el instalador de tu sistema y de tu procesador y comprueba su suma SHA-256.${app ? '' : ' Un solo instalador para toda la familia.'}</p>
+        ${app ? `<p class="launcher-offer-find">Después, busca <b translate="no">${e(app.name)}</b> en su lista.</p>` : ''}
+      </div>
+      <div class="launcher-offer-actions">
+        <a id="launcher-primary-download" class="btn btn-primary" href="${safeUrl(choice.href)}" rel="noopener noreferrer"><img id="launcher-primary-icon" class="vortia-platform-icon" src="${choice.icon || '/platform-linux.svg'}" alt="" width="20" height="20"${choice.icon ? '' : ' hidden'}/><span id="launcher-primary-title">${e(choice.title)}</span></a>
+        <p class="vortia-primary-detail app-download-detail"><span id="launcher-primary-detail" translate="no">${e(detail(choice, 'es'))}</span></p>
+        ${A(launcher.url, 'Conocer Nodalia Launcher ↗', 'text-link')}
+      </div>
+      <script type="application/json" id="launcher-download-config">${JSON.stringify(config).replaceAll('<', '\\u003c')}</script><script type="module" src="${appDownloadSrc}"></script>
+    </aside>`;
+};
+// The line under the hero's download button that leads to the offer further down the page.
+const launcherHint = (app) => offersLauncher(app) ? `<p class="launcher-hint">¿Prefieres instalar y actualizar todas las apps desde un solo sitio? <a class="text-link" href="#instalar-con-launcher">Usa Nodalia Launcher</a></p>` : '';
 
 function product(app) {
   const title = ({brujula:'Navega rápido, seguro y a tu manera.',vortia:'La simulación de fluidos, a tu alcance.',vinilo:'Disfruta de toda tu música.',lienzo:'Un lugar para crear sin límites.',nodalix:'Tu ordenador. Tu sistema.',forja:'Dibuja planos con precisión.',pluma:'Ilustra con precisión vectorial.',letra:'Tus documentos, en tu equipo.',celdas:'Calcula, analiza y presenta.',lamina:'Presenta tus ideas con claridad.',torno:'Modela piezas en 3D, paso a paso.',toma:'Monta tus vídeos con precisión.',anima:'Da vida a tus dibujos.',trama:'Diseña y prototipa interfaces.',agora:'Habla con tu equipo, en privado.',pliego:'Maqueta revistas y libros con precisión.',pulso:'Da movimiento a tus ideas.',papel:'Lee, firma y organiza tus PDF.',luz:'Revela tus fotos sin tocar el original.',buzon:'Todo tu correo, en una sola app.',hito:'Lleva el trabajo de tu equipo hasta el final.'})[app.id] || app.headline;
@@ -492,6 +522,7 @@ function product(app) {
     buzon: () => `<div class="sig-inbox" data-reveal="right"><div class="product-preview">${figure}</div>${inbox}</div>`,
     lamina: () => `<div class="sig-present" data-reveal="right"><div class="product-preview">${figure}</div>${present}</div>`,
     pulso: () => `<div class="sig-ease" data-reveal="right"><div class="product-preview">${figure}</div>${easeCurve}</div>`,
+    launcher: () => `<div class="sig-launcher" data-reveal="right"><div class="product-preview"><ul class="launcher-grid" aria-label="Las aplicaciones que gestiona Nodalia Launcher">${apps.filter((item) => item.id !== 'launcher' && item.id !== 'nodalix').map((item) => `<li><img src="${safeUrl(item.icon)}" alt="" width="64" height="64" loading="eager" decoding="async"/><span translate="no">${e(item.name)}</span></li>`).join('')}</ul></div></div>`,
     hito: () => `<div class="sig-milestone" data-reveal="right"><div class="product-preview">${figure}</div>${milestone}</div>`,
     luz: () => `<div class="sig-histo" data-reveal="right"><div class="product-preview">${figure}</div>${histogram}</div>`,
     papel: () => `<div class="sig-signed" data-reveal="right"><div class="product-preview">${figure}</div>${signed}</div>`,
@@ -523,7 +554,7 @@ function product(app) {
   const installBlock = app.install
     ? `<section class="section install-section" id="instalacion"><div class="container"><h2 data-reveal>${e(app.install.title)}</h2><p class="iso-intro" data-reveal>${e(app.install.intro)}</p><pre class="code" data-reveal tabindex="0"><code>${app.install.commands.map((line) => e(line)).join('\n')}</code></pre><p class="small-label">Guía completa, actualización y otras distribuciones en ${A(app.repo + '#installation', 'el repositorio', 'text-link', true)}.</p></div></section>`
     : '';
-  const others = ordered.filter((item) => item.id !== app.id);
+  const others = [...ordered, ...(launcher ? [launcher] : [])].filter((item) => item.id !== app.id);
   return shell({
     title: `${app.name} — ${app.eyebrow} | Nodalia`,
     description: app.description,
@@ -539,7 +570,7 @@ function product(app) {
       <div class="product-heading">${iconImg(app, 'product-icon', 60)}<div><strong>${e(app.name)}</strong><span class="status-text">${e(app.status)}</span></div></div>
       <span class="eyebrow">${e(app.eyebrow)}</span><h1>${e(title)}</h1><p class="lede">${e(app.description)}</p>
       <div class="actions">${hasDownloads && app.id !== 'nodalix' ? `<div class="download-stack">${primaryDownload}<a href="#descargas" class="btn btn-secondary btn-all-versions">Ver todas las versiones <span class="btn-icon" aria-hidden="true">↓</span></a></div>` : primaryDownload}${learnAction(app, hasDownloads && app.id !== 'nodalix')}</div>
-      ${primaryHint}<div class="product-meta"><span class="pill">${e(app.platforms)}</span><span class="pill">${e(app.technology)}</span></div></div>
+      ${primaryHint}${launcherHint(app)}<div class="product-meta"><span class="pill">${e(app.platforms)}</span><span class="pill">${e(app.technology)}</span></div></div>
       <div class="product-hero-stage" data-parallax style="--depth:-46px">${stage}</div></div></section>
       ${scrollStory(app.id, apps, { e, safeUrl })}
       ${tutorialBlock(app)}
@@ -613,6 +644,7 @@ function vortiaDownloads() {
         <p>Los instaladores se descargan directamente de GitHub Releases. En macOS el navegador no siempre permite identificar si el procesador es Intel o Apple Silicon.</p>
         <a class="text-link" href="https://github.com/getnodalia/vortia/releases" target="_blank" rel="noopener noreferrer">Ver todas las versiones ↗</a>
       </div>
+      ${launcherOffer(byId.vortia)}
     </div>
   </section>
   ${release ? `<script type="application/json" id="vortia-release-config">${JSON.stringify(release).replaceAll('<', '\\u003c')}</script>` : ''}
@@ -657,7 +689,7 @@ const sitemap = () => `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="ht
 async function build(site) {
   const app = apps.find((item) => item.id === site);
   const dir = site === 'portal' ? out : path.join(out, site);
-  const clientScripts = [...({ vortia: ['vortia-download.js'], nodalix: ['nodalix-releases.js'] }[site] || []), ...(app?.downloads ? ['app-download.js'] : []), ...(app?.previews.length ? ['gallery.js'] : [])];
+  const clientScripts = [...({ vortia: ['vortia-download.js'], nodalix: ['nodalix-releases.js'] }[site] || []), ...(app?.downloads || site === 'vortia' || site === 'portal' ? ['app-download.js'] : []), ...(app?.previews.length ? ['gallery.js'] : [])];
   const keys = (await Promise.all(clientScripts.map((file) => readFile(path.join(root, 'assets', file), 'utf8')))).flatMap(clientKeys);
   const pages = [];
   for (const code of localeCodes) {

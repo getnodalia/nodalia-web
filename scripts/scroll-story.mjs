@@ -188,6 +188,15 @@ const stories = {
     ],
     next: 'funciones',
   },
+  launcher: {
+    title: 'De la lista a la app instalada.',
+    chapters: [
+      ['Elige', 'Todas las aplicaciones de Nodalia en una lista, con la versión que tienes de cada una.'],
+      ['Instala', 'Descarga el instalador de tu sistema y de tu procesador, comprueba su suma SHA-256 y lo instala donde corresponde.'],
+      ['Mantén al día', 'Te avisa de cada versión nueva y puede instalarla por ti.'],
+    ],
+    next: 'funciones',
+  },
   nodalix: {
     title: 'Del escritorio a los ajustes.',
     chapters: [
@@ -245,6 +254,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     pulso: () => `<div class="story-artboard">${screenshot(0, 'story-pulso-dark')}${screenshot(2, 'story-pulso-home')}${screenshot(1, 'story-pulso-light')}</div>`,
     luz: () => `<div class="story-artboard">${screenshot(0, 'story-luz-dark')}${screenshot(2, 'story-luz-home')}${screenshot(1, 'story-luz-light')}</div>`,
     papel: () => `<div class="story-artboard">${screenshot(0, 'story-papel-dark')}${screenshot(2, 'story-papel-home')}${screenshot(1, 'story-papel-light')}</div>`,
+    launcher: () => `<ul class="story-launcher">${apps.filter((item) => item.id !== 'launcher' && item.id !== 'nodalix').map((item) => `<li><img src="${safeUrl(item.icon)}" alt="" loading="lazy" decoding="async"/><span translate="no">${e(item.name)}</span></li>`).join('')}</ul>`,
     nodalix: () => `<div class="story-monitor">${screenshot(0, 'story-desktop')}${screenshot(1, 'story-settings')}
       <span class="story-system-cursor"></span>${screenshot(2, 'story-updates')}</div>`,
   };

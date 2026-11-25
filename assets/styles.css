@@ -1851,3 +1851,39 @@ h1,h2,h3{letter-spacing:-.03em}
 .story-artboard .story-screen:nth-child(2),.story-forja-home{opacity:clamp(0, calc(1 - var(--story-c) * 8), 1)}
 /* Long compound words (German above all) hyphenate instead of running past the column. */
 .product-hero h1,.hero h1,.hero-split h1,.story-heading h2,.section-head h2{overflow-wrap:break-word;hyphens:auto}
+
+/* Nodalia Launcher: the apps it installs, as their own icons. The same offer sits on every product page. */
+.sig-launcher .product-preview{align-items:stretch}
+.launcher-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px 10px;width:100%;margin:0;padding:22px 14px;list-style:none;align-content:center}
+.launcher-grid li{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0;text-align:center}
+.launcher-grid img{display:block;width:min(64px,100%);height:auto;aspect-ratio:1;border-radius:16px;box-shadow:0 12px 24px -16px rgb(var(--shade) / calc(.7 * var(--sh)))}
+.launcher-grid span{max-width:100%;overflow:hidden;font-size:12px;line-height:1.3;color:var(--text);text-overflow:ellipsis;white-space:nowrap}
+.scroll-story--launcher .story-stage{background:#101114}
+.story-launcher{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-content:center;gap:4cqw 2cqw;margin:0;padding:4cqw 6cqw;list-style:none}
+.story-launcher li{display:flex;flex-direction:column;align-items:center;gap:1.2cqw;min-width:0;font:500 clamp(8px,1.5cqw,13px)/1.2 var(--sans);color:#c7cbd6;text-align:center;opacity:calc(.16 + var(--story-a) * .84);translate:0 calc((1 - var(--story-a)) * 18%);filter:grayscale(calc(1 - var(--story-b)))}
+.story-launcher img{display:block;width:100%;max-width:8.5cqw;height:auto;aspect-ratio:1;border-radius:22%}
+.launcher-offer{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:28px;margin-top:44px;padding:28px 32px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.launcher-offer-icon{display:block;width:64px;height:64px;border-radius:16px}
+.launcher-offer-copy h3{margin:8px 0;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.03em}
+.launcher-offer-copy p{max-width:64ch;font-size:15px;line-height:1.65}
+.launcher-offer-copy .launcher-offer-find{margin-top:8px;color:var(--muted)}
+.launcher-offer-find b{font-weight:600;color:var(--ink)}
+.launcher-offer-actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.launcher-offer-actions .vortia-primary-detail{margin:0}
+.launcher-hint{margin-top:14px;max-width:540px;font-size:14px;line-height:1.6;color:var(--muted)}
+.launcher-band{padding:0 0 72px}
+.launcher-band .launcher-offer{margin-top:0}
+@media (max-width:900px){
+  .launcher-offer{grid-template-columns:auto minmax(0,1fr)}
+  .launcher-offer-actions{grid-column:1 / -1}
+}
+@media (max-width:600px){
+  .launcher-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 6px;padding:16px 6px}
+  .launcher-grid img{width:min(52px,100%);border-radius:13px}
+  .launcher-offer{grid-template-columns:1fr;gap:18px;padding:22px 20px}
+  .launcher-band{padding-bottom:48px}
+}
+/* The platform glyph is black: on the dark primary button of the light theme it needs to be white. */
+.btn-primary .vortia-platform-icon{filter:brightness(0) invert(1)}
+:root[data-theme=dark] .btn-primary .vortia-platform-icon{filter:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme]) .btn-primary .vortia-platform-icon{filter:none}}
