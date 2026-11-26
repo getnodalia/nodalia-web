@@ -193,7 +193,7 @@ const stories = {
     chapters: [
       ['Abre una carpeta', 'El explorador respeta .gitignore y muestra el estado de git; salta a cualquier archivo con la apertura rápida.'],
       ['Escribe con comodidad', 'Varios cursores, resaltado en 15 lenguajes y archivos de un millón de líneas que se desplazan sin esfuerzo.'],
-      ['Corrige al momento', 'Con un servidor de lenguaje instalado, los errores se subrayan mientras escribes y se cuentan en la barra de estado.'],
+      ['Corrige al momento', 'Con un servidor de lenguaje instalado, los errores se subrayan mientras escribes; la calidad y la seguridad se analizan en local y un clic te lleva al sitio exacto.'],
     ],
     next: 'funciones',
   },
