@@ -2933,7 +2933,7 @@
     "technology": "Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "circuito",
-    "icon": "/screens/circuito/circuito-icon-2.png",
+    "icon": "/screens/circuito/circuito-icon-3.png",
     "previews": [],
     "features": [
       [
@@ -2990,7 +2990,7 @@
     ],
     "limitation": "Circuito todavía no ha publicado ninguna versión. Cuando lo haga, esta página y Nodalia Launcher ofrecerán su descarga.",
     "cta": "Descargar Circuito",
-    "accent": "brass",
+    "accent": "terracotta",
     "downloads": {
       "linux": "^circuito-[0-9].*-linux-x86_64\\.AppImage$",
       "mac": "^circuito-[0-9].*-macos-universal\\.dmg$",
