@@ -1756,7 +1756,6 @@
  "Escenas .tscn": "Cenas .tscn",
  "Recursos .tres y .res": "Recursos .tres e .res",
  "Extensiones GDExtension": "Extensões GDExtension",
- "El icono de Orbe será un retrato de Johannes Kepler, que describió el movimiento de los cuerpos en órbita.": "O ícone do Orbe será um retrato de Johannes Kepler, que descreveu o movimento dos corpos em órbita.",
  "Descarga Orbe.": "Descarregue o Orbe.",
  "En esta página, cuando Orbe publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión.": "Nesta página, quando o Orbe publicar a sua primeira versão: o botão principal oferecerá o pacote para o seu sistema a partir da última versão publicada no GitHub. Também poderá instalá-lo pelo Nodalia Launcher, que o adiciona à lista assim que existir uma versão.",
  "¿Qué hay hoy?": "O que existe hoje?",
@@ -1825,5 +1824,16 @@
  "Una app recién creada con «Nueva app Nodalia», abierta en Código con su explorador y el código que usa el tema de Nodalia (abrir imagen completa)": "Uma app acabada de criar com «Nova app Nodalia», aberta no Código com o seu explorador e o código que usa o tema da Nodalia (abrir imagem completa)",
  "Zip portátil para Windows de 64 bits con arquitectura x64: descomprímelo y ejecuta codigo.exe.": "Zip portátil para Windows de 64 bits (x64): descomprima-o e execute o codigo.exe.",
  "«Nueva app Nodalia» crea una app Rust con el diseño de Nodalia, su ventana Acerca de, español e inglés y la CI de las demás apps. En proyectos Nodalia, el análisis revisa además colores escritos en el código, textos sin traducir y cabeceras de licencia.": "«Nova app Nodalia» cria uma app Rust com o design da Nodalia, a sua janela Acerca de, espanhol e inglês e a CI das restantes apps. Em projetos Nodalia, a análise verifica ainda cores escritas no código, textos por traduzir e cabeçalhos de licença.",
- "¿Mi código sale de mi ordenador?": "O meu código sai do meu computador?"
+ "¿Mi código sale de mi ordenador?": "O meu código sai do meu computador?",
+ "El editor de Orbe en tema oscuro, con una escena 3D abierta, el árbol de nodos a la izquierda y el inspector a la derecha": "O editor do Orbe no tema escuro, com uma cena 3D aberta, a árvore de nós à esquerda e o inspetor à direita",
+ "El editor de Orbe en tema oscuro, con una escena 3D abierta, el árbol de nodos a la izquierda y el inspector a la derecha (abrir imagen completa)": "O editor do Orbe no tema escuro, com uma cena 3D aberta, a árvore de nós à esquerda e o inspetor à direita (abrir imagem completa)",
+ "El editor de Orbe en tema oscuro, con una escena 3D abierta, el árbol de nodos a la izquierda y el inspector a la derecha · Captura publicada por el proyecto": "O editor do Orbe no tema escuro, com uma cena 3D aberta, a árvore de nós à esquerda e o inspetor à direita · Captura publicada pelo projeto",
+ "El mismo editor en tema claro, con la vista previa de la cámara de la escena": "O mesmo editor no tema claro, com a pré-visualização da câmara da cena",
+ "El mismo editor en tema claro, con la vista previa de la cámara de la escena (abrir imagen completa)": "O mesmo editor no tema claro, com a pré-visualização da câmara da cena (abrir imagem completa)",
+ "El mismo editor en tema claro, con la vista previa de la cámara de la escena · Captura publicada por el proyecto": "O mesmo editor no tema claro, com a pré-visualização da câmara da cena · Captura publicada pelo projeto",
+ "Un valle con un lago al atardecer, dibujado por completo con ruido y dos shaders y mostrado por una cámara de Orbe": "Um vale com um lago ao entardecer, desenhado por completo com ruído e dois shaders e mostrado por uma câmara do Orbe",
+ "Un valle con un lago al atardecer, dibujado por completo con ruido y dos shaders y mostrado por una cámara de Orbe (abrir imagen completa)": "Um vale com um lago ao entardecer, desenhado por completo com ruído e dois shaders e mostrado por uma câmara do Orbe (abrir imagem completa)",
+ "Un valle con un lago al atardecer, dibujado por completo con ruido y dos shaders y mostrado por una cámara de Orbe · Captura publicada por el proyecto": "Um vale com um lago ao entardecer, desenhado por completo com ruído e dois shaders e mostrado por uma câmara do Orbe · Captura publicada pelo projeto",
+ "El icono de Orbe es un retrato de Johannes Kepler, que describió el movimiento de los cuerpos en órbita.": "O ícone do Orbe é um retrato de Johannes Kepler, que descreveu o movimento dos corpos em órbita.",
+ "Hay una primera versión del motor y del editor para Linux, macOS y Windows, con los temas claro y oscuro de Nodalia. Aún queda pulir el editor con el diseño de Nodalia: iconos, pestañas y algunos textos por traducir.": "Existe uma primeira versão do motor e do editor para Linux, macOS e Windows, com os temas claro e escuro da Nodalia. O editor ainda precisa de ser polido com o design da Nodalia: ícones, separadores e alguns textos por traduzir."
 }

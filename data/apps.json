@@ -2840,7 +2840,7 @@
     "id": "orbe",
     "name": "Orbe",
     "category": "Motor de juegos",
-    "status": "Primera versión en camino · fase temprana",
+    "status": "Primera versión · fase temprana",
     "statusKind": "early",
     "eyebrow": "Motor de juegos y editor",
     "headline": "Construye tu juego, nodo a nodo.",
@@ -2851,7 +2851,20 @@
     "license": "MIT",
     "repo": "orbe",
     "icon": "/screens/orbe/orbe-icon-2.png",
-    "previews": [],
+    "previews": [
+      [
+        "/screens/orbe/orbe-editor-dark.jpg",
+        "El editor de Orbe en tema oscuro, con una escena 3D abierta, el árbol de nodos a la izquierda y el inspector a la derecha"
+      ],
+      [
+        "/screens/orbe/orbe-editor-light.jpg",
+        "El mismo editor en tema claro, con la vista previa de la cámara de la escena"
+      ],
+      [
+        "/screens/orbe/orbe-scene.jpg",
+        "Un valle con un lago al atardecer, dibujado por completo con ruido y dos shaders y mostrado por una cámara de Orbe"
+      ]
+    ],
     "features": [
       [
         "Un editor de escenas",
@@ -2894,15 +2907,15 @@
         "C++ · SCons · Nodalia Design"
       ]
     ],
-    "credit": "El icono de Orbe será un retrato de Johannes Kepler, que describió el movimiento de los cuerpos en órbita.",
+    "credit": "El icono de Orbe es un retrato de Johannes Kepler, que describió el movimiento de los cuerpos en órbita.",
     "faq": [
       [
         "¿Dónde lo descargo?",
-        "En esta página, cuando Orbe publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión."
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub. También puedes instalarlo y mantenerlo al día desde Nodalia Launcher."
       ],
       [
         "¿Qué hay hoy?",
-        "El motor y el editor se compilan y funcionan en Linux, y el editor se abre en los temas claro y oscuro de Nodalia. Todavía faltan el icono propio, los controles de ventana y el menú de Nodalia, y los paquetes para macOS y Windows."
+        "Hay una primera versión del motor y del editor para Linux, macOS y Windows, con los temas claro y oscuro de Nodalia. Aún queda pulir el editor con el diseño de Nodalia: iconos, pestañas y algunos textos por traducir."
       ],
       [
         "¿Mis proyectos del motor de origen siguen funcionando?",
