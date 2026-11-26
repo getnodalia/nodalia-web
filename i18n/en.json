@@ -1506,12 +1506,10 @@
  "Contrastado con OpenFOAM": "Checked against OpenFOAM",
  "El motor se compara con OpenFOAM v1912 sobre las mismas mallas. Revisa siempre convergencia, balance de masa y dependencia de malla.": "The engine is compared with OpenFOAM v1912 on the same meshes. Always check convergence, mass balance and mesh dependence.",
  "Casos y mallas ajenos": "Other geometries and meshes",
- "Vista de archivos STL y de casos de Fluent (.cas.h5, .msh.h5), e importación de mallas .msh de Fluent, CGNS y Gmsh.": "A view of STL files and of Fluent cases (.cas.h5, .msh.h5), and import of Fluent, CGNS and Gmsh .msh meshes.",
  "AppImage y tar.gz (Linux x86_64) · DMG (macOS arm64)": "AppImage and tar.gz (Linux x86_64) · DMG (macOS arm64)",
  "Motor propio en Rust · sin OpenFOAM, MPI ni Gmsh": "Own engine in Rust · no OpenFOAM, MPI or Gmsh",
  "Linux x86_64 con glibc 2.35 o posterior · macOS con Apple Silicon": "Linux x86_64 with glibc 2.35 or later · macOS with Apple Silicon",
  "No. Vortia ya no incluye ni necesita OpenFOAM, MPI ni Gmsh: el motor de cálculo y el mallador 2D son propios. Todavía no calcula en paralelo.": "No. Vortia no longer includes or needs OpenFOAM, MPI or Gmsh: the calculation engine and the 2D mesher are our own. It does not calculate in parallel yet.",
- "Los resultados de los archivos .dat.h5 de Fluent todavía no se leen, no hay cálculo en paralelo y el visor de .cas.h5 está comprobado con un archivo hecho en este proyecto, no con uno real de Fluent.": "The results of Fluent .dat.h5 files are not read yet, there is no parallel calculation, and the .cas.h5 viewer is checked with a file made in this project, not with a real Fluent one.",
  "Deja de publicarse. La versión 0.11.0 es una sola aplicación en Rust para Linux y macOS, con la misma interfaz en las dos.": "It is no longer published. Version 0.11.0 is a single Rust application for Linux and macOS, with the same interface on both.",
  "Sí. El comando vortia hace, calcula e inspecciona casos sin la interfaz; vortia help lista sus órdenes.": "Yes. The vortia command makes, runs and inspects cases without the interface; vortia help lists its commands.",
  "¿Qué pasó con Vortia Native?": "What happened to Vortia Native?",
@@ -1825,5 +1823,11 @@
  "Una app recién creada con «Nueva app Nodalia», abierta en Código con su explorador y el código que usa el tema de Nodalia (abrir imagen completa)": "An app just created with “New Nodalia app”, open in Código with its explorer and the code that uses the Nodalia theme (open full image)",
  "Zip portátil para Windows de 64 bits con arquitectura x64: descomprímelo y ejecuta codigo.exe.": "Portable zip for 64-bit Windows (x64): unzip it and run codigo.exe.",
  "«Nueva app Nodalia» crea una app Rust con el diseño de Nodalia, su ventana Acerca de, español e inglés y la CI de las demás apps. En proyectos Nodalia, el análisis revisa además colores escritos en el código, textos sin traducir y cabeceras de licencia.": "“New Nodalia app” creates a Rust app in the Nodalia design with its About window, Spanish and English, and the CI the other apps use. In Nodalia projects the analysis also checks colours written in the code, untranslated text and licence headers.",
- "¿Mi código sale de mi ordenador?": "Does my code leave my computer?"
+ "¿Mi código sale de mi ordenador?": "Does my code leave my computer?",
+ "Alrededor de un cuerpo 3D": "Around a 3D body",
+ "Abre un STL, OBJ, STEP (también ensamblajes) o DXF, o modela la pieza en la aplicación: Vortia malla un túnel alrededor y calcula el flujo, laminar o turbulento. Es una primera etapa, todavía sin capas de prisma.": "Open an STL, OBJ, STEP (assemblies too) or DXF file, or model the part in the app: Vortia meshes a tunnel around it and computes the flow, laminar or turbulent. It is a first stage, still without prism layers.",
+ "Editor CAD propio": "A CAD editor of its own",
+ "Modela cajas, cilindros, conos, esferas, contornos extruidos o girados y alas NACA sobre el kernel sólido de Nodalia, con operaciones booleanas, redondeos y chaflanes; guarda la pieza y expórtala a STL o STEP.": "Model boxes, cylinders, cones, spheres, extruded or turned outlines and NACA wings on Nodalia's solid kernel, with boolean operations, rounds and chamfers; save the part and export it to STL or STEP.",
+ "Vista de casos de Fluent (.cas.h5, .msh.h5) e importación de mallas .msh de Fluent, CGNS y Gmsh.": "A view of Fluent cases (.cas.h5, .msh.h5) and import of Fluent, CGNS and Gmsh .msh meshes.",
+ "Los resultados de los archivos .dat.h5 de Fluent todavía no se leen, no hay cálculo en paralelo ni capas de prisma, no se importa IGES y el visor de .cas.h5 está comprobado con un archivo hecho en este proyecto, no con uno real de Fluent.": "The results of Fluent .dat.h5 files are not read yet, there is no parallel calculation or prism layers, IGES is not imported, and the .cas.h5 viewer is checked with a file made in this project, not with a real Fluent one."
 }
