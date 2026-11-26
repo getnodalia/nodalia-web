@@ -1537,6 +1537,10 @@
         "Gestor de fuentes con Mi biblioteca compartida entre documentos, importación y exportación de BibTeX, RIS, CSL-JSON y fuentes de Word, una docena de estilos de cita (APA, IEEE, Vancouver, Chicago, Harvard, ACM, ISO 690…) y bibliografía automática, pensado para TFG, tesis y artículos."
       ],
       [
+        "Documentos largos, listos para escribir",
+        "Archivo > Nuevo abre una tesis o TFG, un artículo científico (a una o dos columnas), un libro con márgenes en espejo e índice o un libro de texto escolar con cajas de objetivos, ejemplos y resumen. Los teoremas y las ecuaciones numeradas por capítulo admiten referencias cruzadas."
+      ],
+      [
         "Diseño de Nodalia",
         "Islas redondeadas, el color de Letra, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro que se elige en Preferencias."
       ],
