@@ -58,8 +58,16 @@
         "El motor se compara con OpenFOAM v1912 sobre las mismas mallas. Revisa siempre convergencia, balance de masa y dependencia de malla."
       ],
       [
+        "Alrededor de un cuerpo 3D",
+        "Abre un STL, OBJ, STEP (también ensamblajes) o DXF, o modela la pieza en la aplicación: Vortia malla un túnel alrededor y calcula el flujo, laminar o turbulento. Es una primera etapa, todavía sin capas de prisma."
+      ],
+      [
+        "Editor CAD propio",
+        "Modela cajas, cilindros, conos, esferas, contornos extruidos o girados y alas NACA sobre el kernel sólido de Nodalia, con operaciones booleanas, redondeos y chaflanes; guarda la pieza y expórtala a STL o STEP."
+      ],
+      [
         "Casos y mallas ajenos",
-        "Vista de archivos STL y de casos de Fluent (.cas.h5, .msh.h5), e importación de mallas .msh de Fluent, CGNS y Gmsh."
+        "Vista de casos de Fluent (.cas.h5, .msh.h5) e importación de mallas .msh de Fluent, CGNS y Gmsh."
       ]
     ],
     "flow": [
@@ -121,7 +129,7 @@
       ],
       [
         "¿Qué queda fuera?",
-        "Los resultados de los archivos .dat.h5 de Fluent todavía no se leen, no hay cálculo en paralelo y el visor de .cas.h5 está comprobado con un archivo hecho en este proyecto, no con uno real de Fluent."
+        "Los resultados de los archivos .dat.h5 de Fluent todavía no se leen, no hay cálculo en paralelo ni capas de prisma, no se importa IGES y el visor de .cas.h5 está comprobado con un archivo hecho en este proyecto, no con uno real de Fluent."
       ],
       [
         "¿Qué pasó con Vortia Native?",

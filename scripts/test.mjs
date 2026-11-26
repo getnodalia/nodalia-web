@@ -33,7 +33,7 @@ for (const id of SITES) {
   assert.match(page,/class="footer"/);
   const products = page.match(/<nav class="footer-products"[\s\S]*?<\/nav>/)?.[0] ?? '';
   for (const app of SITES.filter((site) => site !== 'portal')) assert.ok(products.includes(`href="https://getnodalia.com/${app}/"`), `${app} missing from the footer of ${id}`);
-  assert.equal((products.match(/class="footer-suite"/g) ?? []).length, 5, `footer of ${id} groups its products in five suites`);
+  assert.equal((products.match(/class="footer-suite"/g) ?? []).length, 6, `footer of ${id} groups its products in six suites`);
   assert.match(css,/@media\(max-width:600px\)/);
   assert.match(css,/prefers-reduced-motion/);
   assert.match(wordmark,/<svg[^>]+viewBox/);

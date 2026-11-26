@@ -57,7 +57,7 @@ channel variables (`--fg`, `--shade`, `--bg-rgb`) so they follow the theme.
 
 - 4px base. Common steps: 8, 12, 16, 24, 32, 48, 72, 104.
 - Container 1200px (`--max`), 32px side gutter (24px on phones). Sections breathe with 88–112px vertical padding.
-- The home page is an index of five families (System, Office, Creative, Engineering, Communication and music).
+- The home page is an index of six families (System, Office, Creative, Engineering, Enterprise, Everyday).
   Each family is a 6-column tile grid; tiles span 2 columns, and the 2-, 5- and 7-app families use wider tiles
   so no row is left orphaned.
 - Layout never scrolls horizontally at 390px; wide content (code, tab strips) scrolls inside its own container.
@@ -74,7 +74,7 @@ channel variables (`--fg`, `--shade`, `--bg-rgb`) so they follow the theme.
   with arrow. 46px high, 11px radius, hover shifts fill (no scale), visible 2px accent focus ring.
 - **Theme toggle** and **language picker** sit in the top bar; both are keyboard operable and labelled.
 - **Top bar.** Sticky, translucent window colour with a hairline; wordmark swaps between white and black variants.
-- **Suite index (home hero).** Five rows: family name, the apps' icons, arrow; anchors to the family section.
+- **Suite index (home hero).** Six rows: family name, the apps' icons, arrow; anchors to the family section.
 - **App tile.** Screenshot on top (with the status tag overlaid), app icon + name + category, one-line promise,
   short description, platforms and a "Conocer …" link. Accent colours the link only.
 - **Showcase.** Tabs per app over a dark stage with the real screenshot; auto-advances, pauses on interaction,

@@ -203,7 +203,7 @@ const nav = (active = '', base = brand.portal + '/') => `<header class="topbar">
 </div></header>`;
 // The footer lists every product by suite, so a growing catalogue widens the band instead of
 // lengthening one column. An app missing from these groups still shows, under "Más".
-const footerSuites = [['Sistema', ['nodalix', 'brujula', 'launcher']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel', 'hito']], ['Creatividad', ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'orbe']], ['Ingeniería', ['torno', 'vortia', 'forja', 'circuito', 'abaco']], ['Más', ['vinilo', 'agora', 'buzon', 'codigo']]];
+const footerSuites = [['Sistema', ['nodalix', 'brujula', 'launcher']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel']], ['Creatividad', ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'orbe']], ['Ingeniería', ['torno', 'vortia', 'forja', 'circuito', 'abaco', 'codigo']], ['Empresa', ['agora', 'hito']], ['Más', ['vinilo', 'buzon']]];
 const footerGroups = (() => {
   const grouped = new Set(footerSuites.flatMap(([, ids]) => ids));
   const link = (app) => [app.name, app.url];
@@ -270,10 +270,11 @@ const support = () => brand.coffee ? `<section class="section support" id="apoya
 // Familias de aplicaciones de la portada: cada una agrupa productos que comparten reglas y piezas de interfaz (NDL).
 const suiteList = [
   { id: 'sistema', label: 'Sistema', blurb: 'Un sistema operativo y un navegador pensados juntos.', ids: ['nodalix', 'brujula'] },
-  { id: 'oficina', label: 'Oficina', blurb: 'Escribe, calcula, presenta, firma y organiza el trabajo del equipo.', ids: ['letra', 'celdas', 'lamina', 'papel', 'hito'] },
+  { id: 'oficina', label: 'Oficina', blurb: 'Escribe, calcula, presenta y firma tus documentos.', ids: ['letra', 'celdas', 'lamina', 'papel'] },
   { id: 'creatividad', label: 'Creatividad', blurb: 'Imagen, vector, fotografía, vídeo, animación, interfaces, maquetación, movimiento y juegos.', ids: ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'orbe'] },
-  { id: 'ingenieria', label: 'Ingeniería', blurb: 'Modela piezas, dibuja planos, simula fluidos, diseña circuitos y calcula.', ids: ['torno', 'vortia', 'forja', 'circuito', 'abaco'] },
-  { id: 'dia-a-dia', label: 'Día a día', blurb: 'Escucha música, lee el correo, habla con tu equipo, en tu servidor, y escribe código.', ids: ['vinilo', 'buzon', 'agora', 'codigo'] },
+  { id: 'ingenieria', label: 'Ingeniería', blurb: 'Modela piezas, dibuja planos, simula fluidos, diseña circuitos, calcula y programa.', ids: ['torno', 'vortia', 'forja', 'circuito', 'abaco', 'codigo'] },
+  { id: 'empresa', label: 'Empresa', blurb: 'Habla con tu equipo y lleva el trabajo hasta el final, en tu propio servidor.', ids: ['agora', 'hito'] },
+  { id: 'dia-a-dia', label: 'Día a día', blurb: 'Escucha música y lee el correo.', ids: ['vinilo', 'buzon'] },
 ];
 async function home() {
   const vinilo = byId.vinilo, lienzo = byId.lienzo, nodalix = byId.nodalix;
