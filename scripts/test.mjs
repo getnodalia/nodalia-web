@@ -11,7 +11,7 @@ const sourceCss = await readFile(path.join(root, 'assets', 'styles.css'), 'utf8'
 const hash = createHash('sha256').update(sourceCss).digest('hex').slice(0, 12);
 const versionedCss = `styles.${hash}.css`;
 // One site: the portal at the root of dist/portal and each product in dist/portal/<id>/.
-const SITES = ['portal', 'brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito', 'torno', 'launcher', 'nodalix'];
+const SITES = ['portal', 'brujula', 'vortia', 'vinilo', 'lienzo', 'forja', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito', 'codigo', 'orbe', 'circuito', 'abaco', 'torno', 'launcher', 'nodalix'];
 const site = path.join(root, 'dist', 'portal');
 const dirOf = (id) => (id === 'portal' ? site : path.join(site, id));
 const baseOf = (id) => (id === 'portal' ? 'https://getnodalia.com' : `https://getnodalia.com/${id}`);
@@ -50,7 +50,7 @@ for (const id of SITES) {
 const portal=await readFile(path.join(root,'dist/portal/index.html'),'utf8');
 for(const name of ['Brújula','Vortia','Vinilo','Lienzo','Forja','Torno','Pluma','Letra','Nodalix OS'])assert.match(portal,new RegExp(name));
 // Products are linked by path, never by the old subdomains.
-for (const id of ['brujula','vortia','vinilo','lienzo','forja','pluma','luz','toma','anima','trama','pliego','pulso','agora','letra','celdas','lamina','papel','buzon','hito','torno','nodalix']) assert.ok(portal.includes(`href="https://getnodalia.com/${id}/"`), `Portal sin enlace a /${id}/`);
+for (const id of ['brujula','vortia','vinilo','lienzo','forja','pluma','luz','toma','anima','trama','pliego','pulso','agora','letra','celdas','lamina','papel','buzon','hito','codigo','orbe','circuito','abaco','torno','nodalix']) assert.ok(portal.includes(`href="https://getnodalia.com/${id}/"`), `Portal sin enlace a /${id}/`);
 assert.doesNotMatch(portal, /https:\/\/(?:vortia|vinilo|lienzo|nodalix)\.getnodalia\.com/);
 assert.match(portal,/hero-stage/);
 for (const id of ['ecosistema','autor','faq']) assert.ok(portal.includes(`id="${id}"`), `Portal sin sección ${id}`);
@@ -135,7 +135,7 @@ for (const id of SITES) {
     assert.ok(page.includes(`<link rel="canonical" href="${base}/${code}/"/>`), `${id}/${code} sin canonical propio`);
     for (const other of i18n.localeCodes) assert.ok(page.includes(`hreflang="${other}" href="${base}${i18n.localePath(other)}"`), `${id}/${code} sin alternate ${other}`);
     assert.ok(page.includes(`hreflang="x-default" href="${base}/"`));
-    assert.ok(!/href="https:\/\/getnodalia\.com(?:\/(?:vortia|vinilo|lienzo|forja|pluma|luz|toma|anima|trama|pliego|pulso|agora|letra|celdas|lamina|papel|buzon|hito|torno|launcher|nodalix))?\/(?:#[^"]*)?"/.test(page.split('<').filter((tag) => !tag.includes('hreflang')).join('<')), `${id}/${code} enlaza a la versión en español`);
+    assert.ok(!/href="https:\/\/getnodalia\.com(?:\/(?:vortia|vinilo|lienzo|forja|pluma|luz|toma|anima|trama|pliego|pulso|agora|letra|celdas|lamina|papel|buzon|hito|codigo|orbe|circuito|abaco|torno|launcher|nodalix))?\/(?:#[^"]*)?"/.test(page.split('<').filter((tag) => !tag.includes('hreflang')).join('<')), `${id}/${code} enlaza a la versión en español`);
     assert.notEqual(page.match(/<h1[^>]*>([^<]*)/)[1], spanish.match(/<h1[^>]*>([^<]*)/)[1], `${id}/${code} con titular sin traducir`);
     JSON.parse(page.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
   }
@@ -175,7 +175,7 @@ assert.equal(releasesModule.relativeDate('2026-01-01T00:00:00Z', Date.parse('202
 }
 assert.match(portal, /data-release="nodalix-os"/);
 const viniloHtml = await readFile(path.join(root, 'dist/portal/vinilo/index.html'), 'utf8');
-for (const id of ['vinilo', 'lienzo', 'forja', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'lamina', 'papel', 'buzon', 'hito', 'torno']) {
+for (const id of ['vinilo', 'lienzo', 'forja', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'lamina', 'papel', 'buzon', 'hito', 'codigo', 'orbe', 'circuito', 'abaco', 'torno']) {
   const html = await readFile(path.join(dirOf(id), 'index.html'), 'utf8');
   assert.match(html, /id="app-primary-download" class="btn btn-primary" href="https:\/\/github\.com\/getnodalia\//, `${id}: botón de descarga`);
   assert.match(html, /id="app-primary-icon"/);
@@ -253,7 +253,7 @@ assert.ok(portal.includes('data-release="pluma"'), 'Pluma no está en las últim
 const tomaHtml = await readFile(path.join(root, 'dist/portal/toma/index.html'), 'utf8');
 assert.match(tomaHtml, /<body class="accent-fuchsia">/);
 assert.ok(portal.includes('data-release="toma"'), 'Toma no está en las últimas versiones');
-for (const [id, accent] of [['anima', 'periwinkle'], ['trama', 'lilac'], ['pliego', 'indigo'], ['pulso', 'lime'], ['agora', 'teal'], ['hito', 'leaf']]) {
+for (const [id, accent] of [['anima', 'periwinkle'], ['trama', 'lilac'], ['pliego', 'indigo'], ['pulso', 'lime'], ['agora', 'teal'], ['hito', 'leaf'], ['codigo', 'jade'], ['orbe', 'saffron'], ['circuito', 'brass'], ['abaco', 'plum']]) {
   const html = await readFile(path.join(root, `dist/portal/${id}/index.html`), 'utf8');
   assert.match(html, new RegExp(`<body class="accent-${accent}">`));
   assert.ok(portal.includes(`data-release="${id}"`), `${id} no está en las últimas versiones`);
@@ -286,7 +286,7 @@ await import('./test-vortia-download.mjs');
 await import('./test-app-download.mjs');
 await import('./test-scroll-story.mjs');
 await import('./test-nodalix-releases.mjs');
-console.log('✓ Portal y veintiún productos en getnodalia.com/<app>/, redirecciones de los subdominios, CSS con hash anti-caché, cabeceras, módulos ES y descargas ISO/Vortia validados.');
+console.log('✓ Portal y veinticinco productos en getnodalia.com/<app>/, redirecciones de los subdominios, CSS con hash anti-caché, cabeceras, módulos ES y descargas ISO/Vortia validados.');
 
 // Visor de capturas: presente donde hay capturas, ausente donde no, y con sus textos traducidos.
 {

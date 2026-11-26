@@ -175,11 +175,11 @@ const faqBlock = (items) => `<section class="section faq-section" id="faq"><div 
 </div></section>`;
 const table = (head, rows) => `<div class="table-wrap" data-reveal><table class="table"><thead><tr>${head.map((h) => `<th scope="col">${e(h)}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell, i) => (i === 0 ? `<th scope="row">${e(cell)}</th>` : `<td>${e(cell)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div>`;
 const specCard = (app) => `<div class="spec-card" data-reveal="left"><div class="spec-card-head">${iconImg(app, 'spec-icon', 60)}<div><strong>${e(app.name)}</strong><span>${e(app.category)}</span></div></div><dl class="spec-list">${app.specs.map(([k, v]) => `<div><dt>${e(k)}</dt><dd>${e(v)}</dd></div>`).join('')}</dl></div>`;
-const order = ['nodalix', 'brujula', 'vinilo', 'vortia', 'lienzo', 'forja', 'torno', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito'];
+const order = ['nodalix', 'brujula', 'vinilo', 'vortia', 'lienzo', 'forja', 'torno', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'agora', 'letra', 'celdas', 'lamina', 'papel', 'buzon', 'hito', 'codigo', 'orbe', 'circuito', 'abaco'];
 const byId = Object.fromEntries(apps.map((app) => [app.id, app]));
 const ordered = order.map((id) => byId[id]);
 // The tint each product uses on the portal (tabs, stacked cards), the same values as .product-card--<id>.
-const cardRgb = { nodalix: '143,184,255', brujula: '95,217,161', vinilo: '185,168,255', vortia: '90,169,255', lienzo: '242,163,184', forja: '232,166,111', pluma: '255,154,87', letra: '108,182,236', celdas: '79,207,125', lamina: '238,125,157', torno: '227,182,90', toma: '234,111,198', anima: '175,173,241', trama: '199,165,242', agora: '92,194,191', pliego: '127,136,242', pulso: '158,219,101', papel: '172,180,193', luz: '255,178,61', buzon: '240,122,110', hito: '108,195,90' };
+const cardRgb = { nodalix: '143,184,255', brujula: '95,217,161', vinilo: '185,168,255', vortia: '90,169,255', lienzo: '242,163,184', forja: '232,166,111', pluma: '255,154,87', letra: '108,182,236', celdas: '79,207,125', lamina: '238,125,157', torno: '227,182,90', toma: '234,111,198', anima: '175,173,241', trama: '199,165,242', agora: '92,194,191', pliego: '127,136,242', pulso: '158,219,101', papel: '172,180,193', luz: '255,178,61', buzon: '240,122,110', hito: '108,195,90', codigo: '43,202,169', orbe: '229,170,36', circuito: '222,173,35', abaco: '233,157,192' };
 
 const globe = svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/>');
 const langSelect = (base) => `<details class="lang"><summary aria-label="Idioma">${globe}<span>${locale.toUpperCase()}</span></summary><ul>${locales.map(({ code, name }) => `<li><a href="${safeUrl(base + localePath(code).slice(1))}" hreflang="${code}" lang="${code}" data-lang="${code}"${code === locale ? ' aria-current="true"' : ''}>${name}</a></li>`).join('')}</ul></details>`;
@@ -203,7 +203,7 @@ const nav = (active = '', base = brand.portal + '/') => `<header class="topbar">
 </div></header>`;
 // The footer lists every product by suite, so a growing catalogue widens the band instead of
 // lengthening one column. An app missing from these groups still shows, under "Más".
-const footerSuites = [['Sistema', ['nodalix', 'brujula', 'launcher']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel', 'hito']], ['Creatividad', ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso']], ['Ingeniería', ['torno', 'vortia', 'forja']], ['Más', ['vinilo', 'agora', 'buzon']]];
+const footerSuites = [['Sistema', ['nodalix', 'brujula', 'launcher']], ['Oficina', ['letra', 'celdas', 'lamina', 'papel', 'hito']], ['Creatividad', ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'orbe']], ['Ingeniería', ['torno', 'vortia', 'forja', 'circuito', 'abaco']], ['Más', ['vinilo', 'agora', 'buzon', 'codigo']]];
 const footerGroups = (() => {
   const grouped = new Set(footerSuites.flatMap(([, ids]) => ids));
   const link = (app) => [app.name, app.url];
@@ -271,14 +271,14 @@ const support = () => brand.coffee ? `<section class="section support" id="apoya
 const suiteList = [
   { id: 'sistema', label: 'Sistema', blurb: 'Un sistema operativo y un navegador pensados juntos.', ids: ['nodalix', 'brujula'] },
   { id: 'oficina', label: 'Oficina', blurb: 'Escribe, calcula, presenta, firma y organiza el trabajo del equipo.', ids: ['letra', 'celdas', 'lamina', 'papel', 'hito'] },
-  { id: 'creatividad', label: 'Creatividad', blurb: 'Imagen, vector, fotografía, vídeo, animación, interfaces, maquetación y movimiento.', ids: ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso'] },
-  { id: 'ingenieria', label: 'Ingeniería', blurb: 'Modela piezas, dibuja planos y simula fluidos.', ids: ['torno', 'vortia', 'forja'] },
-  { id: 'dia-a-dia', label: 'Comunicación y música', blurb: 'Escucha música, lee el correo y habla con tu equipo, en tu servidor.', ids: ['vinilo', 'buzon', 'agora'] },
+  { id: 'creatividad', label: 'Creatividad', blurb: 'Imagen, vector, fotografía, vídeo, animación, interfaces, maquetación, movimiento y juegos.', ids: ['lienzo', 'pluma', 'luz', 'toma', 'anima', 'trama', 'pliego', 'pulso', 'orbe'] },
+  { id: 'ingenieria', label: 'Ingeniería', blurb: 'Modela piezas, dibuja planos, simula fluidos, diseña circuitos y calcula.', ids: ['torno', 'vortia', 'forja', 'circuito', 'abaco'] },
+  { id: 'dia-a-dia', label: 'Día a día', blurb: 'Escucha música, lee el correo, habla con tu equipo, en tu servidor, y escribe código.', ids: ['vinilo', 'buzon', 'agora', 'codigo'] },
 ];
 async function home() {
   const vinilo = byId.vinilo, lienzo = byId.lienzo, nodalix = byId.nodalix;
   const previewUrl = (app, i = 0) => safeUrl(app.previews[i][0]);
-  const headlines = {nodalix:'Tu ordenador. Con otra perspectiva.',brujula:'Tu rumbo en la web.',vortia:'Ingeniería de fluidos sin cajas negras.',vinilo:'Escucha como tú quieras.',lienzo:'Un espacio para crear.',forja:'Del primer trazo al plano.',pluma:'Cada curva, en su sitio.',letra:'Escribe sin distracciones.',celdas:'Tus números, en orden.',lamina:'Cuenta tu historia.',torno:'Cada pieza, paso a paso.',toma:'Cada corte, en su fotograma.',anima:'Cada dibujo, en movimiento.',trama:'Cada pantalla, bien tejida.',agora:'Tu equipo, en tu servidor.',pliego:'Cada página, en su retícula.',pulso:'Cada fotograma, con ritmo.',luz:'Cada foto, con su luz.',papel:'Cada página, en su sitio.',buzon:'Tu correo, en orden.',hito:'Cada tarea, hacia su hito.'};
+  const headlines = {nodalix:'Tu ordenador. Con otra perspectiva.',brujula:'Tu rumbo en la web.',vortia:'Ingeniería de fluidos sin cajas negras.',vinilo:'Escucha como tú quieras.',lienzo:'Un espacio para crear.',forja:'Del primer trazo al plano.',pluma:'Cada curva, en su sitio.',letra:'Escribe sin distracciones.',celdas:'Tus números, en orden.',lamina:'Cuenta tu historia.',torno:'Cada pieza, paso a paso.',toma:'Cada corte, en su fotograma.',anima:'Cada dibujo, en movimiento.',trama:'Cada pantalla, bien tejida.',agora:'Tu equipo, en tu servidor.',pliego:'Cada página, en su retícula.',pulso:'Cada fotograma, con ritmo.',luz:'Cada foto, con su luz.',papel:'Cada página, en su sitio.',buzon:'Tu correo, en orden.',hito:'Cada tarea, hacia su hito.',codigo:'Escribe código sin esperas.',orbe:'Construye tu juego, nodo a nodo.',circuito:'Cada circuito, a la vista.',abaco:'Los números de tu proyecto, en orden.'};
   const tile = (app) => {
     const status = `<span class="tag ${e(app.statusKind)}">${e(app.statusKind === 'active' ? 'En desarrollo' : 'Experimental')}</span>`;
     const shot = app.previews.length
@@ -304,6 +304,8 @@ async function home() {
     [icon.check, 'Sin promesas vacías.', 'El estado de cada proyecto y sus limitaciones se explican antes de descargarlo.'],
   ];
   const portraitApps = suiteList.flatMap((suite) => suite.ids.map((id) => byId[id]));
+  // Only apps with a published screenshot rotate in the hero; the rest still get their tile and page.
+  const showcased = ordered.filter((app) => app.previews.length);
   const modeApps = ['lienzo', 'toma', 'torno'].map((id) => byId[id]);
   const facts = [[suiteList.reduce((n, suite) => n + suite.ids.length, 0), 'productos'], [5, 'idiomas'], [0, 'cookies ni rastreadores']];
   return shell({
@@ -324,8 +326,8 @@ async function home() {
       ${suiteIndex}
     </div>
     <div class="container"><div class="hero-stage showcase" data-showcase aria-label="Capturas de las aplicaciones de Nodalia">
-      <div class="showcase-tabs" role="tablist" aria-label="Productos de Nodalia">${ordered.map((app, i) => `<button type="button" role="tab" class="showcase-tab" aria-selected="${i === 0}" data-slide="${i}" style="--tab-rgb:${e(cardRgb[app.id])}"><img src="${safeUrl(app.icon)}" alt="" width="24" height="24" decoding="async"/><span>${e(app.name)}</span><i class="showcase-progress" aria-hidden="true"></i></button>`).join('')}</div>
-      <div class="showcase-frame">${ordered.map((app, i) => `<figure class="shot${i === 0 ? ' shot-main is-active' : i === 1 ? ' shot-secondary' : ''}" data-slide="${i}"${i ? ' aria-hidden="true"' : ''}><img src="${previewUrl(app)}" alt="${e(app.previews[0][1])}" decoding="async" loading="${i ? 'lazy' : 'eager'}"${i ? '' : ' fetchpriority="high"'}/><figcaption><span>${e(app.name)}</span>${e(app.previews[0][1])}<a class="showcase-link" href="${safeUrl(app.url)}">Conocer ${e(app.name)} ${icon.arrow}</a></figcaption></figure>`).join('')}</div>
+      <div class="showcase-tabs" role="tablist" aria-label="Productos de Nodalia">${showcased.map((app, i) => `<button type="button" role="tab" class="showcase-tab" aria-selected="${i === 0}" data-slide="${i}" style="--tab-rgb:${e(cardRgb[app.id])}"><img src="${safeUrl(app.icon)}" alt="" width="24" height="24" decoding="async"/><span>${e(app.name)}</span><i class="showcase-progress" aria-hidden="true"></i></button>`).join('')}</div>
+      <div class="showcase-frame">${showcased.map((app, i) => `<figure class="shot${i === 0 ? ' shot-main is-active' : i === 1 ? ' shot-secondary' : ''}" data-slide="${i}"${i ? ' aria-hidden="true"' : ''}><img src="${previewUrl(app)}" alt="${e(app.previews[0][1])}" decoding="async" loading="${i ? 'lazy' : 'eager'}"${i ? '' : ' fetchpriority="high"'}/><figcaption><span>${e(app.name)}</span>${e(app.previews[0][1])}<a class="showcase-link" href="${safeUrl(app.url)}">Conocer ${e(app.name)} ${icon.arrow}</a></figcaption></figure>`).join('')}</div>
     </div></div></section>
     <div class="portraits" aria-hidden="true"><div class="portraits-track">${[0, 1].map((copy) => `<ul${copy ? ' class="dup"' : ''}>${portraitApps.map((app) => `<li><img src="${safeUrl(app.icon)}" alt="" width="104" height="104" loading="lazy" decoding="async"/></li>`).join('')}</ul>`).join('')}</div></div>
     <p class="portraits-note container">Cada icono es un personaje histórico ligado a lo que hace la aplicación.</p>
@@ -337,7 +339,7 @@ async function home() {
       }).join('')}</ul>
     </div></div>
     <section class="catalogue" id="aplicaciones"><div class="container">
-      <div class="section-head"><div data-reveal><h2 data-reveal>Veintiuna ideas.<br/>Una forma de hacerlas.</h2></div><p data-reveal>Un sistema operativo y veinte aplicaciones, cada una con un problema concreto que resolver. Todas indican su estado real antes de que descargues nada.</p></div>
+      <div class="section-head"><div data-reveal><h2 data-reveal>Veinticinco ideas.<br/>Una forma de hacerlas.</h2></div><p data-reveal>Un sistema operativo y veinticuatro aplicaciones, cada una con un problema concreto que resolver. Todas indican su estado real antes de que descargues nada.</p></div>
       ${suiteList.map(suiteBlock).join('')}
     </div></section>
     <section class="section launcher-band" id="launcher"><div class="container">${launcherOffer()}</div></section>
@@ -498,11 +500,11 @@ const launcherOffer = (app = null) => {
 const launcherHint = (app) => offersLauncher(app) ? `<p class="launcher-hint">¿Prefieres instalar y actualizar todas las apps desde un solo sitio? <a class="text-link" href="#instalar-con-launcher">Usa Nodalia Launcher</a></p>` : '';
 
 function product(app) {
-  const title = ({brujula:'Navega rápido, seguro y a tu manera.',vortia:'La simulación de fluidos, a tu alcance.',vinilo:'Disfruta de toda tu música.',lienzo:'Un lugar para crear sin límites.',nodalix:'Tu ordenador. Tu sistema.',forja:'Dibuja planos con precisión.',pluma:'Ilustra con precisión vectorial.',letra:'Tus documentos, en tu equipo.',celdas:'Calcula, analiza y presenta.',lamina:'Presenta tus ideas con claridad.',torno:'Modela piezas en 3D, paso a paso.',toma:'Monta tus vídeos con precisión.',anima:'Da vida a tus dibujos.',trama:'Diseña y prototipa interfaces.',agora:'Habla con tu equipo, en privado.',pliego:'Maqueta revistas y libros con precisión.',pulso:'Da movimiento a tus ideas.',papel:'Lee, firma y organiza tus PDF.',luz:'Revela tus fotos sin tocar el original.',buzon:'Todo tu correo, en una sola app.',hito:'Lleva el trabajo de tu equipo hasta el final.'})[app.id] || app.headline;
+  const title = ({brujula:'Navega rápido, seguro y a tu manera.',vortia:'La simulación de fluidos, a tu alcance.',vinilo:'Disfruta de toda tu música.',lienzo:'Un lugar para crear sin límites.',nodalix:'Tu ordenador. Tu sistema.',forja:'Dibuja planos con precisión.',pluma:'Ilustra con precisión vectorial.',letra:'Tus documentos, en tu equipo.',celdas:'Calcula, analiza y presenta.',lamina:'Presenta tus ideas con claridad.',torno:'Modela piezas en 3D, paso a paso.',toma:'Monta tus vídeos con precisión.',anima:'Da vida a tus dibujos.',trama:'Diseña y prototipa interfaces.',agora:'Habla con tu equipo, en privado.',pliego:'Maqueta revistas y libros con precisión.',pulso:'Da movimiento a tus ideas.',papel:'Lee, firma y organiza tus PDF.',luz:'Revela tus fotos sin tocar el original.',buzon:'Todo tu correo, en una sola app.',hito:'Lleva el trabajo de tu equipo hasta el final.',codigo:'Edita código con rapidez y sin ruido.',orbe:'Crea juegos 2D y 3D con tu propio motor.',circuito:'Diseña y simula circuitos electrónicos.',abaco:'Calcula los números de tu ingeniería.'})[app.id] || app.headline;
   const hasDownloads = app.id === 'vortia' || app.id === 'nodalix' || Boolean(app.downloads);
   const figure = app.previews.length
     ? `<figure><img src="${safeUrl(app.previews[0][0])}" alt="${e(app.previews[0][1])}" loading="eager" fetchpriority="high" decoding="async"/><figcaption>${e(app.previews[0][1])} · Captura publicada por el proyecto</figcaption></figure>`
-    : '';
+    : `<figure class="figure-icon">${iconImg(app, 'figure-icon-img', 168)}<figcaption>${e(app.name)} aún no tiene capturas: se publicarán con su primera versión.</figcaption></figure>`;
   const stage = ({
     vortia: () => `<div class="product-preview product-preview--sig" data-reveal="right">${signatureFlow()}</div>`,
     nodalix: () => `<div class="product-preview product-preview--sig" data-reveal="right">${signatureBoot(app)}</div>`,

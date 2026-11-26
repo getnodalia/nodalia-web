@@ -74,6 +74,10 @@ body{--accent-l:#086770;--accent-l-rgb:8,103,112;--accent-d:#2CC5D3;--accent-d-r
 .accent-leaf{--accent-l:#286A1C;--accent-l-rgb:40,106,28;--accent-d:#59CB44;--accent-d-rgb:89,203,68;--accent-fill-l:#348624;--accent-fill-d:#59CB44;--accent-subtle-l:#E2F6DE;--accent-subtle-d:#163C0F}
 .accent-gold{--accent-l:#6F5B13;--accent-l-rgb:111,91,19;--accent-d:#D2B137;--accent-d-rgb:210,177,55;--accent-fill-l:#8B7319;--accent-fill-d:#D2B137;--accent-subtle-l:#F7F1DB;--accent-subtle-d:#3E330B}
 .accent-blue{--accent-l:#06657F;--accent-l-rgb:6,101,127;--accent-d:#2AC2EF;--accent-d-rgb:42,194,239;--accent-fill-l:#0780A0;--accent-fill-d:#2AC2EF;--accent-subtle-l:#E6F3F8;--accent-subtle-d:#073948}
+.accent-jade{--accent-l:#076957;--accent-l-rgb:7,105,87;--accent-d:#2BCAA9;--accent-d-rgb:43,202,169;--accent-fill-l:#08856E;--accent-fill-d:#2BCAA9;--accent-subtle-l:#D8F7ED;--accent-subtle-d:#083B31}
+.accent-saffron{--accent-l:#795704;--accent-l-rgb:121,87,4;--accent-d:#E5AA24;--accent-d-rgb:229,170,36;--accent-fill-l:#996E04;--accent-fill-d:#E5AA24;--accent-subtle-l:#F8F0E1;--accent-subtle-d:#443106}
+.accent-brass{--accent-l:#755803;--accent-l-rgb:117,88,3;--accent-d:#DEAD23;--accent-d-rgb:222,173,35;--accent-fill-l:#947003;--accent-fill-d:#DEAD23;--accent-subtle-l:#F8F0DE;--accent-subtle-d:#423106}
+.accent-plum{--accent-l:#9B386D;--accent-l-rgb:155,56,109;--accent-d:#E99DC0;--accent-d-rgb:233,157,192;--accent-fill-l:#C2488A;--accent-fill-d:#E99DC0;--accent-subtle-l:#F6EFF2;--accent-subtle-d:#58203D}
 .accent-green{--accent-l:#076B3C;--accent-l-rgb:7,107,60;--accent-d:#2BCD7A;--accent-d-rgb:43,205,122;--accent-fill-l:#09874D;--accent-fill-d:#2BCD7A;--accent-subtle-l:#DCF7E4;--accent-subtle-d:#083C21}
 body{--accent:var(--accent-l);--accent-rgb:var(--accent-l-rgb);--accent-fill:var(--accent-fill-l);--accent-subtle:var(--accent-subtle-l)}
 :root[data-theme=dark] body,.dark-scope,.story-stage,.sig,.showcase,.product-preview,.lightbox{--accent:var(--accent-d);--accent-rgb:var(--accent-d-rgb);--accent-fill:var(--accent-fill-d);--accent-subtle:var(--accent-subtle-d)}
@@ -238,6 +242,10 @@ html:not(.js) .scroll-progress{display:none}
 .product-card--pliego{--card-rgb:127,136,242}
 .product-card--buzon{--card-rgb:240,122,110}
 .product-card--hito{--card-rgb:108,195,90}
+.product-card--codigo{--card-rgb:43,202,169}
+.product-card--orbe{--card-rgb:229,170,36}
+.product-card--circuito{--card-rgb:222,173,35}
+.product-card--abaco{--card-rgb:233,157,192}
 /* An odd product out spans the row, its screenshot beside the text instead of below it. */
 @media(min-width:861px){
   .product-grid>.product-card:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-rows:1fr auto;min-height:440px}
@@ -333,6 +341,10 @@ html:not(.js) .scroll-progress{display:none}
 .product-preview{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px;padding:14px;overflow:hidden;border:1px solid var(--line-2);border-radius:22px;background:var(--surface);box-shadow:0 50px 100px -40px rgb(var(--shade) / calc(.9 * var(--sh)))}
 .product-preview figure{width:100%}
 .product-preview figure img{width:100%;height:auto;max-height:520px;object-fit:contain;border:1px solid var(--line-2);border-radius:12px;background:var(--bg)}
+/* An app with no screenshots yet: its icon, large, on its own tint. */
+.product-preview .figure-icon{display:grid;justify-items:center;gap:18px;padding:56px 24px;border:1px solid var(--line-2);border-radius:12px;background:var(--accent-subtle,var(--bg-2));text-align:center}
+.product-preview .figure-icon img{width:168px;height:168px;max-height:none;border:0;border-radius:0;background:none}
+.product-preview .figure-icon figcaption{max-width:34ch;font-size:13px}
 .product-preview figcaption{padding:12px 6px 2px;font-size:12px;color:var(--soft)}
 .product-placeholder{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;width:100%;min-height:390px;padding:28px;text-align:center}
 .product-placeholder{overflow:hidden}
@@ -1646,7 +1658,7 @@ h1,h2,h3{letter-spacing:-.03em}
 .suite-head p{max-width:560px;font-size:16px}
 .tile-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
 .tile-grid>.app-tile{grid-column:span 2}
-.tile-grid--2>.app-tile,.tile-grid--5>.app-tile:nth-child(n+4),.tile-grid--7>.app-tile:nth-child(n+4){grid-column:span 3}
+.tile-grid--2>.app-tile,.tile-grid--4>.app-tile,.tile-grid--5>.app-tile:nth-child(n+4),.tile-grid--7>.app-tile:nth-child(n+4){grid-column:span 3}
 /* The wide tiles read sideways: screenshot on the left, text on the right. */
 .tile-grid--2>.app-tile,.tile-grid--5>.app-tile:nth-child(n+4),.tile-grid--7>.app-tile:nth-child(n+4){display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:1fr auto}
 .tile-grid--2>.app-tile .tile-shot,.tile-grid--5>.app-tile:nth-child(n+4) .tile-shot,.tile-grid--7>.app-tile:nth-child(n+4) .tile-shot{grid-row:1 / span 2;aspect-ratio:auto;min-height:300px;border-bottom:0;border-right:1px solid var(--line)}
@@ -1661,7 +1673,7 @@ h1,h2,h3{letter-spacing:-.03em}
 .tile-shot{aspect-ratio:16/10;overflow:hidden;background:var(--bg-2);border-bottom:1px solid var(--line)}
 .tile-shot img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .5s var(--ease)}
 .app-tile:hover .tile-shot img{transform:scale(1.03)}
-.tile-shot--icon{display:grid;place-items:center;background:var(--accent-subtle,var(--bg-2))}
+.tile-shot--icon{display:grid;place-items:center;background:rgb(var(--accent-rgb) / .12)}
 .tile-shot--icon img{width:96px;height:96px;object-fit:contain}
 .tile-body{display:flex;flex-direction:column;gap:10px;flex:1;padding:22px 24px 8px}
 .tile-id{display:flex;align-items:center;gap:12px}
@@ -1854,12 +1866,12 @@ h1,h2,h3{letter-spacing:-.03em}
 
 /* Nodalia Launcher: the apps it installs, as their own icons. The same offer sits on every product page. */
 .sig-launcher .product-preview{align-items:stretch}
-.launcher-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px 10px;width:100%;margin:0;padding:22px 14px;list-style:none;align-content:center}
+.launcher-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px 10px;width:100%;margin:0;padding:22px 14px;list-style:none;align-content:center}
 .launcher-grid li{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0;text-align:center}
 .launcher-grid img{display:block;width:min(64px,100%);height:auto;aspect-ratio:1;border-radius:16px;box-shadow:0 12px 24px -16px rgb(var(--shade) / calc(.7 * var(--sh)))}
 .launcher-grid span{max-width:100%;overflow:hidden;font-size:12px;line-height:1.3;color:var(--text);text-overflow:ellipsis;white-space:nowrap}
 .scroll-story--launcher .story-stage{background:#101114}
-.story-launcher{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-content:center;gap:4cqw 2cqw;margin:0;padding:4cqw 6cqw;list-style:none}
+.story-launcher{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-content:center;gap:4cqw 2cqw;margin:0;padding:4cqw 6cqw;list-style:none}
 .story-launcher li{display:flex;flex-direction:column;align-items:center;gap:1.2cqw;min-width:0;font:500 clamp(8px,1.5cqw,13px)/1.2 var(--sans);color:#c7cbd6;text-align:center;opacity:calc(.16 + var(--story-a) * .84);translate:0 calc((1 - var(--story-a)) * 18%);filter:grayscale(calc(1 - var(--story-b)))}
 .story-launcher img{display:block;width:100%;max-width:8.5cqw;height:auto;aspect-ratio:1;border-radius:22%}
 .launcher-offer{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:28px;margin-top:44px;padding:28px 32px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
@@ -1887,3 +1899,8 @@ h1,h2,h3{letter-spacing:-.03em}
 .btn-primary .vortia-platform-icon{filter:brightness(0) invert(1)}
 :root[data-theme=dark] .btn-primary .vortia-platform-icon{filter:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme]) .btn-primary .vortia-platform-icon{filter:none}}
+
+/* Scroll story for an app with no screenshots yet: the icon, centred. */
+.story-icon{position:absolute;inset:0;display:grid;place-items:center}
+.story-icon img{width:min(34cqw,260px);height:auto;aspect-ratio:1;border-radius:22%;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);opacity:calc(.35 + var(--story-a) * .65);scale:calc(.92 + var(--story-a) * .08)}
+.scroll-story--codigo .story-stage,.scroll-story--orbe .story-stage,.scroll-story--circuito .story-stage,.scroll-story--abaco .story-stage{background:#101114}

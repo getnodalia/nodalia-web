@@ -2701,6 +2701,361 @@
     ]
   },
   {
+    "id": "codigo",
+    "name": "Código",
+    "category": "Editor de código",
+    "status": "Primera versión en camino · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Editor de código nativo",
+    "headline": "Escribe código sin esperas.",
+    "tagline": "Un editor rápido y nativo para cualquier lenguaje, con servidores de lenguaje y el diseño de Nodalia.",
+    "description": "Un editor de código nativo, escrito en Rust y con el diseño de Nodalia: solo se dibujan las filas visibles, de modo que un archivo de un millón de líneas se abre y se desplaza sin esfuerzo. Varios cursores, resaltado de sintaxis, errores mientras escribes y proyectos con explorador, apertura rápida y búsqueda.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Rust · Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "codigo",
+    "icon": "/screens/codigo/codigo-icon.png",
+    "previews": [],
+    "features": [
+      [
+        "Pensado para la velocidad",
+        "Solo se dibujan las filas que se ven, así que un archivo de un millón de líneas (45 MB) se abre y se desplaza sin problemas. Varios cursores y selecciones, ajuste de línea y búsqueda con reemplazo."
+      ],
+      [
+        "Unicode que se comporta",
+        "El movimiento respeta los grafemas, los caracteres anchos se miden bien y al guardar se conservan la codificación y los finales de línea del archivo."
+      ],
+      [
+        "Resaltado en 15 lenguajes",
+        "Rust, Python, JavaScript, TypeScript, JSON, TOML, Markdown, Bash, C, C++, Go, Java, HTML, CSS y YAML con tree-sitter. El resto de archivos se abren como texto y puedes elegir el lenguaje a mano."
+      ],
+      [
+        "Errores mientras escribes",
+        "Con un servidor de lenguaje instalado (rust-analyzer, pyright, gopls, clangd…), Código subraya lo que informa y cuenta errores y avisos en la barra de estado. Nunca instala un servidor por ti."
+      ],
+      [
+        "Proyectos",
+        "Abre una carpeta para tener un explorador que respeta .gitignore y muestra el estado de git, apertura rápida por nombre, búsqueda en todo el proyecto y una paleta de comandos."
+      ],
+      [
+        "Nativo de verdad",
+        "Escrito en Rust con egui y el diseño de Nodalia, en español o en inglés. Sin Electron, sin Chromium y sin vista web."
+      ]
+    ],
+    "formats": [
+      "Rust",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "JSON",
+      "TOML",
+      "Markdown",
+      "Bash",
+      "C",
+      "C++",
+      "Go",
+      "Java",
+      "HTML",
+      "CSS",
+      "YAML"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Plataformas",
+        "Linux x86_64 · macOS (Universal) · Windows x64"
+      ],
+      [
+        "Tecnología",
+        "Rust · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Código es un retrato de Ada Lovelace, que escribió el primer programa pensado para una máquina.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página, cuando Código publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión."
+      ],
+      [
+        "¿Instala servidores de lenguaje?",
+        "No. Si ya tienes uno instalado, como rust-analyzer, pyright o gopls, Código lo usa para mostrar errores. La opción se puede desactivar en Preferencias. Pasar el puntero, completar y ir a la definición todavía no están."
+      ],
+      [
+        "¿Recuerda lo que tenía abierto?",
+        "Sí: las pestañas, la carpeta, la barra lateral y las carpetas recientes vuelven en el siguiente arranque."
+      ]
+    ],
+    "limitation": "Código está en una fase temprana: aún no hay completado, ir a la definición ni terminal integrada. Lo que funciona y lo que falta está en el repositorio.",
+    "cta": "Descargar Código",
+    "accent": "jade",
+    "downloads": {
+      "linux": "^codigo-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^codigo-[0-9].*-macos-universal\\.dmg$",
+      "windows": "^codigo-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    }
+  },
+  {
+    "id": "orbe",
+    "name": "Orbe",
+    "category": "Motor de juegos",
+    "status": "Primera versión en camino · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Motor de juegos y editor",
+    "headline": "Construye tu juego, nodo a nodo.",
+    "tagline": "Un motor de juegos 2D y 3D de código abierto, con un editor dibujado en el diseño de Nodalia.",
+    "description": "Un motor de juegos y su editor, de código abierto: escenas y nodos, un lenguaje de scripts, física, renderizado y exportación. El editor se dibuja con el diseño de Nodalia, en tema claro y oscuro, y los proyectos hechos para el motor del que parte su código siguen abriéndose.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "C++ · SCons · Nodalia Design",
+    "license": "MIT",
+    "repo": "orbe",
+    "icon": "/screens/orbe/orbe-icon.png",
+    "previews": [],
+    "features": [
+      [
+        "Un editor de escenas",
+        "Un árbol de nodos, un inspector, visores 2D y 3D, un editor de animación, un editor de scripts y un depurador."
+      ],
+      [
+        "Renderizado y física",
+        "Un renderizador moderno con Vulkan y otro de compatibilidad con OpenGL, un motor de física, audio, navegación y un lenguaje de scripts."
+      ],
+      [
+        "Tus proyectos siguen abriéndose",
+        "Orbe lee los mismos archivos de proyecto, escena y recurso del motor del que parte su código, de modo que lo que ya tienes sigue funcionando."
+      ],
+      [
+        "El diseño de Nodalia",
+        "El editor usa los temas claro y oscuro de Nodalia con el color propio de Orbe."
+      ],
+      [
+        "Código abierto",
+        "Licencia MIT. Los autores originales aparecen en los créditos y en la ventana Acerca de."
+      ]
+    ],
+    "formats": [
+      "Escenas .tscn",
+      "Recursos .tres y .res",
+      "Extensiones GDExtension",
+      "GDScript"
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT"
+      ],
+      [
+        "Plataformas",
+        "Linux x86_64 · macOS (Universal) · Windows x64"
+      ],
+      [
+        "Tecnología",
+        "C++ · SCons · Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Orbe será un retrato de Johannes Kepler, que describió el movimiento de los cuerpos en órbita.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página, cuando Orbe publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión."
+      ],
+      [
+        "¿Qué hay hoy?",
+        "El motor y el editor se compilan y funcionan en Linux, y el editor se abre en los temas claro y oscuro de Nodalia. Todavía faltan el icono propio, los controles de ventana y el menú de Nodalia, y los paquetes para macOS y Windows."
+      ],
+      [
+        "¿Mis proyectos del motor de origen siguen funcionando?",
+        "Sí, esa compatibilidad es deliberada: Orbe mantiene los nombres de archivos y formatos del motor del que parte para que los proyectos, los complementos y las extensiones existentes sigan abriéndose."
+      ]
+    ],
+    "limitation": "Orbe está en una fase temprana. Lo que funciona y lo que falta está en el repositorio, en NODALIA_MIGRATION.md.",
+    "cta": "Descargar Orbe",
+    "accent": "saffron",
+    "downloads": {
+      "linux": "^orbe-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^orbe-[0-9].*-macos-universal\\.dmg$",
+      "windows": "^orbe-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    }
+  },
+  {
+    "id": "circuito",
+    "name": "Circuito",
+    "category": "Electrónica",
+    "status": "Primera versión en camino · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Diseño y simulación de electrónica",
+    "headline": "Cada circuito, a la vista.",
+    "tagline": "Diseño y simulación de circuitos electrónicos, dentro de Nodalia Engineering.",
+    "description": "Una aplicación nativa para diseñar circuitos electrónicos y ver cómo se comportan, parte de Nodalia Engineering. Su repositorio acaba de crearse y la primera versión está en camino.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "circuito",
+    "icon": "/screens/circuito/circuito-icon.png",
+    "previews": [],
+    "features": [
+      [
+        "Parte de Nodalia Engineering",
+        "Comparte familia con Torno, Vortia y Forja: el mismo diseño, los mismos menús y los mismos iconos, para que lo que aprendes en una sirva en las demás."
+      ],
+      [
+        "Una aplicación nativa",
+        "Pensada como una aplicación de escritorio de verdad, con el diseño de Nodalia y sin vista web."
+      ],
+      [
+        "Se instala con Nodalia Launcher",
+        "En cuanto publique su primera versión aparecerá en la lista de Nodalia Launcher, que la instala y la mantiene al día."
+      ]
+    ],
+    "parts": [
+      [
+        "Familia",
+        "Nodalia Engineering, con Torno, Vortia y Forja"
+      ],
+      [
+        "Interfaz",
+        "El diseño de Nodalia (NDL)"
+      ],
+      [
+        "Estado",
+        "El repositorio acaba de crearse; la primera versión está en camino"
+      ]
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Estado",
+        "Primera versión en camino"
+      ],
+      [
+        "Tecnología",
+        "Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Circuito será un retrato de Gustav Kirchhoff, autor de las leyes que describen cómo circula la corriente por un circuito.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página, cuando Circuito publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión."
+      ],
+      [
+        "¿Qué puede hacer hoy?",
+        "Todavía nada que descargar: el repositorio acaba de crearse y la primera versión llega en una próxima publicación. Esta página irá describiendo lo que funcione cuando exista."
+      ]
+    ],
+    "limitation": "Circuito todavía no ha publicado ninguna versión. Cuando lo haga, esta página y Nodalia Launcher ofrecerán su descarga.",
+    "cta": "Descargar Circuito",
+    "accent": "brass",
+    "downloads": {
+      "linux": "^circuito-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^circuito-[0-9].*-macos-universal\\.dmg$",
+      "windows": "^circuito-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    }
+  },
+  {
+    "id": "abaco",
+    "name": "Ábaco",
+    "category": "Cálculo de ingeniería",
+    "status": "Primera versión en camino · fase temprana",
+    "statusKind": "early",
+    "eyebrow": "Cálculo de ingeniería",
+    "headline": "Los números de tu proyecto, en orden.",
+    "tagline": "Cálculo de ingeniería nativo y rápido, dentro de Nodalia Engineering.",
+    "description": "Una aplicación nativa para calcular los números detrás de un proyecto de ingeniería, parte de Nodalia Engineering. Su repositorio acaba de crearse y la primera versión está en camino.",
+    "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
+    "technology": "Nodalia Design",
+    "license": "MIT OR Apache-2.0",
+    "repo": "abaco",
+    "icon": "/screens/abaco/abaco-icon.png",
+    "previews": [],
+    "features": [
+      [
+        "Parte de Nodalia Engineering",
+        "Comparte familia con Torno, Vortia y Forja: el mismo diseño, los mismos menús y los mismos iconos, para que lo que aprendes en una sirva en las demás."
+      ],
+      [
+        "Una aplicación nativa",
+        "Pensada como una aplicación de escritorio de verdad, con el diseño de Nodalia y sin vista web."
+      ],
+      [
+        "Se instala con Nodalia Launcher",
+        "En cuanto publique su primera versión aparecerá en la lista de Nodalia Launcher, que la instala y la mantiene al día."
+      ]
+    ],
+    "parts": [
+      [
+        "Familia",
+        "Nodalia Engineering, con Torno, Vortia y Forja"
+      ],
+      [
+        "Interfaz",
+        "El diseño de Nodalia (NDL)"
+      ],
+      [
+        "Estado",
+        "El repositorio acaba de crearse; la primera versión está en camino"
+      ]
+    ],
+    "specs": [
+      [
+        "Licencia",
+        "MIT OR Apache-2.0"
+      ],
+      [
+        "Estado",
+        "Primera versión en camino"
+      ],
+      [
+        "Tecnología",
+        "Nodalia Design"
+      ]
+    ],
+    "credit": "El icono de Ábaco será un retrato de John Napier, que inventó los logaritmos para hacer más fáciles los cálculos largos.",
+    "faq": [
+      [
+        "¿Dónde lo descargo?",
+        "En esta página, cuando Ábaco publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión."
+      ],
+      [
+        "¿Qué puede hacer hoy?",
+        "Todavía nada que descargar: el repositorio acaba de crearse y la primera versión llega en una próxima publicación. Esta página irá describiendo lo que funcione cuando exista."
+      ]
+    ],
+    "limitation": "Ábaco todavía no ha publicado ninguna versión. Cuando lo haga, esta página y Nodalia Launcher ofrecerán su descarga.",
+    "cta": "Descargar Ábaco",
+    "accent": "plum",
+    "downloads": {
+      "linux": "^abaco-[0-9].*-linux-x86_64\\.AppImage$",
+      "mac": "^abaco-[0-9].*-macos-universal\\.dmg$",
+      "windows": "^abaco-[0-9].*-windows-x64\\.msi$"
+    },
+    "downloadDescriptions": {
+      "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
+      "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
+      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
+    }
+  },
+  {
     "id": "launcher",
     "name": "Nodalia Launcher",
     "category": "Instalador",
@@ -2781,7 +3136,7 @@
       ],
       [
         "¿Qué aplicaciones instala?",
-        "Las aplicaciones de Nodalia que publican instaladores para tu sistema: Letra, Celdas, Lámina, Papel, Buzón, Hito, Ágora, Lienzo, Pluma, Pliego, Luz, Toma, Pulso, Ánima, Trama, Forja, Torno, Vortia, Vinilo y Brújula."
+        "Las aplicaciones de Nodalia que publican instaladores para tu sistema: Letra, Celdas, Lámina, Papel, Buzón, Hito, Ágora, Lienzo, Pluma, Pliego, Luz, Toma, Pulso, Ánima, Trama, Forja, Torno, Vortia, Vinilo, Brújula, Código y Orbe, y Circuito y Ábaco en cuanto publiquen su primera versión."
       ],
       [
         "¿De dónde descarga?",
