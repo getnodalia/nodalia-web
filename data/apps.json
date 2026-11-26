@@ -1533,6 +1533,10 @@
         "Ortografía y gramática en varios idiomas, comentarios, control de cambios y comparación de documentos."
       ],
       [
+        "Fuentes y citas",
+        "Gestor de fuentes con Mi biblioteca compartida entre documentos, importación y exportación de BibTeX, RIS, CSL-JSON y fuentes de Word, una docena de estilos de cita (APA, IEEE, Vancouver, Chicago, Harvard, ACM, ISO 690…) y bibliografía automática, pensado para TFG, tesis y artículos."
+      ],
+      [
         "Diseño de Nodalia",
         "Islas redondeadas, el color de Letra, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro que se elige en Preferencias."
       ],
