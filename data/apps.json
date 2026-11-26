@@ -1628,6 +1628,14 @@
       [
         "/screens/celdas/celdas-home-light.jpg",
         "Inicio de Celdas: un libro en blanco, plantillas y libros recientes"
+      ],
+      [
+        "/screens/celdas/celdas-macros-vba-es.jpg",
+        "El editor de Visual Basic de Celdas con una macro grabada y el código de ThisWorkbook y de la hoja en el explorador"
+      ],
+      [
+        "/screens/celdas/celdas-macros-record-es.jpg",
+        "El diálogo Grabar macro, con la opción de grabar como Visual Basic"
       ]
     ],
     "features": [
@@ -1646,6 +1654,10 @@
       [
         "Impresión",
         "Vista de saltos de página, configuración de página, exportación a PDF e impresión."
+      ],
+      [
+        "Macros en Visual Basic",
+        "Un editor de VBA moderno con depurador, ayuda al escribir en tu idioma y el código de ThisWorkbook y de cada hoja. Graba una macro directamente como Visual Basic y ejecútala o edítala después."
       ],
       [
         "Diseño de Nodalia",
