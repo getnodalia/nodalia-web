@@ -16,6 +16,14 @@
     "icon": "resources/icons/vortia.png",
     "previews": [
       [
+        "docs/screenshots/body-wake-dark.webp",
+        "Flujo alrededor de una esfera en Vortia: velocidad en un corte, líneas de corriente y estela, con el visor 3D a pantalla completa"
+      ],
+      [
+        "docs/screenshots/body-wake-light.webp",
+        "La misma vista de Vortia en el tema claro"
+      ],
+      [
         "docs/screenshots/results-speed-dark.webp",
         "Campo de velocidad de un chorro en Vortia"
       ],
