@@ -2704,34 +2704,55 @@
     "id": "codigo",
     "name": "Código",
     "category": "Editor de código",
-    "status": "Primera versión en camino · fase temprana",
+    "status": "Primera versión · fase temprana",
     "statusKind": "early",
     "eyebrow": "Editor de código nativo",
     "headline": "Escribe código sin esperas.",
-    "tagline": "Un editor rápido y nativo para cualquier lenguaje, con servidores de lenguaje y el diseño de Nodalia.",
-    "description": "Un editor de código nativo, escrito en Rust y con el diseño de Nodalia: solo se dibujan las filas visibles, de modo que un archivo de un millón de líneas se abre y se desplaza sin esfuerzo. Varios cursores, resaltado de sintaxis, errores mientras escribes y proyectos con explorador, apertura rápida y búsqueda.",
+    "tagline": "Un editor rápido y nativo para cualquier lenguaje, con servidores de lenguaje, terminal, calidad de código integrada y el diseño de Nodalia.",
+    "description": "Un editor de código nativo, escrito en Rust y con el diseño de Nodalia: solo se dibujan las filas visibles, de modo que un archivo de un millón de líneas se abre y se desplaza sin esfuerzo. Varios cursores, resaltado de sintaxis, errores y autocompletado con tu servidor de lenguaje, terminal, consola de ejecución y un análisis de calidad y seguridad que no sale de tu ordenador.",
     "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "codigo",
     "icon": "/screens/codigo/codigo-icon-2.png",
-    "previews": [],
+    "previews": [
+      [
+        "/screens/codigo/codigo-quality.jpg",
+        "La pestaña Calidad de Código, con la puerta de calidad, los hallazgos ordenados de peor a mejor y el sitio exacto marcado en el editor"
+      ],
+      [
+        "/screens/codigo/codigo-terminal.jpg",
+        "La consola de ejecución bajo el editor mostrando el error de compilación de un proyecto de Rust, con la ruta archivo:línea:columna como enlace"
+      ],
+      [
+        "/screens/codigo/codigo-nodalia-app.jpg",
+        "Una app recién creada con «Nueva app Nodalia», abierta en Código con su explorador y el código que usa el tema de Nodalia"
+      ]
+    ],
     "features": [
       [
         "Pensado para la velocidad",
         "Solo se dibujan las filas que se ven, así que un archivo de un millón de líneas (45 MB) se abre y se desplaza sin problemas. Varios cursores y selecciones, ajuste de línea y búsqueda con reemplazo."
       ],
       [
-        "Unicode que se comporta",
-        "El movimiento respeta los grafemas, los caracteres anchos se miden bien y al guardar se conservan la codificación y los finales de línea del archivo."
+        "Calidad y seguridad integradas",
+        "Un análisis local, sin servidor y sin que nada salga de tu ordenador: secretos escritos en el código, patrones inseguros, atajos de Rust que pueden provocar un pánico, funciones demasiado largas y bloques copiados, con una puerta de calidad y un clic para abrir el sitio exacto."
+      ],
+      [
+        "Terminal y consola de ejecución",
+        "Un terminal real bajo el editor, con pestañas, y F5 para ejecutar el proyecto según lo que contiene la carpeta (cargo run, npm start, go run…). Las rutas archivo:línea:columna de la salida son enlaces."
+      ],
+      [
+        "Servidores de lenguaje",
+        "Con un servidor instalado (rust-analyzer, pyright, gopls, clangd…), Código subraya errores mientras escribes y ofrece información al pasar el cursor, autocompletado e ir a la definición. Nunca instala un servidor por ti."
+      ],
+      [
+        "Herramientas para apps Nodalia",
+        "«Nueva app Nodalia» crea una app Rust con el diseño de Nodalia, su ventana Acerca de, español e inglés y la CI de las demás apps. En proyectos Nodalia, el análisis revisa además colores escritos en el código, textos sin traducir y cabeceras de licencia."
       ],
       [
         "Resaltado en 15 lenguajes",
-        "Rust, Python, JavaScript, TypeScript, JSON, TOML, Markdown, Bash, C, C++, Go, Java, HTML, CSS y YAML con tree-sitter. El resto de archivos se abren como texto y puedes elegir el lenguaje a mano."
-      ],
-      [
-        "Errores mientras escribes",
-        "Con un servidor de lenguaje instalado (rust-analyzer, pyright, gopls, clangd…), Código subraya lo que informa y cuenta errores y avisos en la barra de estado. Nunca instala un servidor por ti."
+        "Rust, Python, JavaScript, TypeScript, JSON, TOML, Markdown, Bash, C, C++, Go, Java, HTML, CSS y YAML con tree-sitter, y un icono propio para cada tipo de archivo. El resto de archivos se abren como texto y puedes elegir el lenguaje a mano."
       ],
       [
         "Proyectos",
@@ -2769,6 +2790,10 @@
         "Linux x86_64 · macOS (Universal) · Windows x64"
       ],
       [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · zip portátil (Windows)"
+      ],
+      [
         "Tecnología",
         "Rust · Nodalia Design"
       ]
@@ -2777,30 +2802,35 @@
     "faq": [
       [
         "¿Dónde lo descargo?",
-        "En esta página, cuando Código publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión."
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub. También puedes instalarlo y mantenerlo al día desde Nodalia Launcher."
       ],
       [
         "¿Instala servidores de lenguaje?",
-        "No. Si ya tienes uno instalado, como rust-analyzer, pyright o gopls, Código lo usa para mostrar errores. La opción se puede desactivar en Preferencias. Pasar el puntero, completar y ir a la definición todavía no están."
+        "No. Si ya tienes uno instalado, como rust-analyzer, pyright o gopls, Código lo usa para mostrar errores, información al pasar el cursor, autocompletado e ir a la definición. La opción se puede desactivar en Preferencias."
+      ],
+      [
+        "¿Mi código sale de mi ordenador?",
+        "No. El análisis de calidad y seguridad se ejecuta en local, sin servidor y sin enviar nada."
       ],
       [
         "¿Recuerda lo que tenía abierto?",
         "Sí: las pestañas, la carpeta, la barra lateral y las carpetas recientes vuelven en el siguiente arranque."
       ]
     ],
-    "limitation": "Código está en una fase temprana: aún no hay completado, ir a la definición ni terminal integrada. Lo que funciona y lo que falta está en el repositorio.",
+    "limitation": "Código está en una fase temprana: aún no hay asistentes de IA, git dentro del editor ni depurador. Lo que funciona y lo que falta está en el repositorio.",
     "cta": "Descargar Código",
     "accent": "jade",
     "downloads": {
       "linux": "^codigo-[0-9].*-linux-x86_64\\.AppImage$",
       "mac": "^codigo-[0-9].*-macos-universal\\.dmg$",
-      "windows": "^codigo-[0-9].*-windows-x64\\.msi$"
+      "windows": "^codigo-[0-9].*-windows-x64-portable\\.zip$"
     },
     "downloadDescriptions": {
       "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
       "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
-      "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
-    }
+      "windows": "Zip portátil para Windows de 64 bits con arquitectura x64: descomprímelo y ejecuta codigo.exe."
+    },
+    "otherPackages": "Otros paquetes: .deb, .rpm, .tar.gz"
   },
   {
     "id": "orbe",

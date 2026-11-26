@@ -230,6 +230,7 @@ for (const [id, shots] of [
   ['agora', ['agora-dark.jpg', 'agora-light.jpg', 'agora-encryption-dark.jpg']],
   ['letra', ['letra-document-dark.jpg', 'letra-document-light.jpg', 'letra-preferences-dark.jpg']],
   ['celdas', ['celdas-dashboard-dark.jpg', 'celdas-dashboard-light.jpg', 'celdas-home-light.jpg']],
+  ['codigo', ['codigo-quality.jpg', 'codigo-terminal.jpg', 'codigo-nodalia-app.jpg']],
 ]) {
   const html = await readFile(path.join(root, 'dist/portal', id, 'index.html'), 'utf8');
   for (const shot of shots) {
