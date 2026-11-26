@@ -1680,6 +1680,8 @@
  "Construye tu juego, nodo a nodo.": "Build your game, node by node.",
  "Un motor de juegos y su editor, de código abierto: escenas y nodos, un lenguaje de scripts, física, renderizado y exportación. El editor se dibuja con el diseño de Nodalia, en tema claro y oscuro, y los proyectos hechos para el motor del que parte su código siguen abriéndose.": "An open-source game engine and its editor: scenes and nodes, a scripting language, physics, rendering and export. The editor is drawn with the Nodalia design, in light and dark themes, and projects made for the engine its code base began as keep opening.",
  "Conocer Orbe": "Discover Orbe",
+ "Modela piezas, dibuja planos, simula fluidos, diseña circuitos, calcula y programa.": "Model parts, draw plans, simulate fluids, design circuits, calculate and program.",
+ "Escucha música y lee el correo.": "Listen to music and read your mail.",
  "Modela piezas, dibuja planos, simula fluidos, diseña circuitos y calcula.": "Model parts, draw plans, simulate fluids, design circuits and calculate.",
  "Icono de Circuito": "Circuito icon",
  "Electrónica": "Electronics",
