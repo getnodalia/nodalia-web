@@ -1479,7 +1479,7 @@
     "cta": "Descargar Buzón",
     "accent": "scarlet",
     "downloads": {
-      "linux": "^Buzon-x86_64\\.AppImage$"
+      "linux": "^Buzon-(.+-)?x86_64\\.AppImage$"
     },
     "downloadDescriptions": {
       "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64 y GTK 4.20 o posterior."
