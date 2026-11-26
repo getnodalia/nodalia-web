@@ -2714,7 +2714,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "codigo",
-    "icon": "/screens/codigo/codigo-icon.png",
+    "icon": "/screens/codigo/codigo-icon-2.png",
     "previews": [
       [
         "/screens/codigo/codigo-quality.jpg",
@@ -2846,7 +2846,7 @@
     "technology": "C++ · SCons · Nodalia Design",
     "license": "MIT",
     "repo": "orbe",
-    "icon": "/screens/orbe/orbe-icon.png",
+    "icon": "/screens/orbe/orbe-icon-2.png",
     "previews": [],
     "features": [
       [
@@ -2933,7 +2933,7 @@
     "technology": "Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "circuito",
-    "icon": "/screens/circuito/circuito-icon.png",
+    "icon": "/screens/circuito/circuito-icon-3.png",
     "previews": [],
     "features": [
       [
@@ -2990,7 +2990,7 @@
     ],
     "limitation": "Circuito todavía no ha publicado ninguna versión. Cuando lo haga, esta página y Nodalia Launcher ofrecerán su descarga.",
     "cta": "Descargar Circuito",
-    "accent": "brass",
+    "accent": "terracotta",
     "downloads": {
       "linux": "^circuito-[0-9].*-linux-x86_64\\.AppImage$",
       "mac": "^circuito-[0-9].*-macos-universal\\.dmg$",
@@ -3016,7 +3016,7 @@
     "technology": "Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "abaco",
-    "icon": "/screens/abaco/abaco-icon.png",
+    "icon": "/screens/abaco/abaco-icon-2.png",
     "previews": [],
     "features": [
       [
