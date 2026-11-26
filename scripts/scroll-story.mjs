@@ -188,6 +188,42 @@ const stories = {
     ],
     next: 'funciones',
   },
+  codigo: {
+    title: 'De la carpeta al error corregido.',
+    chapters: [
+      ['Abre una carpeta', 'El explorador respeta .gitignore y muestra el estado de git; salta a cualquier archivo con la apertura rápida.'],
+      ['Escribe con comodidad', 'Varios cursores, resaltado en 15 lenguajes y archivos de un millón de líneas que se desplazan sin esfuerzo.'],
+      ['Corrige al momento', 'Con un servidor de lenguaje instalado, los errores se subrayan mientras escribes y se cuentan en la barra de estado.'],
+    ],
+    next: 'funciones',
+  },
+  orbe: {
+    title: 'De la escena al juego.',
+    chapters: [
+      ['Compón la escena', 'Un árbol de nodos, un inspector y visores 2D y 3D para colocar cada pieza.'],
+      ['Dale comportamiento', 'Escribe scripts, anima y depura con el editor de scripts, el de animación y el depurador.'],
+      ['Pruébalo', 'Un renderizador moderno, física, audio y navegación, con el editor en el diseño de Nodalia.'],
+    ],
+    next: 'funciones',
+  },
+  circuito: {
+    title: 'Una familia de herramientas de ingeniería.',
+    chapters: [
+      ['Parte de Nodalia Engineering', 'Circuito se une a Torno, Vortia y Forja en la familia de ingeniería de Nodalia.'],
+      ['El mismo diseño', 'Los mismos menús, iconos y controles que ya conoces de las demás aplicaciones de ingeniería.'],
+      ['Primera versión en camino', 'Cuando se publique, aparecerá aquí y en la lista de Nodalia Launcher.'],
+    ],
+    next: 'funciones',
+  },
+  abaco: {
+    title: 'Una familia de herramientas de ingeniería.',
+    chapters: [
+      ['Parte de Nodalia Engineering', 'Ábaco se une a Torno, Vortia y Forja en la familia de ingeniería de Nodalia.'],
+      ['El mismo diseño', 'Los mismos menús, iconos y controles que ya conoces de las demás aplicaciones de ingeniería.'],
+      ['Primera versión en camino', 'Cuando se publique, aparecerá aquí y en la lista de Nodalia Launcher.'],
+    ],
+    next: 'funciones',
+  },
   launcher: {
     title: 'De la lista a la app instalada.',
     chapters: [
@@ -223,6 +259,8 @@ export function scrollStory(id, apps, { e, safeUrl }) {
     const product = apps.find((item) => item.id === name);
     return `<figure class="story-plate story-plate--${name}">${picture(product, 0)}<figcaption translate="no">${e(product.name)}</figcaption></figure>`;
   };
+  // An app with no screenshots yet shows its own icon, large, until its first release brings real ones.
+  const iconVisual = () => `<div class="story-icon"><img src="${safeUrl(app.icon)}" alt="" loading="lazy" decoding="async"/></div>`;
   const visuals = {
     portal: () => `<div class="story-contact-sheet">
       ${plate('nodalix')}${plate('vinilo')}${plate('lienzo')}${plate('vortia')}
@@ -264,7 +302,7 @@ export function scrollStory(id, apps, { e, safeUrl }) {
         <header class="story-heading">
           <h2 id="story-title">${e(title)}</h2>
         </header>
-        <div class="story-stage" aria-hidden="true">${visuals[id]()}</div>
+        <div class="story-stage" aria-hidden="true">${(visuals[id] ?? iconVisual)()}</div>
         <div class="story-details">
           <div class="story-progress" aria-hidden="true">${chapters.map(() => '<i></i>').join('')}</div>
           <ol class="story-chapters">${chapters.map(([name, description], i) => `
