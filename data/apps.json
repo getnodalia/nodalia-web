@@ -1537,8 +1537,8 @@
         "Islas redondeadas, el color de Letra, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro que se elige en Preferencias."
       ],
       [
-        "Todo es un comando",
-        "Cada acción se puede automatizar con letra-cli o con agentes de IA a través de MCP."
+        "Asistente de IA con tu propia clave",
+        "Un chat con todo el documento como contexto que redacta, resume, corrige y da formato con tu aprobación. Elige Claude, OpenAI, Gemini u Ollama; la clave se queda en el llavero de tu equipo. Y todo sigue siendo un comando: letra-cli y MCP."
       ]
     ],
     "formats": [
@@ -1578,8 +1578,12 @@
         "Sí. Todo es un comando: letra-cli convierte y edita documentos sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
       ],
       [
+        "¿Cómo funciona el asistente de IA?",
+        "Es opcional. Añades tu propia clave de Claude, OpenAI, Gemini u otro proveedor en Preferencias (se guarda en el llavero del sistema) o usas un modelo local con Ollama. Cada cambio que propone espera tu aprobación y un turno entero se deshace con un clic. Nodalia no cobra nada ni tiene servidores por medio."
+      ],
+      [
         "¿Mis archivos salen de mi equipo?",
-        "No. Todo se edita en local y la aplicación no necesita cuenta ni servidor. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+        "No. Todo se edita en local y la aplicación no necesita cuenta ni servidor. La única excepción es el asistente de IA, que es opcional: si lo usas, el contenido del documento que le pides leer viaja directo al proveedor que elijas, con tu propia clave. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
       ]
     ],
     "limitation": "Letra está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los documentos importantes.",
@@ -1648,8 +1652,8 @@
         "Islas redondeadas, el color de Celdas, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro que se elige en Preferencias."
       ],
       [
-        "Todo es un comando",
-        "Cada acción se puede automatizar con celdas-cli o con agentes de IA a través de MCP."
+        "Asistente de IA con tu propia clave",
+        "Un chat con todo el libro como contexto que escribe fórmulas, da formato, ordena, filtra y crea tablas y gráficos con tu aprobación. Elige Claude, OpenAI, Gemini u Ollama; la clave se queda en el llavero de tu equipo. Y todo sigue siendo un comando: celdas-cli y MCP."
       ]
     ],
     "formats": [
@@ -1687,8 +1691,12 @@
         "Sí. Todo es un comando: celdas-cli calcula y edita libros sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
       ],
       [
+        "¿Cómo funciona el asistente de IA?",
+        "Es opcional. Añades tu propia clave de Claude, OpenAI, Gemini u otro proveedor en Preferencias (se guarda en el llavero del sistema) o usas un modelo local con Ollama. Cada cambio que propone espera tu aprobación y un turno entero se deshace con un clic. Nodalia no cobra nada ni tiene servidores por medio."
+      ],
+      [
         "¿Mis archivos salen de mi equipo?",
-        "No. Todo se calcula en local y la aplicación no necesita cuenta ni servidor. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+        "No. Todo se calcula en local y la aplicación no necesita cuenta ni servidor. La única excepción es el asistente de IA, que es opcional: si lo usas, el contenido de las celdas que le pides leer viaja directo al proveedor que elijas, con tu propia clave. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
       ]
     ],
     "limitation": "Celdas está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de los libros importantes.",
@@ -1757,8 +1765,8 @@
         "Islas redondeadas, el color de Lámina, controles de ventana propios en Linux y nativos en macOS y Windows, y tema claro u oscuro que se elige en Preferencias."
       ],
       [
-        "Todo es un comando",
-        "Cada acción se puede automatizar con lamina-cli o con agentes de IA a través de MCP."
+        "Asistente de IA con tu propia clave",
+        "Un chat con toda la presentación como contexto que crea diapositivas, escribe las notas del orador y ajusta el diseño con tu aprobación. Elige Claude, OpenAI, Gemini u Ollama; la clave se queda en el llavero de tu equipo. Y todo sigue siendo un comando: lamina-cli y MCP."
       ]
     ],
     "formats": [
@@ -1795,8 +1803,12 @@
         "Sí. Todo es un comando: lamina-cli crea, edita y exporta presentaciones sin abrir la ventana y ofrece un servidor MCP para agentes de IA."
       ],
       [
+        "¿Cómo funciona el asistente de IA?",
+        "Es opcional. Añades tu propia clave de Claude, OpenAI, Gemini u otro proveedor en Preferencias (se guarda en el llavero del sistema) o usas un modelo local con Ollama. Cada cambio que propone espera tu aprobación y un turno entero se deshace con un clic. Nodalia no cobra nada ni tiene servidores por medio."
+      ],
+      [
         "¿Mis archivos salen de mi equipo?",
-        "No. Todo se edita en local y la aplicación no necesita cuenta ni servidor. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
+        "No. Todo se edita en local y la aplicación no necesita cuenta ni servidor. La única excepción es el asistente de IA, que es opcional: si lo usas, el contenido de la presentación que le pides leer viaja directo al proveedor que elijas, con tu propia clave. En macOS la aplicación no está notarizada: la primera vez, haz clic derecho sobre ella y elige Abrir."
       ]
     ],
     "limitation": "Lámina está en una fase temprana. La lista de lo que funciona y lo que aún falta está en el repositorio; guarda una copia de las presentaciones importantes.",
