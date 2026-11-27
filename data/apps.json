@@ -28,6 +28,10 @@
         "Modelador de piezas de Vortia: un ala NACA sobre el núcleo de sólidos de Nodalia, con sus operaciones y los ajustes del flujo"
       ],
       [
+        "docs/screenshots/viewer-display-dark.webp",
+        "Visor 3D de Vortia con su panel «Mostrar» abierto: campo de color, plano de corte y escala flotando sobre la imagen"
+      ],
+      [
         "docs/screenshots/new-case-light.webp",
         "La misma galería de Vortia en el tema claro"
       ],
