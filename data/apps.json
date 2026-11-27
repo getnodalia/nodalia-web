@@ -1295,7 +1295,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "agora",
-    "icon": "/screens/agora/agora-icon.png",
+    "icon": "/screens/agora/agora-icon-2.png",
     "previews": [
       [
         "/screens/agora/agora-dark.jpg",
@@ -1374,7 +1374,7 @@
         "Rust · Nodalia Design"
       ]
     ],
-    "credit": "El icono de Ágora es un retrato de Sócrates, que conversaba en el ágora de Atenas.",
+    "credit": "El icono de Ágora es un retrato de Alexander Graham Bell, que hizo posible hablar a distancia.",
     "faq": [
       [
         "¿Dónde lo descargo?",
