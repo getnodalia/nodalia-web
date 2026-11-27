@@ -16,6 +16,26 @@
     "icon": "resources/icons/vortia.png",
     "previews": [
       [
+        "docs/screenshots/new-case-dark.webp",
+        "«Nuevo caso» de Vortia: una galería de tarjetas con los iconos CAD, agrupadas por lo que se empieza a dibujar"
+      ],
+      [
+        "docs/screenshots/cad-sketch-dark.webp",
+        "Editor de regiones de Vortia: cinta de herramientas, explorador, lienzo con aristas con nombre y restricciones, cotas y grados de libertad"
+      ],
+      [
+        "docs/screenshots/cad-part-dark.webp",
+        "Modelador de piezas de Vortia: un ala NACA sobre el núcleo de sólidos de Nodalia, con sus operaciones y los ajustes del flujo"
+      ],
+      [
+        "docs/screenshots/new-case-light.webp",
+        "La misma galería de Vortia en el tema claro"
+      ],
+      [
+        "docs/screenshots/cad-sketch-light.webp",
+        "El editor de regiones de Vortia en el tema claro"
+      ],
+      [
         "docs/screenshots/body-wake-dark.webp",
         "Flujo alrededor de una esfera en Vortia: velocidad en un corte, líneas de corriente y estela, con el visor 3D a pantalla completa"
       ],
