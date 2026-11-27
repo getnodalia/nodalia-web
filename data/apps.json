@@ -2886,7 +2886,7 @@
     "technology": "C++ · SCons · Nodalia Design",
     "license": "MIT",
     "repo": "orbe",
-    "icon": "/screens/orbe/orbe-icon-2.png",
+    "icon": "/screens/orbe/orbe-icon-3.png",
     "previews": [
       [
         "/screens/orbe/orbe-editor-dark.jpg",
@@ -2943,7 +2943,7 @@
         "C++ · SCons · Nodalia Design"
       ]
     ],
-    "credit": "El icono de Orbe es un retrato de Johannes Kepler, que describió el movimiento de los cuerpos en órbita.",
+    "credit": "El icono de Orbe es un retrato de John von Neumann, que dio a los ordenadores su arquitectura de programa almacenado.",
     "faq": [
       [
         "¿Dónde lo descargo?",
