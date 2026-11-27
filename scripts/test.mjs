@@ -259,7 +259,7 @@ for (const [id, accent] of [['anima', 'periwinkle'], ['trama', 'lilac'], ['plieg
   assert.match(html, new RegExp(`<body class="accent-${accent}">`));
   assert.ok(portal.includes(`data-release="${id}"`), `${id} no está en las últimas versiones`);
   // Renamed whenever the artwork changes so browser caches drop the old file.
-  const iconFile = ['trama', 'pliego', 'hito', 'circuito'].includes(id) ? `${id}-icon-3.png` : ['anima', 'buzon', 'codigo', 'orbe', 'abaco'].includes(id) ? `${id}-icon-2.png` : `${id}-icon.png`;
+  const iconFile = ['trama', 'pliego', 'hito', 'circuito', 'codigo', 'abaco'].includes(id) ? `${id}-icon-3.png` : ['anima', 'buzon', 'orbe'].includes(id) ? `${id}-icon-2.png` : `${id}-icon.png`;
   assert.ok((await stat(path.join(root, `dist/portal/${id}/screens/${id}/${iconFile}`))).size > 1000, `Falta el icono de ${id}`);
   assert.ok(portal.includes(`https://getnodalia.com/${id}/screens/${id}/${iconFile}`), `El portal no usa el icono local de ${id}`);
 }

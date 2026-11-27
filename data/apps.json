@@ -2734,7 +2734,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "codigo",
-    "icon": "/screens/codigo/codigo-icon-2.png",
+    "icon": "/screens/codigo/codigo-icon-3.png",
     "previews": [
       [
         "/screens/codigo/codigo-quality.jpg",
@@ -2818,7 +2818,7 @@
         "Rust · Nodalia Design"
       ]
     ],
-    "credit": "El icono de Código es un retrato de Ada Lovelace, que escribió el primer programa pensado para una máquina.",
+    "credit": "El icono de Código es un retrato de Alan Turing, que definió qué puede calcular un programa.",
     "faq": [
       [
         "¿Dónde lo descargo?",
@@ -3088,7 +3088,7 @@
     "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "abaco",
-    "icon": "/screens/abaco/abaco-icon-2.png",
+    "icon": "/screens/abaco/abaco-icon-3.png",
     "previews": [
       [
         "/screens/abaco/abaco-document-light.jpg",
@@ -3159,7 +3159,7 @@
         "Rust · Nodalia Design"
       ]
     ],
-    "credit": "El icono de Ábaco es un retrato de John Napier, que inventó los logaritmos para hacer más fáciles los cálculos largos.",
+    "credit": "El icono de Ábaco es un retrato de Carl Friedrich Gauss, que convirtió el cálculo de órbitas y errores en una ciencia exacta.",
     "faq": [
       [
         "¿Dónde lo descargo?",
