@@ -207,20 +207,20 @@ const stories = {
     next: 'funciones',
   },
   circuito: {
-    title: 'Una familia de herramientas de ingeniería.',
+    title: 'Del esquema a la placa.',
     chapters: [
-      ['Parte de Nodalia Engineering', 'Circuito se une a Torno, Vortia y Forja en la familia de ingeniería de Nodalia.'],
-      ['El mismo diseño', 'Los mismos menús, iconos y controles que ya conoces de las demás aplicaciones de ingeniería.'],
-      ['Primera versión en camino', 'Cuando se publique, aparecerá aquí y en la lista de Nodalia Launcher.'],
+      ['Dibuja o escribe', 'Arrastra piezas al esquema o escribe el circuito como código: los dos se mantienen en sincronía.'],
+      ['Simula', 'Punto de operación, pequeña señal en CA y transitorio con un simulador propio.'],
+      ['Comprueba y fabrica', 'Reglas eléctricas y de diseño, y salidas Gerber y Excellon para fabricar la placa.'],
     ],
     next: 'funciones',
   },
   abaco: {
-    title: 'Una familia de herramientas de ingeniería.',
+    title: 'De la fórmula al modelo.',
     chapters: [
-      ['Parte de Nodalia Engineering', 'Ábaco se une a Torno, Vortia y Forja en la familia de ingeniería de Nodalia.'],
-      ['El mismo diseño', 'Los mismos menús, iconos y controles que ya conoces de las demás aplicaciones de ingeniería.'],
-      ['Primera versión en camino', 'Cuando se publique, aparecerá aquí y en la lista de Nodalia Launcher.'],
+      ['Calcula con unidades', 'Cada número lleva su unidad y cada celda se recalcula cuando cambia lo que usa.'],
+      ['Programa con matrices', 'Ábaco Script: editor, ventana de órdenes, variables y gráficas en un mismo espacio.'],
+      ['Simula sistemas', 'Diagramas de bloques con solucionadores propios y linealización.'],
     ],
     next: 'funciones',
   },

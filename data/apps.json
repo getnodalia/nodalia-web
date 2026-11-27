@@ -2956,44 +2956,63 @@
     "id": "circuito",
     "name": "Circuito",
     "category": "Electrónica",
-    "status": "Primera versión en camino · fase temprana",
+    "status": "Primera versión · fase temprana",
     "statusKind": "early",
-    "eyebrow": "Diseño y simulación de electrónica",
+    "eyebrow": "Electrónica: esquemas y simulación",
     "headline": "Cada circuito, a la vista.",
-    "tagline": "Diseño y simulación de circuitos electrónicos, dentro de Nodalia Engineering.",
-    "description": "Una aplicación nativa para diseñar circuitos electrónicos y ver cómo se comportan, parte de Nodalia Engineering. Su repositorio acaba de crearse y la primera versión está en camino.",
+    "tagline": "Captura de esquemas, simulación de circuitos, diseño de placas y salidas de fabricación, en una aplicación nativa.",
+    "description": "Una aplicación nativa de electrónica, escrita en Rust con motores propios, sin envolver SPICE ni KiCad: captura de esquemas, simulación de circuitos, diseño de placas y salidas de fabricación. Dibujas el circuito con el ratón o lo escribes como código, y los dos se mantienen en sincronía. Sin cuenta, sin nube.",
     "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
-    "technology": "Nodalia Design",
+    "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "circuito",
     "icon": "/screens/circuito/circuito-icon-3.png",
-    "previews": [],
-    "features": [
+    "previews": [
       [
-        "Parte de Nodalia Engineering",
-        "Comparte familia con Torno, Vortia y Forja: el mismo diseño, los mismos menús y los mismos iconos, para que lo que aprendes en una sirva en las demás."
+        "/screens/circuito/circuito-editor-dark.jpg",
+        "Circuito en el tema oscuro con un amplificador de emisor común abierto: la lista de piezas a la izquierda, el esquema junto a su código, las propiedades del transistor seleccionado a la derecha y el punto de operación abajo"
       ],
       [
-        "Una aplicación nativa",
-        "Pensada como una aplicación de escritorio de verdad, con el diseño de Nodalia y sin vista web."
+        "/screens/circuito/circuito-editor-light-es.jpg",
+        "El mismo amplificador en el tema claro, con la interfaz en español"
       ],
       [
-        "Se instala con Nodalia Launcher",
-        "En cuanto publique su primera versión aparecerá en la lista de Nodalia Launcher, que la instala y la mantiene al día."
+        "/screens/circuito/circuito-context-menu-es.jpg",
+        "El menú contextual del esquema con cortar, copiar, pegar, duplicar, eliminar, girar, reflejar, seleccionar todo y ajustar a la ventana"
       ]
     ],
-    "parts": [
+    "features": [
       [
-        "Familia",
-        "Nodalia Engineering, con Torno, Vortia y Forja"
+        "Editor de esquemas",
+        "Arrastra piezas de la lista a la hoja, dibuja cables que se ajustan a las patillas y a otros cables, añade etiquetas de red, puertos de alimentación y marcas de no conexión, y edita referencias, valores y modelos en el panel de propiedades."
       ],
       [
-        "Interfaz",
-        "El diseño de Nodalia (NDL)"
+        "El circuito como código",
+        "Una forma de texto corta del esquema, una línea por pieza (R1 1k in out), con colocación y enrutado automáticos. Edita el dibujo y cambia el código; edita el código y cambia el dibujo."
       ],
       [
-        "Estado",
-        "El repositorio acaba de crearse; la primera versión está en camino"
+        "Un simulador propio",
+        "Análisis nodal modificado con Newton–Raphson: punto de operación, pequeña señal en CA y transitorio, con resistencias, condensadores, bobinas, fuentes, diodo, BJT, MOSFET de nivel 1, interruptor y amplificador operacional. Corre en un hilo aparte, con progreso y cancelación."
+      ],
+      [
+        "Archivos SPICE",
+        "Lee y escribe tarjetas R, C, L, V, I, D, E, G, F, H, K, Q, M y S, además de .model, .op, .dc, .ac y .tran. Lo que no admite es un error, nunca se omite en silencio."
+      ],
+      [
+        "Reglas eléctricas",
+        "25 reglas con códigos estables, listadas en la aplicación y disponibles como JSON."
+      ],
+      [
+        "Salidas de placa",
+        "Modelo de placa, comprobación de reglas de diseño con geometría exacta, Gerber RS-274X/X2, taladros Excellon, pick-and-place y lista de materiales en CSV."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, el color cobre de Circuito, controles de ventana propios en Linux y nativos en macOS y Windows, tema claro u oscuro, español e inglés."
+      ],
+      [
+        "Línea de órdenes",
+        "circuito simula, comprueba reglas, extrae la lista de conexiones y genera Gerber sin abrir la interfaz, con salida en tabla, CSV o JSON."
       ]
     ],
     "specs": [
@@ -3002,26 +3021,38 @@
         "MIT OR Apache-2.0"
       ],
       [
-        "Estado",
-        "Primera versión en camino"
+        "Plataformas",
+        "Linux x86_64 · macOS (Universal) · Windows x64"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · .msi y zip portátil (Windows x64)"
       ],
       [
         "Tecnología",
-        "Nodalia Design"
+        "Rust · Nodalia Design"
       ]
     ],
-    "credit": "El icono de Circuito será un retrato de Gustav Kirchhoff, autor de las leyes que describen cómo circula la corriente por un circuito.",
+    "credit": "El icono de Circuito es un retrato de Gustav Kirchhoff, autor de las leyes que describen cómo circula la corriente por un circuito.",
     "faq": [
       [
         "¿Dónde lo descargo?",
-        "En esta página, cuando Circuito publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión."
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub. También puedes instalarlo y mantenerlo al día desde Nodalia Launcher."
       ],
       [
-        "¿Qué puede hacer hoy?",
-        "Todavía nada que descargar: el repositorio acaba de crearse y la primera versión llega en una próxima publicación. Esta página irá describiendo lo que funcione cuando exista."
+        "¿Con qué se ha comprobado el simulador?",
+        "Los resultados se comparan con soluciones analíticas y con las ecuaciones publicadas de los modelos, no con otro simulador. Los archivos Gerber y Excellon se releen con lectores propios, no se han abierto en un visor externo."
+      ],
+      [
+        "¿Hay editor de placas?",
+        "Todavía no: hay modelo de placa, comprobación de reglas y salidas de fabricación, pero el diseño se hace en el esquema. El editor de placas está previsto."
+      ],
+      [
+        "¿Sirve para equipos críticos?",
+        "No. Circuito está en una fase temprana, no está certificado y no es apto para usos críticos para la seguridad."
       ]
     ],
-    "limitation": "Circuito todavía no ha publicado ninguna versión. Cuando lo haga, esta página y Nodalia Launcher ofrecerán su descarga.",
+    "limitation": "Circuito está en una fase temprana: aún no hay editor de placas y no es apto para usos críticos para la seguridad. Lo que falta está en ROADMAP.md.",
     "cta": "Descargar Circuito",
     "accent": "terracotta",
     "downloads": {
@@ -3033,50 +3064,81 @@
       "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
       "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
       "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
-    }
+    },
+    "formats": [
+      "Esquemas y código de circuito",
+      "Netlists SPICE",
+      "Gerber RS-274X/X2",
+      "Taladros Excellon",
+      "Pick-and-place y BOM en CSV",
+      "Resultados en JSON"
+    ]
   },
   {
     "id": "abaco",
     "name": "Ábaco",
-    "category": "Cálculo de ingeniería",
-    "status": "Primera versión en camino · fase temprana",
+    "category": "Matemáticas y cálculo",
+    "status": "Primera versión · fase temprana",
     "statusKind": "early",
-    "eyebrow": "Cálculo de ingeniería",
+    "eyebrow": "Matemáticas y cálculo científico",
     "headline": "Los números de tu proyecto, en orden.",
-    "tagline": "Cálculo de ingeniería nativo y rápido, dentro de Nodalia Engineering.",
-    "description": "Una aplicación nativa para calcular los números detrás de un proyecto de ingeniería, parte de Nodalia Engineering. Su repositorio acaba de crearse y la primera versión está en camino.",
+    "tagline": "Documentos de cálculo con unidades, un lenguaje de matrices y diagramas de bloques, en una aplicación nativa.",
+    "description": "Una aplicación nativa de matemáticas y cálculo científico, escrita en Rust y con el diseño de Nodalia: documentos de cálculo ejecutables en los que cada número lleva su unidad y cada celda se recalcula cuando cambia aquello de lo que depende. Incluye un lenguaje de matrices y un modelador de diagramas de bloques, ambos con solucionadores propios. Sin cuenta, sin nube.",
     "platforms": "Linux x86_64 · macOS (Universal) · Windows x64",
-    "technology": "Nodalia Design",
+    "technology": "Rust · Nodalia Design",
     "license": "MIT OR Apache-2.0",
     "repo": "abaco",
     "icon": "/screens/abaco/abaco-icon-3.png",
-    "previews": [],
-    "features": [
+    "previews": [
       [
-        "Parte de Nodalia Engineering",
-        "Comparte familia con Torno, Vortia y Forja: el mismo diseño, los mismos menús y los mismos iconos, para que lo que aprendes en una sirva en las demás."
+        "/screens/abaco/abaco-document-light.jpg",
+        "Ábaco en el tema claro con un documento de cálculo abierto: una viga en voladizo en la que cada número lleva su unidad, el esquema de las celdas a la izquierda y el panel de unidades y constantes a la derecha"
       ],
       [
-        "Una aplicación nativa",
-        "Pensada como una aplicación de escritorio de verdad, con el diseño de Nodalia y sin vista web."
+        "/screens/abaco/abaco-document-dark.jpg",
+        "El mismo documento de la viga en el tema oscuro"
       ],
       [
-        "Se instala con Nodalia Launcher",
-        "En cuanto publique su primera versión aparecerá en la lista de Nodalia Launcher, que la instala y la mantiene al día."
+        "/screens/abaco/abaco-script-dark.jpg",
+        "El espacio de Ábaco Script en el tema oscuro: un editor, una ventana de órdenes, el navegador de variables y la gráfica de una oscilación amortiguada"
+      ],
+      [
+        "/screens/abaco/abaco-blocks-dark.jpg",
+        "El espacio de Ábaco Blocks en el tema oscuro: el modelo de un servo con límite de par y las gráficas de su última simulación"
+      ],
+      [
+        "/screens/abaco/abaco-blocks-light.jpg",
+        "El mismo modelo del servo en el tema claro"
       ]
     ],
-    "parts": [
+    "features": [
       [
-        "Familia",
-        "Nodalia Engineering, con Torno, Vortia y Forja"
+        "Unidades en cada número",
+        "Dimensiones, unidades del SI y habituales, conversión y constantes CODATA. Sumar metros y segundos es un error que nombra las dos dimensiones, y un desbordamiento es un error, nunca infinito."
       ],
       [
-        "Interfaz",
-        "El diseño de Nodalia (NDL)"
+        "Documentos de cálculo",
+        "Celdas con grafo de dependencias, detección de ciclos y evaluación incremental, guardadas en un archivo .abaco con versión y escrito de forma atómica."
       ],
       [
-        "Estado",
-        "El repositorio acaba de crearse; la primera versión está en camino"
+        "Un lenguaje de matrices",
+        "Ábaco Script: scripts, funciones, estructuras, expresiones regulares, más de 350 funciones integradas y órdenes de gráficos, con editor, ventana de órdenes y navegador de variables."
+      ],
+      [
+        "Diagramas de bloques",
+        "Ábaco Blocks: unos 60 bloques, solucionadores de paso fijo y variable (también para sistemas rígidos), tiempos de muestreo exactos, detección de cruces por cero y de bucles algebraicos, y linealización."
+      ],
+      [
+        "Resultados comprobados",
+        "Los motores se prueban contra soluciones analíticas o valores publicados, y con entradas aleatorias para que no se cierren por sorpresa."
+      ],
+      [
+        "Diseño de Nodalia",
+        "Islas redondeadas, el color ciruela de Ábaco, controles de ventana propios en Linux y nativos en macOS y Windows, tema claro u oscuro, español e inglés, y el menú en la barra superior en Linux."
+      ],
+      [
+        "Línea de órdenes",
+        "abaco-cli evalúa expresiones, ejecuta documentos y scripts y simula modelos sin abrir la interfaz, con salida en JSON."
       ]
     ],
     "specs": [
@@ -3085,26 +3147,38 @@
         "MIT OR Apache-2.0"
       ],
       [
-        "Estado",
-        "Primera versión en camino"
+        "Plataformas",
+        "Linux x86_64 · macOS (Universal) · Windows x64"
+      ],
+      [
+        "Paquetes",
+        "AppImage · .deb · .rpm · .tar.gz (Linux x86_64) · DMG (macOS) · .msi y zip portátil (Windows x64)"
       ],
       [
         "Tecnología",
-        "Nodalia Design"
+        "Rust · Nodalia Design"
       ]
     ],
     "credit": "El icono de Ábaco es un retrato de Carl Friedrich Gauss, que convirtió el cálculo de órbitas y errores en una ciencia exacta.",
     "faq": [
       [
         "¿Dónde lo descargo?",
-        "En esta página, cuando Ábaco publique su primera versión: el botón principal ofrecerá el paquete para tu sistema desde la última versión publicada en GitHub. También podrás instalarlo desde Nodalia Launcher, que lo añade a su lista en cuanto exista una versión."
+        "En esta página: el botón principal ofrece el paquete para tu sistema desde la última versión publicada en GitHub. También puedes instalarlo y mantenerlo al día desde Nodalia Launcher."
       ],
       [
         "¿Qué puede hacer hoy?",
-        "Todavía nada que descargar: el repositorio acaba de crearse y la primera versión llega en una próxima publicación. Esta página irá describiendo lo que funcione cuando exista."
+        "Evalúa documentos de cálculo con unidades, ejecuta scripts en Ábaco Script y simula diagramas de bloques, con aplicación de escritorio y línea de órdenes. Lo que aún no existe está en ROADMAP.md, en el repositorio."
+      ],
+      [
+        "¿Puedo deshacer un cambio?",
+        "Todavía no: ni el documento ni el editor de bloques tienen deshacer y rehacer. Guarda copias de los documentos importantes."
+      ],
+      [
+        "¿Sirve para ingeniería crítica?",
+        "No. Ábaco está en una fase temprana y no es apto para usos críticos para la seguridad."
       ]
     ],
-    "limitation": "Ábaco todavía no ha publicado ninguna versión. Cuando lo haga, esta página y Nodalia Launcher ofrecerán su descarga.",
+    "limitation": "Ábaco está en una fase temprana: de momento solo se ha usado en Linux, no tiene deshacer en el documento ni en el editor de bloques, aún no hace cálculo simbólico y no debe usarse para nada crítico para la seguridad. Lo que falta está en ROADMAP.md.",
     "cta": "Descargar Ábaco",
     "accent": "plum",
     "downloads": {
@@ -3116,7 +3190,13 @@
       "linux": "Archivo ejecutable para distribuciones Linux de 64 bits con arquitectura x86_64.",
       "mac": "El DMG universal funciona en Macs con Apple Silicon e Intel.",
       "windows": "Instalador MSI para Windows de 64 bits con arquitectura x64."
-    }
+    },
+    "formats": [
+      "Documentos .abaco",
+      "Scripts de Ábaco Script",
+      "Modelos de bloques en JSON",
+      "Resultados en JSON"
+    ]
   },
   {
     "id": "launcher",
